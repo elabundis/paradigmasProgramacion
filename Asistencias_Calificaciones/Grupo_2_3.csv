@@ -1,0 +1,90 @@
+Asistencia: Asistencia
+Nombre,27-ene,28-ene,29-ene,3-feb,4-feb,5-feb,9-feb,10-feb,11-feb,13-feb,16-feb,17-feb,18-feb
+Alcantar García Edgar Omar,1,1,1,0,1,1,1,1,1,1,1,1,1
+Aragón Nava Armando Emmanuel,1,1,1,1,1,1,0,1,1,1,1,1,0
+Armenta Ceniceros Luis Felipe,1,1,1,1,0,1,1,1,1,1,1,1,1
+Barraza Medina José Miguel,1,1,1,0,0,1,0,0,0,1,0,1,1
+Bedolla Garrido Carlos Esau,1,1,1,1,1,1,0,1,1,0,0,1,1
+Beltrán Alfaro Carlos Francisco,1,1,0,1,1,1,0,1,1,1,1,0,0
+Beltrán González Mia Alejandra,1,1,0,1,1,1,1,1,1,1,1,1,1
+Beltran Ramirez Luis Angel,1,1,1,1,0,1,1,1,1,1,1,1,0
+Bonilla Rubio Jose Ricardo,0,1,1,1,1,1,1,1,1,1,1,1,0
+Chavez Ramirez David Uriel,0,0,0,1,1,1,0,1,1,1,1,1,1
+Esparza Arce Isaac Enrique,0,1,1,1,1,1,1,1,1,0,1,1,1
+Felix Peña Jorge Charbel,1,1,1,1,0,1,0,1,1,1,1,1,1
+Galban Leon Yarold Jared,1,1,1,1,1,1,1,1,1,1,1,1,0
+Gallardo Herrera Sergio,1,1,0,0,0,1,0,1,0,1,0,0,0
+Gastelum Roman Marco Antonio,1,1,1,1,1,1,0,1,1,0,1,1,1
+Gonzales Silvas César Alexis,1,1,1,1,1,1,0,1,1,0,1,1,1
+Gonzalez Aviles Sori Jaqueline,1,1,1,1,1,1,1,1,1,1,1,1,1
+González Medina Jorge,1,1,1,1,1,1,1,1,1,1,1,1,1
+Gurrola Cebreros Jose Alejandro,1,1,1,1,1,1,1,1,1,1,1,1,1
+Gutiérrez Valdez Jorge Antonio,1,1,1,0,1,1,0,1,1,0,1,0,1
+Iribe Martínez Nidia Guadalupe,1,1,1,0,1,1,0,1,1,0,1,1,0
+Leon Favela Dagoberto,0,1,1,1,0,1,1,1,1,1,1,1,1
+Leon Quiroa Axel Dahil,1,1,1,1,1,1,1,1,1,0,1,1,1
+Loera Arenibas Jesus Samuel,0,0,0,0,1,0,1,0,1,0,0,0,1
+López Parra Kevin,1,1,1,0,1,1,0,1,1,0,0,1,1
+Mendoza Silva Andrew,1,1,1,1,0,0,1,1,1,1,1,0,1
+Moreno Felix Pablo Isai,0,1,0,1,0,1,0,1,1,1,1,1,1
+Obregon Martinez Andrea,1,1,0,1,1,1,1,1,1,1,1,0,1
+Ortiz Ortiz Clemente Andreé,1,1,0,1,1,1,1,1,1,1,1,1,1
+Parra Lopez Kevin Alfonso,1,1,1,1,1,1,0,0,0,0,0,1,1
+Peiro Sanchez Adrian Freddy,0,1,1,1,0,0,1,1,1,1,1,1,1
+Quintero Núñez Edson Arath,1,1,1,1,1,1,1,1,1,1,1,1,0
+Reyes Salazar Adilene,1,1,1,1,1,1,1,1,1,1,1,1,1
+Rodríguez Sánchez Ricardo,1,1,1,1,1,1,0,1,0,1,1,1,1
+Rubio Amarillas Vianca Nohemi,0,1,0,1,1,1,1,1,1,0,1,1,1
+Salas Rojo Briseida Melani,1,1,0,1,1,1,0,1,1,0,0,1,1
+Salazar Godoy Tristan de Jesus,0,1,1,1,1,1,1,1,1,1,1,0,1
+Torres León Dalia Azucena,0,0,1,0,0,1,1,1,1,1,1,1,1
+Torres Valdez Miguel,1,1,0,1,1,1,1,1,1,1,1,1,1
+Valenzuela Medina Misael,1,1,0,1,1,1,1,1,1,1,1,1,1
+Vega Núñez Máximo Isai,1,1,1,1,1,1,1,1,1,1,1,1,1
+Velarde López Carlos Daniel,1,1,1,1,1,1,1,1,1,1,1,1,1
+Verdugo López Luis Alfredo,1,1,1,1,1,1,1,1,1,1,1,1,1
+
+Asistencia: Resumen
+Clases Totales:,13,,
+Nombre,Asistencias,Faltas,Promedio
+Alcantar García Edgar Omar,12,1,92
+Aragón Nava Armando Emmanuel,11,2,85
+Armenta Ceniceros Luis Felipe,12,1,92
+Barraza Medina José Miguel,7,6,54
+Bedolla Garrido Carlos Esau,10,3,77
+Beltrán Alfaro Carlos Francisco,9,4,69
+Beltrán González Mia Alejandra,12,1,92
+Beltran Ramirez Luis Angel,11,2,85
+Bonilla Rubio Jose Ricardo,11,2,85
+Esparza Arce Isaac Enrique,11,2,85
+Felix Peña Jorge Charbel,11,2,85
+Galban Leon Yarold Jared,12,1,92
+Gallardo Herrera Sergio,5,8,38
+Gastelum Roman Marco Antonio,11,2,85
+Gonzales Silvas César Alexis,11,2,85
+Gonzalez Aviles Sori Jaqueline,13,0,100
+González Medina Jorge,13,0,100
+Gurrola Cebreros Jose Alejandro,13,0,100
+Gutiérrez Valdez Jorge Antonio,9,4,69
+Iribe Martínez Nidia Guadalupe,9,4,69
+Leon Favela Dagoberto,11,2,85
+Leon Quiroa Axel Dahil,12,1,92
+López Parra Kevin,9,4,69
+Mendoza Silva Andrew,10,3,77
+Moreno Felix Pablo Isai,9,4,69
+Obregon Martinez Andrea,11,2,85
+Ortiz Ortiz Clemente Andreé,12,1,92
+Parra Lopez Kevin Alfonso,8,5,62
+Peiro Sanchez Adrian Freddy,10,3,77
+Quintero Núñez Edson Arath,12,1,92
+Reyes Salazar Adilene,13,0,100
+Rodríguez Sánchez Ricardo,11,2,85
+Rubio Amarillas Vianca Nohemi,10,3,77
+Salas Rojo Briseida Melani,9,4,69
+Salazar Godoy Tristan de Jesus,11,2,85
+Torres León Dalia Azucena,9,4,69
+Torres Valdez Miguel,12,1,92
+Valenzuela Medina Misael,12,1,92
+Vega Núñez Máximo Isai,13,0,100
+Velarde López Carlos Daniel,13,0,100
+Verdugo López Luis Alfredo,13,0,100
