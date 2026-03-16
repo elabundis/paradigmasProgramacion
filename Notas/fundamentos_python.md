@@ -5,16 +5,17 @@ fontsize: 12pt
 
 # Fundamentos de Python
 
-Lenguaje interpretado de alto y nivel y multiparadignma.
+Lenguaje interpretado de alto nivel y multiparadigma.
 
-Su implementación fundamental es CPython, aunque existen múltiples otras implementaciones como ya hemos visto en el curso.
+Su implementación fundamental es **CPython**, aunque existen múltiples otras implementaciones como ya hemos visto en el curso.
 
 Muy utilizado en la inteligencia artificial, ciencia de datos, en cálculos científicos, creación de páginas web, automatizando de tareas, microcontroladores, etc.
 
 
 ## Instalación y Ejecución
 
-Ya hemos visto que la herramienta Pyenv no permite instalar cualquier versión deseada de Python. Refiérase al laboratorio 2.
+Ya hemos visto que la herramienta **pyenv** nos permite instalar cualquier versión deseada de **python**
+(refiérase al laboratorio 2).
 Aquí repasamos el uso fundamental de esta herramienta.
 
 
@@ -187,10 +188,10 @@ Por ejemplo,  para instalar la librerías **numpy** y **mypy**
 
     python -m pip install numpy mypy
 
-El módulo **pip** es la herramienta estándar para 
+El módulo **pip** es la herramienta estándar para
 instalar, actualizar y eliminar
 bibliotecas de terceros a partir del
-Python Package Index 
+Python Package Index
 ([PyPI](https://pypi.org/)).
 También podemos utilizar más resumidamente
 
