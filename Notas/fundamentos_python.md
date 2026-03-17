@@ -238,7 +238,73 @@ cada que creemos haberlos modificado realmente hemos creado un nuevo objeto.
 
 ### Métodos para los objetos **str**
 
-nombre = "Maria Rojas"
+Abramos
+**IPython** (Interactive Python),
+el intérprete (shell) de comandos interactivo para python.
+Este representa una actualización significativa sobre el
+intérprete estándar de python
+(**REPL** - **Read-Eval-Print Loop**).
+Investiga sobre sus características
+(intérprete interactivo,
+comandos mágicos,
+introspección de objetos,
+acceso a comandos del shell).
+
+Provemos algunos métodos de los objetos inmutables **str**,
+así como algunas características de **ipython**.
+
+    In [1]: nombre = "Maria Rojas"
+
+Introspección en ipython:
+
+    In [2]: nombre.isascii?
+
+Ejecución de método:
+
+    In [3]: nombre.isascii()
+    Out[3]: True
+
+Para ver todos los métodos disponibles podemos escribir
+`nombre.` y presionar \<TAB> para que **ipython** nos muestre todos los métodos del objeto.
+Python provee la función `dir` para ver los métodos y atributos de cualquier objeto como ya hemos visto en clase.
+
+Experimentar con algunos métodos:
+
+    In [4]: nombre.lower()
+
+    In [5]: nombre.capitalize()
+
+    In [6]: texto = ' Tenemos espacio  '
+
+    In [7]: texto.strip()
+
+    In [8]: texto.lstrip()
+
+Los strings cuentan con índices para cada caracter comenzando en cero.
+Esto nos permite extraer información o seleccionar parte de este.
+
+    In [9]: nombre[2]
+    Out[9]: 'r'
+
+    In [10]: nombre.find('a')
+    Out[10]: 1
+
+    In [11]: nombre.find('jas')
+    Out[11]: 8
+
+    In [11]: nombre.find('Jas')
+    Out[11]: -1
+
+    In [12]: nombre.replace('Maria', 'Elena')
+
+    In [13]: nombre_correcto = nombre.replace('Maria', 'Elena')
+
+También podemos utilizar algunas palabras reservadas en combinación con nuestros strings.
+Por ejemplo,
+para verificar si una cadena de caracteres está contenida en nuestro string
+
+    In [14] 'Rojas' in nombre
+    Out[14] True
 
 ## Loops
 
