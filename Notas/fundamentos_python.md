@@ -231,6 +231,11 @@ Estas variables almacenan objetos de tipo **str**, **int**, **float** y **bool**
     >>> type(verdad)
     <class 'bool'>
 
+Recordamos que estos objetos son del tipo **inmutable** como ya hemos visto en clase,
+es decir,
+no pueden ser modificados;
+cada que creemos haberlos modificado realmente hemos creado un nuevo objeto.
+
 ### Métodos para los objetos **str**
 
 nombre = "Maria Rojas"
