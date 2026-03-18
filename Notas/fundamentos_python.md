@@ -309,24 +309,26 @@ Por ejemplo,
 
 Para acceder a los elementos del string utilizamos índices como se muestra a continuación.
 
+### Indexación
+
 Los strings cuentan con índices para cada caracter comenzando en cero.
 Esto nos permite extraer información o seleccionar parte de este.
 
-    In [9]: nombre[2]
-    Out[9]: 'r'
+    In [13]: nombre[2]
+    Out[13]: 'r'
 
-    In [10]: nombre.find('a')
-    Out[10]: 1
+    In [14]: nombre.find('a')
+    Out[14]: 1
 
-    In [11]: nombre.find('jas')
-    Out[11]: 8
+    In [15]: nombre.find('jas')
+    Out[15]: 8
 
-    In [11]: nombre.find('Jas')
-    Out[11]: -1
+    In [16]: nombre.find('Jas')
+    Out[16]: -1
 
-    In [12]: nombre.replace('Maria', 'Elena')
+    In [17]: nombre.replace('Maria', 'Elena')
 
-    In [13]: nombre_correcto = nombre.replace('Maria', 'Elena')
+    In [18]: nombre_correcto = nombre.replace('Maria', 'Elena')
 
 
 
