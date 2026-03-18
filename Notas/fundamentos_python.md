@@ -404,4 +404,4 @@ se selecciona el primer caracter. Vea los siguientes ejemplos
 ## Decisiones
 
 ## Funciones
-## Estructuras de Datos básicas
+## Estructuras de Datos
