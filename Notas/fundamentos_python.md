@@ -330,7 +330,74 @@ Esto nos permite extraer información o seleccionar parte de este.
 
     In [18]: nombre_correcto = nombre.replace('Maria', 'Elena')
 
+### Slicing
 
+Podemos utilizar los índices para seleccionar un subconjunto de caracteres del string. La sintaxis a utilizar es
+
+    texto[start:end]
+
+o bien,
+
+    texto[start:end:inc]
+
+donde **start** es el índice de inicio,
+**end** es el índice final más uno
+y **inc** es el incremento entre índices.
+Cuando no declaramos el incremento,
+este toma el valor de uno
+(sintaxis superior).
+A continuación algunos ejemplos.
+
+    In [19]: nombre[6:9]
+    Out[19]: 'Roj'
+
+    In [20]: nombre[0:10:2]
+    Out[20]: 'MraRj'
+
+Cuando no declaramos **end** automáticamente se selecciona el índice del último caracter más uno.
+
+    In [21]: nombre[2:]
+    Out[21]: 'ria Rojas'
+
+    In [22]: nombre[2::2]
+    Out[22]: 'raRjs'
+
+Si no declaramos **start** se selecciona para este parámetro el índice cero. Por ejemplo,
+
+    In [23]: nombre[:7]
+    Out[23]: 'Maria R'
+
+¿Cómo se vería el resultado de las siguientes declaraciones?
+
+    In [24]: nombre[:7:2]
+
+    In [25]: nombre[:]
+
+    In [26]: nombre[::2]
+
+También podemos utilizar un incremento negativo
+
+    In [27]: nombre[4:1:-1]
+    Out[27]: 'air'
+
+Para ir de derecha a izquierda y llegar hasta el primer caracter simplemente no declaramos **end**
+
+    In [28]: nombre[4::-1]
+    Out[28]: 'airaM'
+
+Cuando declaramos incrementos negativos el papel de
+**start** y **end** se invierten;
+si no declaramos el **start** se selecciona el último caracter,
+y si no declaramos **end**
+se selecciona el primer caracter. Vea los siguientes ejemplos
+
+    In [29]: nombre[:3:-1]
+    Out[29]: 'sajoR a'
+
+    In [30]: nombre[7::-1]
+    Out[30]: 'oR airaM'
+
+¿Cómo invierto el string por completo?
 
 ## Loops
 
