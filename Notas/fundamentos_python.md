@@ -280,6 +280,35 @@ Experimentar con algunos métodos:
 
     In [8]: texto.lstrip()
 
+También podemos utilizar algunas **palabras reservadas** en combinación con nuestros strings.
+Por ejemplo,
+para verificar si una cadena de caracteres está contenida en nuestro string
+
+    In [9] 'Rojas' in nombre
+    Out[9] True
+
+o para verificar que una cadena no aparece en el string
+
+    In [10] 'rojas' in nombre
+    Out[10] False
+
+    In [11] 'rojas' not in nombre
+    Out[11] True
+
+Un **string** es un objeto **iterable**,
+esto es,
+un objeto que es capaz de regresar sus elementos uno a la vez;
+los elementos de un **string** son cada uno de sus caracteres.
+Una función muy útil para todo objeto iterable es
+`len`,
+la cuál regresa el número de elementos del iterable.
+Por ejemplo,
+
+    In [12]: len(texto)
+    Out[12]: 18
+
+Para acceder a los elementos del string utilizamos índices como se muestra a continuación.
+
 Los strings cuentan con índices para cada caracter comenzando en cero.
 Esto nos permite extraer información o seleccionar parte de este.
 
@@ -299,12 +328,7 @@ Esto nos permite extraer información o seleccionar parte de este.
 
     In [13]: nombre_correcto = nombre.replace('Maria', 'Elena')
 
-También podemos utilizar algunas palabras reservadas en combinación con nuestros strings.
-Por ejemplo,
-para verificar si una cadena de caracteres está contenida en nuestro string
 
-    In [14] 'Rojas' in nombre
-    Out[14] True
 
 ## Loops
 
