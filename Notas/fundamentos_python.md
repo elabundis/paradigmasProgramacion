@@ -5,11 +5,34 @@ fontsize: 12pt
 
 # Fundamentos de Python
 
-Lenguaje interpretado de alto nivel y multiparadigma.
+Python es un lenguaje interpretado de alto nivel multiparadigma,
+permitiéndonos utilizar un enfoque **orientado a objetos**,
+por **procedimientos**,
+**funcional** (map, filter, reduce, list comprehension),
+e incluso **programación lógica** mediante librerías como
+PyKE, kanren, o pyDatalog.
+El paradigma a emplear dependerá del problema y conocimientos del programador pero python pone a nuestra disposición todos los paradigmas.
 
-Su implementación fundamental es **CPython**, aunque existen múltiples otras implementaciones como ya hemos visto en el curso.
+Su implementación fundamental es **CPython**,
+la cuál está escrita en **C**.
+Esto nos permite escribir y utilizar módulos de extensión en C
+(numpy, etc),
+es decir,
+podemos interactuar fácilmente con código en ese lenguaje.
+Sin embargo,
+como ya hemos discutido durante el curso,
+existen muchas otras implementaciones;
+algunas hechas en Java (**Jython**)
+otras hechas en python mismo (**PyPy**)
+y muchas más.
 
-Muy utilizado en la inteligencia artificial, ciencia de datos, en cálculos científicos, creación de páginas web, automatizando de tareas, microcontroladores, etc.
+Este lenguaje es muy utilizado en la inteligencia artificial,
+ciencia de datos,
+en cálculos científicos,
+creación de páginas web,
+automatización de tareas,
+microcontroladores,
+etc.
 
 
 ## Instalación y Ejecución
