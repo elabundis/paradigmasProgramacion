@@ -259,7 +259,8 @@ es decir,
 no pueden ser modificados;
 cada que creemos haberlos modificado realmente hemos creado un nuevo objeto.
 
-### Métodos para los objetos **str**
+### Strings (str)
+#### Métodos
 
 Abramos
 **IPython** (Interactive Python),
@@ -340,7 +341,7 @@ Por ejemplo,
 
 Para acceder a los elementos del string utilizamos índices como se muestra a continuación.
 
-### Indexación
+#### Indexación
 
 Los strings cuentan con índices para cada carácter comenzando en cero.
 Esto nos permite extraer información o seleccionar parte de este.
@@ -361,7 +362,7 @@ Esto nos permite extraer información o seleccionar parte de este.
 
     In [18]: nombre_correcto = nombre.replace('Maria', 'Elena')
 
-### Slicing
+#### Slicing
 
 Podemos utilizar los índices para seleccionar un subconjunto de caracteres del string. La sintaxis a utilizar es
 
@@ -429,6 +430,8 @@ se selecciona el primer carácter. Vea los siguientes ejemplos
     Out[30]: 'oR airaM'
 
 ¿Cómo invierto el string por completo?
+
+#### Operaciones básicas
 
 ## Loops
 
