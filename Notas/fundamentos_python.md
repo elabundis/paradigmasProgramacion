@@ -305,7 +305,11 @@ Experimentar con algunos métodos:
     In [8]: texto.lstrip()
 
 Por cierto,
-en ipython se almacena el historial de la entrada y salida en las variables globales In y Out, respectivamente.
+en ipython se almacena el historial de la entrada y salida en las variables
+In (lista)
+y
+Out (diccionario),
+respectivamente.
 Por ejemplo,
 podemos acceder a la entrada (código) de la celda número 6 mediante `In[6]` o bien la salida (resultado) de la celda 5 con `Out[5]`.
 La última salida se almacena en la variable `_`
