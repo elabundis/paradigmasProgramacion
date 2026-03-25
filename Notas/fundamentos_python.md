@@ -303,7 +303,15 @@ Experimentar con algunos métodos:
 
     In [8]: texto.lstrip()
 
-También podemos utilizar algunas **palabras reservadas** en combinación con nuestros strings.
+Por cierto,
+en ipython se almacena el historial de la entrada y salida en las variables globales In y Out, respectivamente.
+Por ejemplo,
+podemos acceder a la entrada (código) de la celda número 6 mediante `In[6]` o bien la salida (resultado) de la celda 5 con `Out[5]`.
+La última salida se almacena en la variable `_`
+y la última entrada en `_i`.
+
+Continuando con el uso de strings,
+también podemos combinar **palabras reservadas** con nuestros strings.
 Por ejemplo,
 para verificar si una cadena de caracteres está contenida en nuestro string
 
