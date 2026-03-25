@@ -78,7 +78,7 @@ Para ver todas las implementaciones instaladas
 
     pyenv versions
 
-dónde la versión que empieza con asterisco es la que estamos empleando en este momento.
+donde la versión que empieza con asterisco es la que estamos empleando en este momento.
 La versión denotada como **system** se refiere a la versión de python preinstalada en tu sistema operativo.
 
 Si solo deseamos ver la versión que estamos utilizando actualmente ejecutamos
@@ -97,7 +97,7 @@ Esta herramienta nos permite establecer una versión global para python mediante
     pyenv global 3.13
 
 También podemos activar versiones locales.
-Las versiones locales son aquellas que configuramoe en un directorio y se activan y desactivan automáticamente cuando entramos o salimos de este.
+Las versiones locales son aquellas que configuramos en un directorio y se activan y desactivan automáticamente cuando entramos o salimos de este.
 Por ejemplo, crea una carpeta y dentro de esta ejecuta
 
     pyenv local 3.12.2
@@ -105,7 +105,7 @@ Por ejemplo, crea una carpeta y dentro de esta ejecuta
 Observa qué versión de python tienes al entrar y salir de este directorio con `python --version`.
 Observa que la opción `local` crea un archivo en el directorio con nombre **.python-version** dentro del cual se tiene la versión local de python a utilizar. Si eliminamos este archivo se elimina la configuración local.
 
-Por último pyenv nos permite establecer una versión de python para nuestra sesión en el shell sobreescribiendo cualquier ajuste global o local.
+Por último pyenv nos permite establecer una versión de python para nuestra sesión en el shell sobrescribiendo cualquier ajuste global o local.
 Esto lo logramos mediante
 
     pyenv shell 3.13
@@ -145,7 +145,7 @@ Si deseamos ayuda con un comando, digamos el comando virtualenv, utilizamos
 ## HelloWorld
 
 Siguiendo la costumbre de empezar con nuestro programa más básico, aquí mostramos nuestro HelloWorld.
-Abrimos el intérprete mediante `python` y dentro de este ejecutamos
+Abrimos el intérprete (**REPL**) mediante `python` y dentro de este ejecutamos
 
     >>> print('HelloWorld!')
 
@@ -273,7 +273,7 @@ comandos mágicos,
 introspección de objetos,
 acceso a comandos del shell).
 
-Provemos algunos métodos de los objetos inmutables **str**,
+Probemos algunos métodos de los objetos inmutables **str**,
 así como algunas características de **ipython**.
 
     In [1]: nombre = "Maria Rojas"
@@ -334,7 +334,7 @@ Para acceder a los elementos del string utilizamos índices como se muestra a co
 
 ### Indexación
 
-Los strings cuentan con índices para cada caracter comenzando en cero.
+Los strings cuentan con índices para cada carácter comenzando en cero.
 Esto nos permite extraer información o seleccionar parte de este.
 
     In [13]: nombre[2]
@@ -377,7 +377,7 @@ A continuación algunos ejemplos.
     In [20]: nombre[0:10:2]
     Out[20]: 'MraRj'
 
-Cuando no declaramos **end** automáticamente se selecciona el índice del último caracter más uno.
+Cuando no declaramos **end** automáticamente se selecciona el índice del último carácter más uno.
 
     In [21]: nombre[2:]
     Out[21]: 'ria Rojas'
@@ -403,16 +403,16 @@ También podemos utilizar un incremento negativo
     In [27]: nombre[4:1:-1]
     Out[27]: 'air'
 
-Para ir de derecha a izquierda y llegar hasta el primer caracter simplemente no declaramos **end**
+Para ir de derecha a izquierda y llegar hasta el primer carácter simplemente no declaramos **end**
 
     In [28]: nombre[4::-1]
     Out[28]: 'airaM'
 
 Cuando declaramos incrementos negativos el papel de
 **start** y **end** se invierten;
-si no declaramos el **start** se selecciona el último caracter,
+si no declaramos el **start** se selecciona el último carácter,
 y si no declaramos **end**
-se selecciona el primer caracter. Vea los siguientes ejemplos
+se selecciona el primer carácter. Vea los siguientes ejemplos
 
     In [29]: nombre[:3:-1]
     Out[29]: 'sajoR a'
