@@ -1,112 +1,340 @@
 Asistencia: Asistencia
-Nombre,27-ene,28-ene,29-ene,30-ene,3-feb,4-feb,5-feb,9-feb,10-feb,11-feb,13-feb,18-feb
-Aispuro Zuñiga Jayme Antonio,1,0,1,0,1,1,1,0,1,1,0,0
-Alcaraz Salas Héctor Zadquiel,1,1,1,0,1,1,1,0,1,0,1,0
-Angulo Calleros Joel Enrique,1,1,0,0,1,1,1,0,1,1,0,1
-Ángulo Soto Ángel Gabriel,1,1,1,0,1,1,0,0,0,1,1,1
-Beltrán León Aaron Enrique,0,1,1,0,1,1,1,0,1,1,1,1
-Cazares Garcia Raul Artemio,0,1,0,0,1,0,0,0,0,0,0,0
-Contreras Camacho Jose roberto,1,1,1,1,1,1,1,0,1,1,1,1
-Duarte Amezquita Abel,0,0,0,0,1,1,0,0,0,0,0,0
-Escudero Salcedo Arturo,1,1,1,0,1,1,1,0,1,1,1,1
-Espinoza López Maria Yedith,1,1,1,0,1,1,1,0,1,1,1,1
-Espitia Verdugo Marlon Jose,1,1,0,0,1,1,1,0,1,1,0,1
-Felix Herrera Mercedes,1,1,1,0,1,1,1,1,1,1,1,1
-Félix Ramirez Manuel de Jesus,1,1,1,0,1,0,1,0,1,1,1,0
-Felix Rojo Giancarlo,1,1,1,0,1,0,1,1,1,0,0,1
-FLORES LÓPEZ VALENTINA,1,1,1,1,1,1,1,0,1,1,0,1
-Flores Pacheco Joshua,1,1,1,0,1,1,1,0,1,1,0,1
-GAEL Rogelio Bernal torres,1,0,0,0,0,1,0,0,1,1,0,1
-Gámez Espinoza Jesús Armando,1,1,1,1,1,1,1,0,1,1,1,1
-GARCÍA VERDUZCO JOSÉ RICARDO,1,1,1,0,1,1,0,0,1,0,1,0
-Hernández José Ángel,1,1,1,1,1,1,1,0,1,1,1,0
-Hilario Ballesteros Lisandro Adonai,0,1,0,0,1,1,1,1,1,0,1,0
-Ibarra Zazueta Jaime,1,1,1,0,1,1,1,0,1,1,0,1
-Jacobo Torres Adrián Josué,1,0,1,0,1,0,1,1,1,1,1,1
-Landeros Martinez Alexis Jeovany,1,1,1,0,1,1,1,1,1,1,1,1
-Lopez Carballo Elian de Jesus,1,1,1,0,1,1,1,0,1,1,0,0
-Lopez Villarreal Lesli Yamileth,1,1,1,0,1,1,1,1,1,1,0,1
-LUGO RAMÍREZ ESKANDRA,1,1,1,0,1,1,1,1,1,1,1,1
-Machado Olivas Benigno Sebastián,1,1,1,0,1,1,1,1,1,1,1,1
-Molina Velázquez Brayan Jesús,1,1,0,0,1,1,1,1,1,1,0,1
-Montoya Garcia Darey,1,1,1,0,1,1,1,0,1,1,1,1
-Murillo Córdova Alexis Loreto,1,1,1,0,1,1,1,0,1,1,1,1
-Muro López Angel Victorio,1,1,1,0,1,1,1,1,1,0,1,1
-Nuñez Inurriaga Luis Alfonso,1,1,1,0,1,1,1,0,1,1,1,1
-Otañez Vidaca Emilio Santiago,1,1,1,0,1,1,1,0,1,1,1,1
-Papachoris Camacho Adan,1,1,1,0,1,1,1,0,1,0,0,1
-PAZ RABAGO MARCOS ANTONIO,1,1,1,1,1,0,1,0,0,1,1,1
-Pérez Márquez Francisco Javier,1,1,1,0,1,1,1,1,1,1,1,1
-Quintero Núñez Victor Dariel,1,1,0,0,1,1,1,1,1,0,0,1
-Rasura Fregozo Juan Emanuel,0,0,0,0,1,1,0,0,1,1,0,1
-Recio Guerrero Erick Alejandro,1,1,1,0,1,1,1,0,1,1,0,1
-Reyes Peña Maria Fernanda,1,1,1,0,1,1,1,0,1,1,1,1
-Rojas Moreno Jesus Tadeo,1,1,1,0,1,0,1,0,1,1,1,1
-Rosas García Elias,1,1,1,0,1,0,0,0,1,1,0,1
-Sainz Hernandez Rey David,0,1,1,0,1,1,1,0,1,1,1,1
-Sánchez Zavala Luis Fernando,1,1,1,0,1,1,1,1,1,1,1,1
-Sicairos Escobedo Rogelio,1,1,1,0,1,1,1,1,1,1,1,1
-Soto Uraga Luis Adrian,1,0,1,0,1,1,1,1,1,1,1,1
-Traslaviña Calderon Luis Guillermo,1,1,1,0,1,0,1,0,1,1,1,1
-Uriarte Valenzuela Osmar Emiliano,1,1,1,0,1,1,1,1,1,1,0,1
-Valdez Rodríguez Johan Uriel,1,1,1,0,1,1,1,0,1,1,1,1
-Velarde Amarillas Sebastian,1,1,1,0,1,1,1,1,1,1,1,1
-Villa Corrales Esaú,1,1,1,0,1,1,0,0,1,0,0,1
-Zazueta Rios Diego,1,1,1,0,1,1,0,0,1,1,1,1
-Zepeda Rivera Antonio,1,1,1,1,1,1,1,1,1,1,1,1
+Nombre,27-ene,28-ene,29-ene,30-ene,3-feb,4-feb,5-feb,9-feb,10-feb,11-feb,13-feb,18-feb,20-feb,23-feb,3-mar,6-mar,9-mar,11-mar,12-mar,17-mar,23-mar,24-mar
+Aispuro Zuñiga Jayme Antonio,1,0,1,0,1,1,1,0,1,1,0,0,1,0,1,1,0,1,1,1,0,1
+Alcaraz Salas Héctor Zadquiel,1,1,1,0,1,1,1,0,1,0,1,0,1,1,1,1,1,1,1,1,1,0
+Angulo Calleros Joel Enrique,1,1,0,0,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,1,0,1
+Ángulo Soto Ángel Gabriel,1,1,1,0,1,1,0,0,0,1,1,1,0,1,1,0,1,1,1,1,0,1
+Beltrán León Aaron Enrique,0,1,1,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Cazares Garcia Raul Artemio,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Contreras Camacho Jose roberto,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Duarte Amezquita Abel,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+Escudero Salcedo Arturo,1,1,1,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,0
+Espinoza López Maria Yedith,1,1,1,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Espitia Verdugo Marlon Jose,1,1,0,0,1,1,1,0,1,1,0,1,1,0,0,1,1,1,0,1,0,1
+Felix Herrera Mercedes,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Félix Ramirez Manuel de Jesus,1,1,1,0,1,0,1,0,1,1,1,0,1,1,1,1,0,1,1,1,0,1
+Felix Rojo Giancarlo,1,1,1,0,1,0,1,1,1,0,0,1,1,1,1,1,1,1,0,1,1,0
+FLORES LÓPEZ VALENTINA,1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,0,1,1,1,0,1,1
+Flores Pacheco Joshua,1,1,1,0,1,1,1,0,1,1,0,1,0,0,1,0,1,1,0,1,1,1
+GAEL Rogelio Bernal torres,1,0,0,0,0,1,0,0,1,1,0,1,1,0,0,0,0,1,1,0,0,1
+Gámez Espinoza Jesús Armando,1,1,1,1,1,1,1,0,1,1,1,1,0,1,1,0,1,1,1,1,0,0
+GARCÍA VERDUZCO JOSÉ RICARDO,1,1,1,0,1,1,0,0,1,0,1,0,1,0,1,0,1,1,1,1,1,1
+Hernández José Ángel,1,1,1,1,1,1,1,0,1,1,1,0,1,0,1,0,0,1,0,1,0,1
+Hilario Ballesteros Lisandro Adonai,0,1,0,0,1,1,1,1,1,0,1,0,1,0,1,1,1,1,0,1,0,1
+Ibarra Zazueta Jaime,1,1,1,0,1,1,1,0,1,1,0,1,1,1,1,0,1,1,1,1,0,1
+Jacobo Torres Adrián Josué,1,0,1,0,1,0,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1
+Landeros Martinez Alexis Jeovany,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Lopez Carballo Elian de Jesus,1,1,1,0,1,1,1,0,1,1,0,0,0,1,1,1,1,1,1,1,1,1
+Lopez Villarreal Lesli Yamileth,1,1,1,0,1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,1,0,1
+LUGO RAMÍREZ ESKANDRA,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0
+Machado Olivas Benigno Sebastián,1,1,1,0,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,0,0
+Molina Velázquez Brayan Jesús,1,1,0,0,1,1,1,1,1,1,0,1,1,1,1,1,1,1,0,1,0,1
+Montoya Garcia Darey,1,1,1,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Murillo Córdova Alexis Loreto,1,1,1,0,1,1,1,0,1,1,1,1,1,0,1,1,0,1,1,1,1,1
+Muro López Angel Victorio,1,1,1,0,1,1,1,1,1,0,1,1,1,0,1,1,1,1,1,1,1,0
+Nuñez Inurriaga Luis Alfonso,1,1,1,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Otañez Vidaca Emilio Santiago,1,1,1,0,1,1,1,0,1,1,1,1,1,0,1,1,0,1,1,1,1,0
+Papachoris Camacho Adan,1,1,1,0,1,1,1,0,1,0,0,1,1,1,1,1,1,0,1,1,1,1
+PAZ RABAGO MARCOS ANTONIO,1,1,1,1,1,0,1,0,0,1,1,1,0,0,1,1,1,1,1,1,1,0
+Pérez Márquez Francisco Javier,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Quintero Núñez Victor Dariel,1,1,0,0,1,1,1,1,1,0,0,1,0,0,1,0,1,0,0,0,0,0
+Rasura Fregozo Juan Emanuel,0,0,0,0,1,1,0,0,1,1,0,1,1,0,1,0,1,1,1,1,1,1
+Recio Guerrero Erick Alejandro,1,1,1,0,1,1,1,0,1,1,0,1,0,1,1,1,1,1,1,1,1,1
+Reyes Peña Maria Fernanda,1,1,1,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Rojas Moreno Jesus Tadeo,1,1,1,0,1,0,1,0,1,1,1,1,1,0,1,0,1,1,1,1,0,0
+Rosas García Elias,1,1,1,0,1,0,0,0,1,1,0,1,0,0,1,0,1,1,0,1,0,1
+Sainz Hernandez Rey David,0,1,1,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Sánchez Zavala Luis Fernando,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0
+Sicairos Escobedo Rogelio,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1
+Soto Uraga Luis Adrian,1,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1
+Traslaviña Calderon Luis Guillermo,1,1,1,0,1,0,1,0,1,1,1,1,1,0,1,0,1,1,1,0,0,1
+Uriarte Valenzuela Osmar Emiliano,1,1,1,0,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,0
+Valdez Rodríguez Johan Uriel,1,1,1,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Velarde Amarillas Sebastian,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Villa Corrales Esaú,1,1,1,0,1,1,0,0,1,0,0,1,1,1,0,0,1,1,1,1,0,1
+Zazueta Rios Diego,1,1,1,0,1,1,0,0,1,1,1,1,1,1,0,0,1,1,1,1,0,1
+Zepeda Rivera Antonio,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1
 
 Asistencia: Resumen
-Clases Totales:,12,,
+Clases Totales:,22,,
 Nombre,Asistencias,Faltas,Promedio
-Aispuro Zuñiga Jayme Antonio,7,5,58
-Alcaraz Salas Héctor Zadquiel,8,4,67
-Angulo Calleros Joel Enrique,8,4,67
-Ángulo Soto Ángel Gabriel,8,4,67
-Beltrán León Aaron Enrique,9,3,75
-Cazares Garcia Raul Artemio,2,10,17
-Contreras Camacho Jose roberto,11,1,92
-Escudero Salcedo Arturo,10,2,83
-Espinoza López Maria Yedith,10,2,83
-Espitia Verdugo Marlon Jose,8,4,67
-Felix Herrera Mercedes,11,1,92
-Félix Ramirez Manuel de Jesus,8,4,67
-Felix Rojo Giancarlo,8,4,67
-FLORES LÓPEZ VALENTINA,10,2,83
-Flores Pacheco Joshua,9,3,75
-GAEL Rogelio Bernal torres,5,7,42
-Gámez Espinoza Jesús Armando,11,1,92
-GARCÍA VERDUZCO JOSÉ RICARDO,7,5,58
-Hernández José Ángel,10,2,83
-Hilario Ballesteros Lisandro Adonai,7,5,58
-Ibarra Zazueta Jaime,9,3,75
-Jacobo Torres Adrián Josué,9,3,75
-Landeros Martinez Alexis Jeovany,11,1,92
-Lopez Carballo Elian de Jesus,8,4,67
-Lopez Villarreal Lesli Yamileth,10,2,83
-LUGO RAMÍREZ ESKANDRA,11,1,92
-Machado Olivas Benigno Sebastián,11,1,92
-Molina Velázquez Brayan Jesús,9,3,75
-Montoya Garcia Darey,10,2,83
-Murillo Córdova Alexis Loreto,10,2,83
-Muro López Angel Victorio,10,2,83
-Nuñez Inurriaga Luis Alfonso,10,2,83
-Otañez Vidaca Emilio Santiago,10,2,83
-Papachoris Camacho Adan,8,4,67
-PAZ RABAGO MARCOS ANTONIO,9,3,75
-Pérez Márquez Francisco Javier,11,1,92
-Quintero Núñez Victor Dariel,8,4,67
-Recio Guerrero Erick Alejandro,9,3,75
-Reyes Peña Maria Fernanda,10,2,83
-Rojas Moreno Jesus Tadeo,9,3,75
-Rosas García Elias,7,5,58
-Sainz Hernandez Rey David,9,3,75
-Sánchez Zavala Luis Fernando,11,1,92
-Sicairos Escobedo Rogelio,11,1,92
-Soto Uraga Luis Adrian,10,2,83
-Traslaviña Calderon Luis Guillermo,9,3,75
-Uriarte Valenzuela Osmar Emiliano,10,2,83
-Valdez Rodríguez Johan Uriel,10,2,83
-Velarde Amarillas Sebastian,11,1,92
-Villa Corrales Esaú,7,5,58
-Zazueta Rios Diego,9,3,75
-Zepeda Rivera Antonio,12,0,100
+Aispuro Zuñiga Jayme Antonio,14,8,64
+Alcaraz Salas Héctor Zadquiel,17,5,77
+Angulo Calleros Joel Enrique,17,5,77
+Ángulo Soto Ángel Gabriel,15,7,68
+Beltrán León Aaron Enrique,19,3,86
+Cazares Garcia Raul Artemio,2,20,9
+Contreras Camacho Jose roberto,21,1,95
+Escudero Salcedo Arturo,19,3,86
+Espinoza López Maria Yedith,20,2,91
+Espitia Verdugo Marlon Jose,14,8,64
+Felix Herrera Mercedes,21,1,95
+Félix Ramirez Manuel de Jesus,16,6,73
+Felix Rojo Giancarlo,16,6,73
+FLORES LÓPEZ VALENTINA,18,4,82
+Flores Pacheco Joshua,15,7,68
+GAEL Rogelio Bernal torres,9,13,41
+Gámez Espinoza Jesús Armando,17,5,77
+GARCÍA VERDUZCO JOSÉ RICARDO,15,7,68
+Hernández José Ángel,15,7,68
+Hilario Ballesteros Lisandro Adonai,14,8,64
+Ibarra Zazueta Jaime,17,5,77
+Jacobo Torres Adrián Josué,18,4,82
+Landeros Martinez Alexis Jeovany,21,1,95
+Lopez Carballo Elian de Jesus,17,5,77
+Lopez Villarreal Lesli Yamileth,18,4,82
+LUGO RAMÍREZ ESKANDRA,19,3,86
+Machado Olivas Benigno Sebastián,18,4,82
+Molina Velázquez Brayan Jesús,17,5,77
+Montoya Garcia Darey,20,2,91
+Murillo Córdova Alexis Loreto,18,4,82
+Muro López Angel Victorio,18,4,82
+Nuñez Inurriaga Luis Alfonso,20,2,91
+Otañez Vidaca Emilio Santiago,17,5,77
+Papachoris Camacho Adan,17,5,77
+PAZ RABAGO MARCOS ANTONIO,16,6,73
+Pérez Márquez Francisco Javier,21,1,95
+Quintero Núñez Victor Dariel,10,12,45
+Recio Guerrero Erick Alejandro,18,4,82
+Reyes Peña Maria Fernanda,20,2,91
+Rojas Moreno Jesus Tadeo,15,7,68
+Rosas García Elias,12,10,55
+Sainz Hernandez Rey David,19,3,86
+Sánchez Zavala Luis Fernando,19,3,86
+Sicairos Escobedo Rogelio,20,2,91
+Soto Uraga Luis Adrian,19,3,86
+Traslaviña Calderon Luis Guillermo,15,7,68
+Uriarte Valenzuela Osmar Emiliano,19,3,86
+Valdez Rodríguez Johan Uriel,20,2,91
+Velarde Amarillas Sebastian,21,1,95
+Villa Corrales Esaú,14,8,64
+Zazueta Rios Diego,16,6,73
+Zepeda Rivera Antonio,20,2,91
+
+Tareas: Tareas
+Nombre,PEP8,Hist. Leng. Prog.,Pyenv,Ambientes virt.
+Aispuro Zuñiga Jayme Antonio,8,10,,8
+Alcaraz Salas Héctor Zadquiel,8,10,,
+Angulo Calleros Joel Enrique,6,10,,10
+Ángulo Soto Ángel Gabriel,10,,,
+Beltrán León Aaron Enrique,9,10,,
+Cazares Garcia Raul Artemio,,,,
+Contreras Camacho Jose roberto,9,10,,
+Duarte Amezquita Abel,,,,
+Escudero Salcedo Arturo,5,10,,9
+Espinoza López Maria Yedith,9,10,10,
+Espitia Verdugo Marlon Jose,2,10,9,
+Felix Herrera Mercedes,8,10,8,10
+Félix Ramirez Manuel de Jesus,10,10,,
+Felix Rojo Giancarlo,5,10,9,9
+FLORES LÓPEZ VALENTINA,9,10,9,8
+Flores Pacheco Joshua,5,,,
+GAEL Rogelio Bernal torres,,,,
+Gámez Espinoza Jesús Armando,8,10,,
+GARCÍA VERDUZCO JOSÉ RICARDO,8,,,9
+Hernández José Ángel,,,,
+Hilario Ballesteros Lisandro Adonai,,,9,
+Ibarra Zazueta Jaime,10,10,10,
+Jacobo Torres Adrián Josué,10,10,,8
+Landeros Martinez Alexis Jeovany,8,10,8,10
+Lopez Carballo Elian de Jesus,10,,,
+Lopez Villarreal Lesli Yamileth,10,10,,9
+LUGO RAMÍREZ ESKANDRA,10,10,9,9
+Machado Olivas Benigno Sebastián,8,10,8,8
+Molina Velázquez Brayan Jesús,5,10,9,
+Montoya Garcia Darey,5,10,,
+Murillo Córdova Alexis Loreto,10,10,8,8
+Muro López Angel Victorio,8,10,9,
+Nuñez Inurriaga Luis Alfonso,10,10,,8
+Otañez Vidaca Emilio Santiago,,,,
+Papachoris Camacho Adan,5,10,,
+PAZ RABAGO MARCOS ANTONIO,8,10,,
+Pérez Márquez Francisco Javier,10,10,8,9
+Quintero Núñez Victor Dariel,10,,,
+Rasura Fregozo Juan Emanuel,10,,10,8
+Recio Guerrero Erick Alejandro,6,,,
+Reyes Peña Maria Fernanda,10,10,,9
+Rojas Moreno Jesus Tadeo,5,,,
+Rosas García Elias,8,,,
+Sainz Hernandez Rey David,10,,8,
+Sánchez Zavala Luis Fernando,8,10,8,8
+Sicairos Escobedo Rogelio,9,10,9,
+Soto Uraga Luis Adrian,10,,,8
+Traslaviña Calderon Luis Guillermo,10,,,
+Uriarte Valenzuela Osmar Emiliano,6,10,,
+Valdez Rodríguez Johan Uriel,5,10,,10
+Velarde Amarillas Sebastian,,10,,9
+Villa Corrales Esaú,10,,,
+Zazueta Rios Diego,10,,,8
+Zepeda Rivera Antonio,10,10,,10
+
+Laboratorios: Laboratorios
+Nombre,Lab1,Lab2
+Aispuro Zuñiga Jayme Antonio,0,9.5
+Alcaraz Salas Héctor Zadquiel,0,5
+Angulo Calleros Joel Enrique,9,0
+Ángulo Soto Ángel Gabriel,,
+Beltrán León Aaron Enrique,6,0
+Cazares Garcia Raul Artemio,,
+Contreras Camacho Jose roberto,9,9
+Duarte Amezquita Abel,,
+Escudero Salcedo Arturo,7,10
+Espinoza López Maria Yedith,8,0
+Espitia Verdugo Marlon Jose,0,
+Felix Herrera Mercedes,6,8
+Félix Ramirez Manuel de Jesus,0,7
+Felix Rojo Giancarlo,10,0
+FLORES LÓPEZ VALENTINA,8.5,10
+Flores Pacheco Joshua,,
+GAEL Rogelio Bernal torres,,
+Gámez Espinoza Jesús Armando,0,9
+GARCÍA VERDUZCO JOSÉ RICARDO,0,0
+Hernández José Ángel,4,5
+Hilario Ballesteros Lisandro Adonai,0,
+Ibarra Zazueta Jaime,7,9
+Jacobo Torres Adrián Josué,,
+Landeros Martinez Alexis Jeovany,7.5,10
+Lopez Carballo Elian de Jesus,10,10
+Lopez Villarreal Lesli Yamileth,8.5,10
+LUGO RAMÍREZ ESKANDRA,10,10
+Machado Olivas Benigno Sebastián,7,10
+Molina Velázquez Brayan Jesús,9,0
+Montoya Garcia Darey,3.5,9
+Murillo Córdova Alexis Loreto,10,9
+Muro López Angel Victorio,6.5,10
+Nuñez Inurriaga Luis Alfonso,10,5
+Otañez Vidaca Emilio Santiago,0,9
+Papachoris Camacho Adan,0,10
+PAZ RABAGO MARCOS ANTONIO,0,
+Pérez Márquez Francisco Javier,8,9
+Quintero Núñez Victor Dariel,,
+Rasura Fregozo Juan Emanuel,6,9.5
+Recio Guerrero Erick Alejandro,0,8.5
+Reyes Peña Maria Fernanda,7,9
+Rojas Moreno Jesus Tadeo,,
+Rosas García Elias,,
+Sainz Hernandez Rey David,,10
+Sánchez Zavala Luis Fernando,7.5,9
+Sicairos Escobedo Rogelio,6,8
+Soto Uraga Luis Adrian,,
+Traslaviña Calderon Luis Guillermo,7,
+Uriarte Valenzuela Osmar Emiliano,10,
+Valdez Rodríguez Johan Uriel,10,9
+Velarde Amarillas Sebastian,,9.5
+Villa Corrales Esaú,,
+Zazueta Rios Diego,,
+Zepeda Rivera Antonio,8,9
+
+Examenes: Examenes
+Nombre,Ex1,Ex2
+Aispuro Zuñiga Jayme Antonio,4.7,1
+Alcaraz Salas Héctor Zadquiel,3.7,7
+Angulo Calleros Joel Enrique,4.7,7
+Ángulo Soto Ángel Gabriel,2.7,2
+Beltrán León Aaron Enrique,6.0,9
+Cazares Garcia Raul Artemio,,
+Contreras Camacho Jose roberto,3.7,8
+Duarte Amezquita Abel,3.0,
+Escudero Salcedo Arturo,5.3,10
+Espinoza López Maria Yedith,7.0,10
+Espitia Verdugo Marlon Jose,3.3,8
+Felix Herrera Mercedes,5.3,8
+Félix Ramirez Manuel de Jesus,5.7,7
+Felix Rojo Giancarlo,3.7,8
+FLORES LÓPEZ VALENTINA,5.7,10
+Flores Pacheco Joshua,5.7,4
+GAEL Rogelio Bernal torres,3.0,
+Gámez Espinoza Jesús Armando,7.0,9
+GARCÍA VERDUZCO JOSÉ RICARDO,9.0,5
+Hernández José Ángel,3.3,5
+Hilario Ballesteros Lisandro Adonai,6.3,2
+Ibarra Zazueta Jaime,8.7,5
+Jacobo Torres Adrián Josué,6.7,8
+Landeros Martinez Alexis Jeovany,2.0,7
+Lopez Carballo Elian de Jesus,6.0,8
+Lopez Villarreal Lesli Yamileth,6.3,
+LUGO RAMÍREZ ESKANDRA,6.0,
+Machado Olivas Benigno Sebastián,6.3,9
+Molina Velázquez Brayan Jesús,4.0,5
+Montoya Garcia Darey,8.0,8
+Murillo Córdova Alexis Loreto,5.7,9
+Muro López Angel Victorio,2.7,4
+Nuñez Inurriaga Luis Alfonso,5.7,10
+Otañez Vidaca Emilio Santiago,8.3,
+Papachoris Camacho Adan,7.0,2
+PAZ RABAGO MARCOS ANTONIO,6.3,7
+Pérez Márquez Francisco Javier,6.0,8
+Quintero Núñez Victor Dariel,5.0,
+Rasura Fregozo Juan Emanuel,2.3,5
+Recio Guerrero Erick Alejandro,4.3,5
+Reyes Peña Maria Fernanda,9.7,7
+Rojas Moreno Jesus Tadeo,2.3,
+Rosas García Elias,2.3,
+Sainz Hernandez Rey David,4.7,8
+Sánchez Zavala Luis Fernando,5.0,9
+Sicairos Escobedo Rogelio,3.7,4
+Soto Uraga Luis Adrian,3.3,7
+Traslaviña Calderon Luis Guillermo,8.7,2
+Uriarte Valenzuela Osmar Emiliano,4.7,5
+Valdez Rodríguez Johan Uriel,6.0,7
+Velarde Amarillas Sebastian,3.7,7
+Villa Corrales Esaú,5.7,3
+Zazueta Rios Diego,2.7,
+Zepeda Rivera Antonio,3.3,2
+
+Examenes: Comentarios
+Nombre,Ex1,Ex2
+Aispuro Zuñiga Jayme Antonio,,Solo el paso 2 es correcto (añadir contenido a saludo.py)
+Alcaraz Salas Héctor Zadquiel,,
+Angulo Calleros Joel Enrique,,
+Ángulo Soto Ángel Gabriel,,
+Beltrán León Aaron Enrique,,
+Cazares Garcia Raul Artemio,,
+Contreras Camacho Jose roberto,,
+Duarte Amezquita Abel,,
+Escudero Salcedo Arturo,,
+Espinoza López Maria Yedith,,
+Espitia Verdugo Marlon Jose,,
+Felix Herrera Mercedes,,
+Félix Ramirez Manuel de Jesus,,
+Felix Rojo Giancarlo,,
+FLORES LÓPEZ VALENTINA,,
+Flores Pacheco Joshua,,
+GAEL Rogelio Bernal torres,,
+Gámez Espinoza Jesús Armando,,
+GARCÍA VERDUZCO JOSÉ RICARDO,,
+Hernández José Ángel,,
+Hilario Ballesteros Lisandro Adonai,,La estructura estaba incorrecta (medio punto). Les pedí un nombre específico para el ambiente virtual (medio punto). El único acierto total fue ajustar la versión global de python.
+Ibarra Zazueta Jaime,,No mostraste como instalar la última versión de CPython 3.13. No pusiste la versión global. El ambiente virtual debía tener un nombre específico dado durante el examen. No instalaste numpy. No agregaste el PATH y por ende no se podía correr el programa desde cualquier ubicación.
+Jacobo Torres Adrián Josué,,
+Landeros Martinez Alexis Jeovany,,
+Lopez Carballo Elian de Jesus,,
+Lopez Villarreal Lesli Yamileth,,
+LUGO RAMÍREZ ESKANDRA,,
+Machado Olivas Benigno Sebastián,,
+Molina Velázquez Brayan Jesús,,
+Montoya Garcia Darey,,
+Murillo Córdova Alexis Loreto,,
+Muro López Angel Victorio,,No mostraste instalación de CPython con pyenv. No modificaste versión global. No creaste el ambiente virtual con el nombre pedido. No mostraste permisos de archivo. No agregaste al PATH.
+Nuñez Inurriaga Luis Alfonso,,
+Otañez Vidaca Emilio Santiago,,
+Papachoris Camacho Adan,,
+PAZ RABAGO MARCOS ANTONIO,,
+Pérez Márquez Francisco Javier,,
+Quintero Núñez Victor Dariel,,
+Rasura Fregozo Juan Emanuel,,No mostraste estructura de directorios. No mostraste contenido de archivo. No vi el shebang. El PATH está mal.
+Recio Guerrero Erick Alejandro,,
+Reyes Peña Maria Fernanda,,Faltó el shebang. Faltó mostrar los permisos del archivo. Faltó agregar al PATH.
+Rojas Moreno Jesus Tadeo,,
+Rosas García Elias,,
+Sainz Hernandez Rey David,,
+Sánchez Zavala Luis Fernando,,
+Sicairos Escobedo Rogelio,,"Pasos correctos: 1,2, 6 y 7. No agregaste shebang, No mostraste como instalar la última versión de CPython con pyenv ni cómo modificar la versión global. No mostraste como instalaste numpy aunque estoy confiando como funciona el REPL de python. No mostraste como diste permisos al archivo. No agregaste al PATH."
+Soto Uraga Luis Adrian,,
+Traslaviña Calderon Luis Guillermo,,No aparece la estructura de archivos. La versión de python que muestras es 3.12. El shebang está mal. El ambiente era .venv no venv y no se ven los paquetes instalados. No se ven los permisos. Tampoco aparece el PATH.
+Uriarte Valenzuela Osmar Emiliano,,No agregaste el shebang. No supiste activar el ambiente virtual (falla grave). No me mostraste los permisos del archivo saludo.py. No agregaste al PATH. Al no tener el PATH no se podia correr el programa desde otra ubicación.
+Valdez Rodríguez Johan Uriel,,
+Velarde Amarillas Sebastian,,
+Villa Corrales Esaú,,"Solo los pasos 2, 4 y 5 correctos."
+Zazueta Rios Diego,,
+Zepeda Rivera Antonio,,
