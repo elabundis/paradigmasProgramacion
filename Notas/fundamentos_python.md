@@ -437,6 +437,30 @@ se selecciona el primer carácter. Vea los siguientes ejemplos
 
 #### Operaciones básicas
 
+Los operadores encontrados en aritmética básica toman un significado distinto dependiendo del tipo de datos sobre los que operen.
+En el caso de strings,
+python define la suma de strings y
+su multiplicación por un número entero.
+
+La sumatoria conduce a la **concatenación**:
+
+    In [31]: print("Hola" + " Mundo" + "!")
+    Out[31]: 'Hola Mundo!'
+
+mientras que la **multiplicación por un entero** como en
+
+    In [32]: print(3*"Ja")
+    Out[32]: 'JaJaJa'
+
+repite el string multiplicado 
+(debido a que la multiplicación se interpreta como sumatoria).
+Desde luego podemos combinar las operaciones recordando que el lenguaje tiene su orden de precedencia:
+
+    In [33]: saludo = 2*'¡' + 'Hola' + 2*'!'
+
+    In [34]: saludo
+    Out[34]: '¡¡Hola!!'
+
 ## Loops
 
 ## Decisiones
