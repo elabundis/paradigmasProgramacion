@@ -1,90 +1,230 @@
 Asistencia: Asistencia
-Nombre,27-ene,28-ene,29-ene,3-feb,4-feb,5-feb,9-feb,10-feb,11-feb,13-feb,16-feb,17-feb,18-feb
-Alcantar García Edgar Omar,1,1,1,0,1,1,1,1,1,1,1,1,1
-Aragón Nava Armando Emmanuel,1,1,1,1,1,1,0,1,1,1,1,1,0
-Armenta Ceniceros Luis Felipe,1,1,1,1,0,1,1,1,1,1,1,1,1
-Barraza Medina José Miguel,1,1,1,0,0,1,0,0,0,1,0,1,1
-Bedolla Garrido Carlos Esau,1,1,1,1,1,1,0,1,1,0,0,1,1
-Beltrán Alfaro Carlos Francisco,1,1,0,1,1,1,0,1,1,1,1,0,0
-Beltrán González Mia Alejandra,1,1,0,1,1,1,1,1,1,1,1,1,1
-Beltran Ramirez Luis Angel,1,1,1,1,0,1,1,1,1,1,1,1,0
-Bonilla Rubio Jose Ricardo,0,1,1,1,1,1,1,1,1,1,1,1,0
-Chavez Ramirez David Uriel,0,0,0,1,1,1,0,1,1,1,1,1,1
-Esparza Arce Isaac Enrique,0,1,1,1,1,1,1,1,1,0,1,1,1
-Felix Peña Jorge Charbel,1,1,1,1,0,1,0,1,1,1,1,1,1
-Galban Leon Yarold Jared,1,1,1,1,1,1,1,1,1,1,1,1,0
-Gallardo Herrera Sergio,1,1,0,0,0,1,0,1,0,1,0,0,0
-Gastelum Roman Marco Antonio,1,1,1,1,1,1,0,1,1,0,1,1,1
-Gonzales Silvas César Alexis,1,1,1,1,1,1,0,1,1,0,1,1,1
-Gonzalez Aviles Sori Jaqueline,1,1,1,1,1,1,1,1,1,1,1,1,1
-González Medina Jorge,1,1,1,1,1,1,1,1,1,1,1,1,1
-Gurrola Cebreros Jose Alejandro,1,1,1,1,1,1,1,1,1,1,1,1,1
-Gutiérrez Valdez Jorge Antonio,1,1,1,0,1,1,0,1,1,0,1,0,1
-Iribe Martínez Nidia Guadalupe,1,1,1,0,1,1,0,1,1,0,1,1,0
-Leon Favela Dagoberto,0,1,1,1,0,1,1,1,1,1,1,1,1
-Leon Quiroa Axel Dahil,1,1,1,1,1,1,1,1,1,0,1,1,1
-Loera Arenibas Jesus Samuel,0,0,0,0,1,0,1,0,1,0,0,0,1
-López Parra Kevin,1,1,1,0,1,1,0,1,1,0,0,1,1
-Mendoza Silva Andrew,1,1,1,1,0,0,1,1,1,1,1,0,1
-Moreno Felix Pablo Isai,0,1,0,1,0,1,0,1,1,1,1,1,1
-Obregon Martinez Andrea,1,1,0,1,1,1,1,1,1,1,1,0,1
-Ortiz Ortiz Clemente Andreé,1,1,0,1,1,1,1,1,1,1,1,1,1
-Parra Lopez Kevin Alfonso,1,1,1,1,1,1,0,0,0,0,0,1,1
-Peiro Sanchez Adrian Freddy,0,1,1,1,0,0,1,1,1,1,1,1,1
-Quintero Núñez Edson Arath,1,1,1,1,1,1,1,1,1,1,1,1,0
-Reyes Salazar Adilene,1,1,1,1,1,1,1,1,1,1,1,1,1
-Rodríguez Sánchez Ricardo,1,1,1,1,1,1,0,1,0,1,1,1,1
-Rubio Amarillas Vianca Nohemi,0,1,0,1,1,1,1,1,1,0,1,1,1
-Salas Rojo Briseida Melani,1,1,0,1,1,1,0,1,1,0,0,1,1
-Salazar Godoy Tristan de Jesus,0,1,1,1,1,1,1,1,1,1,1,0,1
-Torres León Dalia Azucena,0,0,1,0,0,1,1,1,1,1,1,1,1
-Torres Valdez Miguel,1,1,0,1,1,1,1,1,1,1,1,1,1
-Valenzuela Medina Misael,1,1,0,1,1,1,1,1,1,1,1,1,1
-Vega Núñez Máximo Isai,1,1,1,1,1,1,1,1,1,1,1,1,1
-Velarde López Carlos Daniel,1,1,1,1,1,1,1,1,1,1,1,1,1
-Verdugo López Luis Alfredo,1,1,1,1,1,1,1,1,1,1,1,1,1
+Nombre,27-ene,28-ene,29-ene,3-feb,4-feb,5-feb,9-feb,10-feb,11-feb,13-feb,16-feb,17-feb,18-feb,19-feb,23-feb,2-mar,3-mar,6-mar,9-mar,10-mar,11-mar,12-mar,17-mar,23-mar,24-mar
+Alcantar García Edgar Omar,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1
+Aragón Nava Armando Emmanuel,1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,1,1,0,1,1,1,1
+Armenta Ceniceros Luis Felipe,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1
+Barraza Medina José Miguel,1,1,1,0,0,1,0,0,0,1,0,1,1,1,0,0,1,0,1,1,0,1,1,0,0
+Bedolla Garrido Carlos Esau,1,1,1,1,1,1,0,1,1,0,0,1,1,1,1,0,1,1,1,1,1,1,1,0,0
+Beltrán Alfaro Carlos Francisco,1,1,0,1,1,1,0,1,1,1,1,0,0,0,0,0,1,0,1,1,0,1,1,1,1
+Beltrán González Mia Alejandra,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1
+Beltran Ramirez Luis Angel,1,1,1,1,0,1,1,1,1,1,1,1,0,0,1,1,1,0,1,1,0,1,0,0,1
+Bonilla Rubio Jose Ricardo,0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1
+Chavez Ramirez David Uriel,0,0,0,1,1,1,0,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1
+Esparza Arce Isaac Enrique,0,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,0,1,1,1,1,0,0
+Felix Peña Jorge Charbel,1,1,1,1,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Galban Leon Yarold Jared,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1
+Gallardo Herrera Sergio,1,1,0,0,0,1,0,1,0,1,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0
+Gastelum Roman Marco Antonio,1,1,1,1,1,1,0,1,1,0,1,1,1,1,0,1,1,1,1,1,1,1,1,0,1
+Gonzales Silvas César Alexis,1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,0,1,0,1,1,1,1,0,1,1
+Gonzalez Aviles Sori Jaqueline,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,1
+González Medina Jorge,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,0,1,1,1
+Gurrola Cebreros Jose Alejandro,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1
+Gutiérrez Valdez Jorge Antonio,1,1,1,0,1,1,0,1,1,0,1,0,1,1,0,0,1,0,0,1,0,1,0,0,0
+Iribe Martínez Nidia Guadalupe,1,1,1,0,1,1,0,1,1,0,1,1,0,1,0,0,1,0,0,1,0,1,0,0,0
+Leon Favela Dagoberto,0,1,1,1,0,1,1,1,1,1,1,1,1,0,1,0,1,1,1,1,1,1,1,1,1
+Leon Quiroa Axel Dahil,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Loera Arenibas Jesus Samuel,0,0,0,0,1,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+López Parra Kevin,1,1,1,0,1,1,0,1,1,0,0,1,1,1,0,0,0,0,0,1,1,1,1,0,0
+Mendoza Silva Andrew,1,1,1,1,0,0,1,1,1,1,1,0,1,0,1,0,1,1,1,1,1,1,1,1,1
+Moreno Felix Pablo Isai,0,1,0,1,0,1,0,1,1,1,1,1,1,1,0,1,1,0,0,1,0,0,0,0,1
+Obregon Martinez Andrea,1,1,0,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,1,1,0,1,0,1
+Ortiz Ortiz Clemente Andreé,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Parra Lopez Kevin Alfonso,1,1,1,1,1,1,0,0,0,0,0,1,1,0,0,0,1,0,1,1,0,1,1,1,0
+Peiro Sanchez Adrian Freddy,0,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Quintero Núñez Edson Arath,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,0,1
+Reyes Salazar Adilene,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Rodríguez Sánchez Ricardo,1,1,1,1,1,1,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Rubio Amarillas Vianca Nohemi,0,1,0,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,0,1,0,1,1,0,1
+Salas Rojo Briseida Melani,1,1,0,1,1,1,0,1,1,0,0,1,1,0,0,0,1,0,1,1,1,0,0,1,1
+Salazar Godoy Tristan de Jesus,0,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,0,1,1,1,1,1
+Torres León Dalia Azucena,0,0,1,0,0,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1
+Torres Valdez Miguel,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1
+Valenzuela Medina Misael,1,1,0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1
+Vega Núñez Máximo Isai,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1
+Velarde López Carlos Daniel,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Verdugo López Luis Alfredo,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1
 
 Asistencia: Resumen
-Clases Totales:,13,,
+Clases Totales:,25,,
 Nombre,Asistencias,Faltas,Promedio
-Alcantar García Edgar Omar,12,1,92
-Aragón Nava Armando Emmanuel,11,2,85
-Armenta Ceniceros Luis Felipe,12,1,92
-Barraza Medina José Miguel,7,6,54
-Bedolla Garrido Carlos Esau,10,3,77
-Beltrán Alfaro Carlos Francisco,9,4,69
-Beltrán González Mia Alejandra,12,1,92
-Beltran Ramirez Luis Angel,11,2,85
-Bonilla Rubio Jose Ricardo,11,2,85
-Esparza Arce Isaac Enrique,11,2,85
-Felix Peña Jorge Charbel,11,2,85
-Galban Leon Yarold Jared,12,1,92
-Gallardo Herrera Sergio,5,8,38
-Gastelum Roman Marco Antonio,11,2,85
-Gonzales Silvas César Alexis,11,2,85
-Gonzalez Aviles Sori Jaqueline,13,0,100
-González Medina Jorge,13,0,100
-Gurrola Cebreros Jose Alejandro,13,0,100
-Gutiérrez Valdez Jorge Antonio,9,4,69
-Iribe Martínez Nidia Guadalupe,9,4,69
-Leon Favela Dagoberto,11,2,85
-Leon Quiroa Axel Dahil,12,1,92
-López Parra Kevin,9,4,69
-Mendoza Silva Andrew,10,3,77
-Moreno Felix Pablo Isai,9,4,69
-Obregon Martinez Andrea,11,2,85
-Ortiz Ortiz Clemente Andreé,12,1,92
-Parra Lopez Kevin Alfonso,8,5,62
-Peiro Sanchez Adrian Freddy,10,3,77
-Quintero Núñez Edson Arath,12,1,92
-Reyes Salazar Adilene,13,0,100
-Rodríguez Sánchez Ricardo,11,2,85
-Rubio Amarillas Vianca Nohemi,10,3,77
-Salas Rojo Briseida Melani,9,4,69
-Salazar Godoy Tristan de Jesus,11,2,85
-Torres León Dalia Azucena,9,4,69
-Torres Valdez Miguel,12,1,92
-Valenzuela Medina Misael,12,1,92
-Vega Núñez Máximo Isai,13,0,100
-Velarde López Carlos Daniel,13,0,100
-Verdugo López Luis Alfredo,13,0,100
+Alcantar García Edgar Omar,23,2,92
+Aragón Nava Armando Emmanuel,22,3,88
+Armenta Ceniceros Luis Felipe,23,2,92
+Barraza Medina José Miguel,13,12,52
+Bedolla Garrido Carlos Esau,19,6,76
+Beltrán Alfaro Carlos Francisco,16,9,64
+Beltrán González Mia Alejandra,23,2,92
+Beltran Ramirez Luis Angel,18,7,72
+Bonilla Rubio Jose Ricardo,23,2,92
+Chavez Ramirez David Uriel,20,5,80
+Esparza Arce Isaac Enrique,20,5,80
+Felix Peña Jorge Charbel,23,2,92
+Galban Leon Yarold Jared,24,1,96
+Gallardo Herrera Sergio,7,18,28
+Gastelum Roman Marco Antonio,21,4,84
+Gonzales Silvas César Alexis,20,5,80
+Gonzalez Aviles Sori Jaqueline,23,2,92
+González Medina Jorge,22,3,88
+Gurrola Cebreros Jose Alejandro,24,1,96
+Gutiérrez Valdez Jorge Antonio,13,12,52
+Iribe Martínez Nidia Guadalupe,13,12,52
+Leon Favela Dagoberto,21,4,84
+Leon Quiroa Axel Dahil,24,1,96
+Loera Arenibas Jesus Samuel,4,21,16
+López Parra Kevin,14,11,56
+Mendoza Silva Andrew,20,5,80
+Moreno Felix Pablo Isai,14,11,56
+Obregon Martinez Andrea,20,5,80
+Ortiz Ortiz Clemente Andreé,24,1,96
+Parra Lopez Kevin Alfonso,14,11,56
+Peiro Sanchez Adrian Freddy,22,3,88
+Quintero Núñez Edson Arath,23,2,92
+Reyes Salazar Adilene,25,0,100
+Rodríguez Sánchez Ricardo,23,2,92
+Rubio Amarillas Vianca Nohemi,19,6,76
+Salas Rojo Briseida Melani,15,10,60
+Salazar Godoy Tristan de Jesus,22,3,88
+Torres León Dalia Azucena,20,5,80
+Torres Valdez Miguel,23,2,92
+Valenzuela Medina Misael,23,2,92
+Vega Núñez Máximo Isai,24,1,96
+Velarde López Carlos Daniel,25,0,100
+Verdugo López Luis Alfredo,23,2,92
+
+Tareas: Tareas
+Nombre,PEP8,Hist. Leng. Prog.,Pyenv,Ambientes virt.
+Alcantar García Edgar Omar,,,,9
+Aragón Nava Armando Emmanuel,10,10,,10
+Armenta Ceniceros Luis Felipe,,10,,10
+Barraza Medina José Miguel,,,,
+Bedolla Garrido Carlos Esau,8,,,
+Beltrán Alfaro Carlos Francisco,,,,
+Beltrán González Mia Alejandra,10,10,,9
+Beltran Ramirez Luis Angel,,,,
+Bonilla Rubio Jose Ricardo,5,,,9
+Chavez Ramirez David Uriel,10,,,10
+Esparza Arce Isaac Enrique,2,10,,
+Felix Peña Jorge Charbel,,10,,10
+Galban Leon Yarold Jared,10,10,9,9
+Gallardo Herrera Sergio,10,10,,
+Gastelum Roman Marco Antonio,10,,10,9
+Gonzales Silvas César Alexis,,,,
+Gonzalez Aviles Sori Jaqueline,10,10,10,10
+González Medina Jorge,10,10,,10
+Gurrola Cebreros Jose Alejandro,,,,10
+Gutiérrez Valdez Jorge Antonio,,,,
+Iribe Martínez Nidia Guadalupe,10,,,
+Leon Favela Dagoberto,10,10,9,10
+Leon Quiroa Axel Dahil,10,10,,
+Loera Arenibas Jesus Samuel,,,,
+López Parra Kevin,,,,
+Mendoza Silva Andrew,10,,,
+Moreno Felix Pablo Isai,,,,
+Obregon Martinez Andrea,10,10,10,9
+Ortiz Ortiz Clemente Andreé,8,,,10
+Parra Lopez Kevin Alfonso,10,,,
+Peiro Sanchez Adrian Freddy,10,10,10,10
+Quintero Núñez Edson Arath,6,,,
+Reyes Salazar Adilene,10,10,9,10
+Rodríguez Sánchez Ricardo,10,,,9
+Rubio Amarillas Vianca Nohemi,10,10,10,9
+Salas Rojo Briseida Melani,,,,
+Salazar Godoy Tristan de Jesus,10,10,,9
+Torres León Dalia Azucena,10,10,10,9
+Torres Valdez Miguel,10,10,,10
+Valenzuela Medina Misael,10,10,,10
+Vega Núñez Máximo Isai,10,10,,
+Velarde López Carlos Daniel,10,10,10,10
+Verdugo López Luis Alfredo,10,,10,
+
+Laboratorios: Laboratorios
+Nombre,Lab1,Lab2
+Alcantar García Edgar Omar,10,7.5
+Aragón Nava Armando Emmanuel,9,9
+Armenta Ceniceros Luis Felipe,10,8
+Barraza Medina José Miguel,,
+Bedolla Garrido Carlos Esau,10,
+Beltrán Alfaro Carlos Francisco,,
+Beltrán González Mia Alejandra,10,9.5
+Beltran Ramirez Luis Angel,6,9
+Bonilla Rubio Jose Ricardo,10,0
+Chavez Ramirez David Uriel,,
+Esparza Arce Isaac Enrique,9,8
+Felix Peña Jorge Charbel,9,9
+Galban Leon Yarold Jared,10,10
+Gallardo Herrera Sergio,7,8.5
+Gastelum Roman Marco Antonio,10,
+Gonzales Silvas César Alexis,,
+Gonzalez Aviles Sori Jaqueline,10,10
+González Medina Jorge,8,9.5
+Gurrola Cebreros Jose Alejandro,9,9
+Gutiérrez Valdez Jorge Antonio,,
+Iribe Martínez Nidia Guadalupe,,
+Leon Favela Dagoberto,9,0
+Leon Quiroa Axel Dahil,10,10
+Loera Arenibas Jesus Samuel,,
+López Parra Kevin,,
+Mendoza Silva Andrew,,
+Moreno Felix Pablo Isai,,
+Obregon Martinez Andrea,10,8.5
+Ortiz Ortiz Clemente Andreé,10,9
+Parra Lopez Kevin Alfonso,,
+Peiro Sanchez Adrian Freddy,10,10
+Quintero Núñez Edson Arath,,
+Reyes Salazar Adilene,10,10
+Rodríguez Sánchez Ricardo,10,0
+Rubio Amarillas Vianca Nohemi,10,9.5
+Salas Rojo Briseida Melani,,
+Salazar Godoy Tristan de Jesus,10,10
+Torres León Dalia Azucena,10,10
+Torres Valdez Miguel,10,9.5
+Valenzuela Medina Misael,10,9.5
+Vega Núñez Máximo Isai,10,8.5
+Velarde López Carlos Daniel,,10
+Verdugo López Luis Alfredo,10,8
+
+Examenes: Examenes
+Nombre,Ex1
+Alcantar García Edgar Omar,1.7
+Aragón Nava Armando Emmanuel,4.7
+Armenta Ceniceros Luis Felipe,8.7
+Barraza Medina José Miguel,0
+Bedolla Garrido Carlos Esau,4
+Beltrán Alfaro Carlos Francisco,3.3
+Beltrán González Mia Alejandra,8.7
+Beltran Ramirez Luis Angel,4
+Bonilla Rubio Jose Ricardo,7.7
+Chavez Ramirez David Uriel,4.3
+Esparza Arce Isaac Enrique,5.7
+Felix Peña Jorge Charbel,4.3
+Galban Leon Yarold Jared,3
+Gallardo Herrera Sergio,6
+Gastelum Roman Marco Antonio,4
+Gonzales Silvas César Alexis,4.7
+Gonzalez Aviles Sori Jaqueline,8.7
+González Medina Jorge,6.7
+Gurrola Cebreros Jose Alejandro,8.7
+Gutiérrez Valdez Jorge Antonio,5
+Iribe Martínez Nidia Guadalupe,3.3
+Leon Favela Dagoberto,4
+Leon Quiroa Axel Dahil,9.3
+Loera Arenibas Jesus Samuel,0
+López Parra Kevin,3.3
+Mendoza Silva Andrew,9.3
+Moreno Felix Pablo Isai,4.7
+Obregon Martinez Andrea,4.7
+Ortiz Ortiz Clemente Andreé,7.7
+Parra Lopez Kevin Alfonso,5.3
+Peiro Sanchez Adrian Freddy,4.7
+Quintero Núñez Edson Arath,3.3
+Reyes Salazar Adilene,3
+Rodríguez Sánchez Ricardo,3.3
+Rubio Amarillas Vianca Nohemi,5.3
+Salas Rojo Briseida Melani,5.7
+Salazar Godoy Tristan de Jesus,7.3
+Torres León Dalia Azucena,9.7
+Torres Valdez Miguel,4.3
+Valenzuela Medina Misael,3.3
+Vega Núñez Máximo Isai,6.7
+Velarde López Carlos Daniel,8.3
+Verdugo López Luis Alfredo,5
