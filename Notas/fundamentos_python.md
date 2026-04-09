@@ -35,7 +35,9 @@ microcontroladores,
 etc.
 
 
-## Instalación y Ejecución
+## Preámbulo
+
+### Instalación y Ejecución
 
 Ya hemos visto que la herramienta **pyenv** nos permite instalar cualquier versión deseada de **python**
 (refiérase al laboratorio 2).
@@ -142,74 +144,34 @@ Si deseamos ayuda con un comando, digamos el comando virtualenv, utilizamos
 
     pyenv help virtualenv
 
-## HelloWorld
 
-Siguiendo la costumbre de empezar con nuestro programa más básico, aquí mostramos nuestro HelloWorld.
-Abrimos el intérprete (**REPL**) mediante `python` y dentro de este ejecutamos
+### Ambientes virtuales
 
-    >>> print('HelloWorld!')
-
-El comando `print` toma como argumento cada uno de los valores dados y los imprime a **stdout** por default
-
-    >>> print('Mis', 2, 'amores')
-    Mis 2 amores
-
-donde los valores no tienen que ser **strings**.
-Para salir del **REPL**,
-invocamos `exit()` o `quit()`.
-En versiones de CPython 3.13 y superiores,
-es suficiente escribir cualquiera de los dos comandos sin los paréntesis.
-
-## Ayuda
-
-Para ver la documentación y obtener ayuda con
-comandos, funciones, clases e incluso módulos,
-contamos con la función `help`.
-
-    >>> help(print)
-
-    >>> help(float)
-
-Podemos ver la documentación de módulos no importados utilizando su nombre en un string
-
-    >>> help('sys')
-
-Podemos entrar a un intérprete interactivo de ayuda ejecutando
-`help()` sin argumentos.
-En este intérprete escribimos el nombre del
-módulo, palabra clave o incluso tema de interés
-y obtenemos la documentación correspondiente.
-Para salir del modo de ayuda utilizamos
-`q`, `quit`, o `exit`.
-Para ver los temas posibles invocamos `topics`
-o para ver los módulos `modules`.
-
-Antes de continuar utilicemos un intérprete más avanzado que el que viene de manera estándar con python.
-Este se encuentra disponible como una librería y se llama **ipython**.
-Siempre que nuestro proyecto vaya a necesitar hacer uso de librerías debemos crear un ambiente virtual.
-
-## Ambientes virtuales
+Siempre que nuestro proyecto vaya a hacer uso de **paquetes**
+(librerías sería el término común en otros lenguajes)
+no incluidos en el **standadrd library**,
+debemos crear un ambiente virtual.
 
 Los ambientes virtuales nos permiten aislar ambientes de programación para que podamos instalar librerías en las versiones que requiramos en distintos proyectos.
 
 El aislamiento se consigue
 creando una estructura de directorios por proyecto,
-dentro de la cual se almacenan las librerías que instalamos.
+dentro de la cual se almacenan los paquetes que instalamos.
 Dentro de esta estructura,
 se crea una copia o un enlace
 (dependiendo del sistema operativo, versión)
 al python con que fue creado el ambiente virtual.
 Además,
-se crean enlaces a módulos y librerías incluidas en la librería estándar de python para que la instalación del ambiente sea ligero y de rápida creación.
+se crean enlaces a módulos y paquetes incluidos en la librería estándar de python para que la instalación del ambiente sea ligero y de rápida creación.
 
 Gracias al aislamiento,
-si dos proyectos requieren la misma librería pero con distinta versión (la nueva versión incluye una característica necesaria en uno de los proyectos),
-no tendremos que desinstalar una librería
+si dos proyectos requieren el mismo paquete pero con distinta versión (la nueva versión incluye una característica necesaria en uno de los proyectos),
+no tendremos que desinstalar uno
 para poder trabajar en uno de los proyectos
 y repetir el proceso.
 Además,
-es común que una librería dependa de otra,
-la cual debemos instalar en una versión compatible,
+es común que un paquete dependa de otro,
+el cual debemos instalar en una versión compatible,
 es decir, tenemos una restricción de las versiones a utilizar en nuestro proyecto.
 Con los ambientes virtuales cada proyecto tendrá sus librerías en las versiones específicas que requiramos y no existirán conflictos entre proyectos.
 
@@ -223,9 +185,10 @@ existen herramientas externas como
 **poetry**,
 entre otras.
 Nosotros utilizaremos el módulo **venv** incluido en nuestra instalación.
+Este módulo ya lo hemos puesto en práctica en el laboratorio 2 y aquí realizamos un repaso.
 
 
-### Creación y uso de ambientes virtuales
+#### Creación y uso de ambientes virtuales
 
 Para crear un ambiente virtual primero nos aseguramos de seleccionar el python con que deseemos trabajar (`pyenv global <version>`).
 Posteriormente, utilizamos el módulo **venv** dándole como argumento el nombre que deseamos para el ambiente virtual; si deseamos que nuestro ambiente se llama **.venv** utilizamos
@@ -270,6 +233,54 @@ Para eliminar un ambiente virtual basta con que eliminemos la carpeta donde se a
 y si esta función no da resultados forzamos la eliminación mediante
 
     rm -rf .venv
+
+Concluido el preámbulo pasamos a discutir los fundamentos del lenguaje.
+
+## HelloWorld
+
+Siguiendo la costumbre de empezar con nuestro programa más básico,
+aquí mostramos nuestro HelloWorld en python.
+Abrimos el intérprete (**REPL**) mediante `python` y dentro de este ejecutamos
+
+    >>> print('HelloWorld!')
+
+El comando `print` toma como argumento cada uno de los valores dados y los imprime a **stdout** por default
+
+    >>> print('Mis', 2, 'amores')
+    Mis 2 amores
+
+donde los valores no tienen que ser **strings**.
+Para salir del **REPL**,
+invocamos `exit()` o `quit()`.
+En versiones de CPython 3.13 y superiores,
+es suficiente escribir cualquiera de los dos comandos sin los paréntesis.
+
+## Ayuda
+
+Para ver la documentación y obtener ayuda con
+comandos, funciones, clases e incluso módulos,
+contamos con la función `help`.
+
+    >>> help(print)
+
+    >>> help(float)
+
+Podemos ver la documentación de módulos no importados utilizando su nombre en un string
+
+    >>> help('sys')
+
+Podemos entrar a un intérprete interactivo de ayuda ejecutando
+`help()` sin argumentos.
+En este intérprete escribimos el nombre del
+módulo, palabra clave o incluso tema de interés
+y obtenemos la documentación correspondiente.
+Para salir del modo de ayuda utilizamos
+`q`, `quit`, o `exit`.
+Para ver los temas posibles invocamos `topics`
+o para ver los módulos `modules`.
+
+Antes de continuar utilicemos un intérprete más avanzado que el que viene de manera estándar con python.
+Este se encuentra disponible como una librería y se llama **ipython**.
 
 
 ## Variables y Tipos de Datos Básicos
