@@ -302,6 +302,37 @@ es decir,
 no pueden ser modificados;
 cada que creemos haberlos modificado realmente hemos creado un nuevo objeto.
 
+### Precedencia de operadores
+
+La precedencia de operadores se refiere al orden en que se llevan acabo las operaciones.
+Los operadores, por su parte,
+son funciones que actúan sobre uno (unarios) o más objetos.
+A continuación una lista de operadores con precedencia de mayor a menor por renglón
+(dos operadores en el mismo renglón tienen la misma precedencia):
+
+    ()            Paréntesis
+    **            Exponenciación
+    +x, -x, ~x    Operadores unarios: positivo, negativo y NOT bit a bit
+    *, /, //, %   Multiplicación, división, división entera, módulo
+    +, -          Suma, resta
+    <<, >>        Desplazamiento a la izquierda o derecha
+    &             AND bit a bit
+    ^             XOR bit a bit
+    |             OR bit a bit
+    ==, !=, >, >=, <, <=, is, is not, in, not in   Comparaciones lógicas,
+                                     operadores de identidad y membresía
+    not           NOT
+    and           AND
+    or            OR
+
+Si una expresión contiene dos operadores con la misma precedencia, esta se evalúa de izquierda a derecha.
+
+Los operadores pueden actuar sobre más de un tipo de objeto
+(sobrecarga o polimorfismo de operadores),
+por ejemplo,
+el operador de sumatoria `+`
+realiza una suma sobre enteros pero una concatenación sobre strings.
+
 
 ### Strings (str)
 #### Métodos
