@@ -149,6 +149,41 @@ Abrimos el intérprete (**REPL**) mediante `python` y dentro de este ejecutamos
 
     >>> print('HelloWorld!')
 
+El comando `print` toma como argumento cada uno de los valores dados y los imprime a **stdout** por default
+
+    >>> print('Mis', 2, 'amores')
+    Mis 2 amores
+
+donde los valores no tienen que ser **strings**.
+Para salir del **REPL**,
+invocamos `exit()` o `quit()`.
+En versiones de CPython 3.13 y superiores,
+es suficiente escribir cualquiera de los dos comandos sin los paréntesis.
+
+## Ayuda
+
+Para ver la documentación y obtener ayuda con
+comandos, funciones, clases e incluso módulos,
+contamos con la función `help`.
+
+    >>> help(print)
+
+    >>> help(float)
+
+Podemos ver la documentación de módulos no importados utilizando su nombre en un string
+
+    >>> help('sys')
+
+Podemos entrar a un intérprete interactivo de ayuda ejecutando
+`help()` sin argumentos.
+En este intérprete escribimos el nombre del
+módulo, palabra clave o incluso tema de interés
+y obtenemos la documentación correspondiente.
+Para salir del modo de ayuda utilizamos
+`q`, `quit`, o `exit`.
+Para ver los temas posibles invocamos `topics`
+o para ver los módulos `modules`.
+
 Antes de continuar utilicemos un intérprete más avanzado que el que viene de manera estándar con python.
 Este se encuentra disponible como una librería y se llama **ipython**.
 Siempre que nuestro proyecto vaya a necesitar hacer uso de librerías debemos crear un ambiente virtual.
@@ -452,7 +487,7 @@ mientras que la **multiplicación por un entero** como en
     In [32]: print(3*"Ja")
     Out[32]: 'JaJaJa'
 
-repite el string multiplicado 
+repite el string multiplicado
 (debido a que la multiplicación se interpreta como sumatoria).
 Desde luego podemos combinar las operaciones recordando que el lenguaje tiene su orden de precedencia:
 
