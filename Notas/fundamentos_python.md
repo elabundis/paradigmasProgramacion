@@ -279,9 +279,6 @@ Para salir del modo de ayuda utilizamos
 Para ver los temas posibles invocamos `topics`
 o para ver los módulos `modules`.
 
-Antes de continuar utilicemos un intérprete más avanzado que el que viene de manera estándar con python.
-Este se encuentra disponible como una librería y se llama **ipython**.
-
 
 ## Variables y Tipos de Datos Básicos
 
@@ -305,8 +302,12 @@ es decir,
 no pueden ser modificados;
 cada que creemos haberlos modificado realmente hemos creado un nuevo objeto.
 
+
 ### Strings (str)
 #### Métodos
+
+Antes de continuar utilicemos un intérprete más avanzado que el que viene de manera estándar con python.
+Este se encuentra disponible como un paquete en PyPI y se llama **ipython**.
 
 Abramos
 **IPython** (Interactive Python),
