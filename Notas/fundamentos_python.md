@@ -340,6 +340,242 @@ por ejemplo,
 el operador de sumatoria `+`
 realiza una suma sobre enteros pero una concatenación sobre strings.
 
+### Tipos numéricos
+
+Tenemos en esta categoría a los objetos de tipo
+`int`, `float` y `complex`.
+Las instancias de tipo `int` son lo números enteros sin decimales
+(positivos, negativos y el cero),
+los `float` son aquellos números con al menos un decimal (2.7, 4.0),
+y los `complex` son aquellos que tienen parte imaginaria y probablemente una parte real (`-2.7j, 5+1j`).
+En el caso de los complejos,
+la parte imaginaria se da mediante un
+`int` o `float` seguido por la letra `j` (unidad imaginaria),
+sin dejar de tener un número frente a esta,
+es decir,
+`j` nos arroja un error,
+mientras `1j` o `-1j` son correctos.
+
+Al llevar acabo operaciones de
+**sumatoria**, **resta** y **multiplicación**
+con instancias de un mismo tipo numérico,
+el intérprete regresará ese tipo.
+La **exponenciación** de una base elevada a un entero
+regresará el tipo de la base.
+Por su parte una **división** que incluya números enteros o reales
+siempre regresará un número real,
+mientras q si tenemos un número complejo en el numerador o denominador el resultado sera complejo.
+
+    >>> 4 ** 2
+    >>> 4.0 ** 2
+    >>> 6 / 2
+    >>> 2 * (3 + 4) - 3 ** 2
+    >>> 2j ** 2
+    >>> -3**2
+    >>> -4j ** 2
+
+En el caso de la división, contamos con dos funciones que pueden resultar útiles;
+la **división entera** (`//`)
+y el **módulo** (`%`),
+definidos para los tipos
+`int` y `float`
+(no funcionan con el tipo complex).
+**Nota:** en las versiones de CPython 2 el operador `/`
+corresponde a la división entera a menos que un operando sea `float`.
+
+La división entera regresa el cociente,
+es decir,
+el número entero de veces que el divisor cabe en el dividendo.
+Además,
+si ambos operandos son de tipo `int` el resultado es `int`,
+de otra manera regresa un `float`.
+
+El módulo retorna el residuo de la división
+y utiliza la misma regla que la división entera para el tipo de dato que regresa.
+**Nota importante:**
+al utilizar números de punto flotante,
+se introducen pequeños errores debido a la manera en que estos objetos son almacenados en memoria.
+Esto también aplica con la división entera.
+
+    >>> 7 // 4
+    >>> 7 % 4
+    >>> 4.4 // 2.2
+    >>> 6.6 // 2.2
+    >>> 1 % 0.3
+
+#### Conversión de tipos
+##### Explícita
+
+Contamos con las funciones: `int`, `float` y `complex`.
+Las primeras dos funciones están definidas para números reales y strings.
+
+La función `int` retorna una nueva instancia de tipo `int`;
+si se le da un `float` recorta la parte decimal
+y solo acepta objetos `str` que representen números enteros.
+
+Por su parte `float` retorna un número de punto flotante siempre que sea posible.
+
+Por último `complex` toma un número o un string y los convierte en un número complejo.
+Esta función también nos permite dar dos argumentos;
+en este caso el primer argumento es la parte real y la segunda la imaginaria.
+
+    >>> float(5)
+    5.0
+    >>> int(8.7)
+    8
+    >>> complex(3)
+    (3+0j)
+    >>> complex(2, 5)
+    >>> complex('13')
+    >>> int('18.9')
+
+##### Implícita
+
+Para evitar la pérdida de información al llevar acabo ciertas operaciones entre datos con distintos tipos,
+python convierte el tipo de dato menor a mayor
+(int &lt; float &lt; complex)
+sin intervención del programador.
+En particular,
+esto ocurre con las operaciones de suma, resta y multiplicación.
+
+    >>> x = 2
+    >>> y = 4.5
+    >>> z = 1 - 3j
+    >>> suma = x + y
+    >>> type(suma)
+    >>> y - z
+    >>> x * z
+    >>> type(5 * x)
+    >>> 1 + 4 / 2
+    >>> 2 + (1 - 2.0) * 3 + 1j
+    >>> -3 + 5 // 2.0 ** 2
+
+#### Sistemas numéricos
+
+Además de utilizar cantidades numéricas en formato decimal,
+python reconoce otros tres sistemas:
+**binario** (base 2),
+**octal** (8) y
+**hexadecimal** (base 16).
+Para declarar un entero en uno de estos sistemas,
+utilizamos el prefijo
+**0b**, **0o** o **0x**,
+respectivamente.
+El primer carácter es el número cero y
+el segundo es una letra que puede darse en
+**minúscula o mayúscula**.
+
+Los caracteres numéricos que cada sistema permite son los siguientes:
+
+- binario 0,1
+- octal   0-7
+- hexadecimal 0-9, A-F
+
+<!-- -->
+
+    >>> x = 0B110
+    >>> print(x)
+    >>> print(0o15)
+    >>> print(0x1A)
+    >>> y = 0b110 + 0x1A
+    >>> print(y)
+
+En ocasiones,
+necesitamos introducir números enteros en estos sistemas mediante **strings**
+(al leer información desde un archivo).
+Esto se logra utilizando la función **int**
+con un segundo argumento `base=0`.
+Por ejemplo,
+
+    >>> entero = int('0x11', base=0)
+    >>> print(entero)
+
+**Cuando usemos el argumento `base` debemos dar el entero mediante un string.**
+Este argumento se refiere a la base usada para el entero;
+podemos usar cualquier base en el rango 2-36
+(con caracteres de 0-9 y a-z en minúscula o mayúscula).
+Un valor de cero
+le indica a python que interprete el string de acuerdo a sus reglas.
+
+    >>> int('z', base=36)
+    >>> int('1Y', base=36)
+    >>> int('z', base=35)
+
+### Matemáticas en Python
+
+La librería estándar de python incluye el módulo **math**,
+el cual puede ser suficiente para tareas sencillas.
+Para funciones complejas no incluidas u operaciones con vectores,
+podemos utilizar una librería externa especializada como
+**numpy** o **scipy**.
+
+El módulo **math** incluye
+constantes típicas
+($\pi$, $e$),
+funciones comunes
+(raíz cuadrada, exponencial, logarítmo),
+funciones trigonométricas
+(coseno, seno hiperbólico),
+así como funciones encontradas en probabilidad y estadística
+(factorial, combinaciones, permutaciones, función error).
+
+Para importar un módulo incluido en la librería estándar,
+utilizamos el comando `import` seguido por el nombre de este.
+Para acceder a sus objetos
+(clases, funciones y constantes),
+utilizamos la notación de punto como mostramos abajo.
+
+En esta sección empleamos un editor para ingresar las instrucciones y posteriormente correrlas con el intérprete.
+Introducimos los siguientes comandos en un archivo con extensión py:
+matematicas.py
+
+    import math
+
+    # seno de pi / 2
+    x = math.pi / 2
+    print( 'x = ', x, ', sin(x) = ', math.sin(x) )
+
+    # logarítmo de base e
+    y = math.e
+    print(f'y = {y}, ln(y) = {math.log(y)}', )
+
+    # logaritmo de base 2, 10 y cualesquiera
+
+#### Notas sobre objetos numéricos
+
+Los **enteros** (`int`) en python,
+pueden ser tan grandes como se desee
+(**precisión arbitraria**);
+como se ha mencionado en las diapositivas,
+el intérprete asignará la cantidad necesaria de bits para representar cualesquier entero de manera exacta.
+Esta característica no se presenta en un lenguaje con tipos estáticos
+(C++, Haskell, Rust, etc.),
+donde se asigna una cantidad de bytes a cada tipo de dato durante el proceso de compilación.
+
+Los `float`,
+por su parte,
+representan números de **punto flotante** con una
+**precisión de 15 a 17 cifras significativas**
+(para mayor precisión existe el módulo `decimal`).
+Internamente,
+estos son representados mediante 64 bits,
+utilizando el estándar IEEE 754 de doble precisión
+(**binary64**).
+En esta representación,
+se utilizan 53 bits de precisión
+(1 bit para el signo y 52 para la mantisa o base)
+y 11 para representar el exponente.
+Este es el estándar que casi todas las implementaciones de C o C++ utilizan para el tipo `double`
+(recordemos de la clase,
+que distintas implementaciones pueden almacenar tipos de datos con distinta cantidad de bits).
+De hecho, la mayoría de lenguajes de programación modernos utilizan este estándar bajo distintos nombres:
+**double** en Java,
+**real(dp)** en Fortran,
+**float64** en Go,
+**f64** en Rust,
+etc.
+
+Los objetos `complex` representan tanto la parte real como la parte imaginaria mediante **binary64**.
 
 ### Strings (str)
 #### Métodos
