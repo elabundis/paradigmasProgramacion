@@ -316,7 +316,11 @@ A continuación una lista de operadores con precedencia de mayor a menor por ren
     ()            Paréntesis
     **            Exponenciación
     +x, -x, ~x    Operadores unarios: positivo, negativo y NOT bit a bit
-    *, /, //, %   Multiplicación, división, división entera, módulo
+    *, @, /, //, %   Multiplicación,
+                     multiplicación matricial,
+                     división,
+                     división entera,
+                     módulo
     +, -          Suma, resta
     <<, >>        Desplazamiento a la izquierda o derecha
     &             AND bit a bit
