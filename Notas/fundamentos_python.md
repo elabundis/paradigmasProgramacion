@@ -289,10 +289,13 @@ Volvemos a mencionar los tipos de datos básicos en Python
     >>> strings = "Hola Mundo"
     >>> entero = 5
     >>> reales = 3.7
+    >>> complejo = 3+4j
     >>> verdad = True
     >>> falso = False
 
-Estas variables almacenan objetos de tipo **str**, **int**, **float** y **bool**. Para ver su tipo basta con ejecutar
+Estas variables almacenan objetos de tipo
+**str**, **int**, **float**, **complex** y **bool**.
+Para ver su tipo basta con ejecutar
 
     >>> type(verdad)
     <class 'bool'>
