@@ -2,6 +2,7 @@
 geometry: "left=3cm,right=3cm,top=2cm,bottom=2cm"
 fontsize: 12pt
 ---
+<div style="text-align: justify;">
 
 # Fundamentos de Python
 
@@ -943,3 +944,5 @@ Desde luego podemos combinar las operaciones recordando que el lenguaje tiene su
 
 ## Funciones
 ## Estructuras de Datos
+
+</div>
