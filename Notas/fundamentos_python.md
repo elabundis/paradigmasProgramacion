@@ -525,26 +525,176 @@ la puedes ver
 [aquí](https://docs.python.org/3.13/library/math.html).
 
 Para importar un módulo incluido en la librería estándar,
-utilizamos el comando `import` seguido por el nombre de este.
+utilizamos el comando `import` seguido por el nombre de este,
+es decir,
+`import math`.
 Para acceder a sus objetos
 (clases, funciones y constantes),
-utilizamos la notación de punto como mostramos abajo.
+empleamos la notación de punto como mostramos más abajo.
 
-En esta sección empleamos un editor para ingresar las instrucciones y posteriormente correrlas con el intérprete.
-Introducimos los siguientes comandos en un archivo con extensión py:
+Comenzamos introduciendo operaciones de punto flotante, en particular, las funciones:
+
+* `math.floor(x)` regresa el entero más grande menor o igual a x,
+* `math.ceil(x)` regresa el entero más chico mayor o igual a x,
+* `math.trunc(x)` regresa la parte entera de x.
+
+En esta sección,
+ingresaremos las instrucciones en el archivo
 matematicas.py
+con nuestro editor favorito,
+y posteriormente las ejecutaremos con el intérprete.
+A continuación,
+editamos nuestro archivo:
 
     import math
 
-    # seno de pi / 2
-    x = math.pi / 2
-    print( 'x = ', x, ', sin(x) = ', math.sin(x) )
+    print('Operaciones de punto flotante')
+
+    # Apliquemos algunas funciones importantes
+    x = math.floor(4.8)   # Operación piso
+    y = math.ceil(7.1)    # Operación techo
+    z = math.trunc(2.99)  # Truncar parte decimal
+    print(x, y, z)
+
+y lo ejecutemos desde la terminal mediante
+
+    python matematicas.py
+
+En este código hacemos uso de comentarios:
+
+- **Los comentarios comienzan con el carácter #**,
+a partir del cual,
+el intérprete descarta todo a la derecha.
+Note que estos pueden colocarse en cualquier parte de una línea.
+
+Un detalle importante a mencionar; 
+se debe tener cuidado al comparar la igualdad de dos números de tipo `float`;
+**no es recomendable comparar números reales con el operador `==`**.
+Esto debido a la precisión finita de la computadora
+y a la manera en que estos números son almacenados.
+La manera más correcta es emplear la función
+`math.isclose`
+como se muestra aquí
+
+    # Comparar igualdad de números reales
+    x = 0.1 + 0.2
+    y = 0.3
+    print('Comparando dos números reales que deberían ser iguales\n')
+    print("Utilizando '=='")
+    print( x == y )
+    print("Utilizando 'math.isclose'")
+    print( math.isclose(x, y) )
+    print()
+
+
+Procedemos ahora con algunas funciones trigonométricas.
+Recordemos que, básicamente en cualquier lenguaje de programación,
+las funciones trigonométricas operan con radianes por default:
+
+    import math
+
+    print("Funciones trigonométricas")
+
+    # Angulo en radianes
+    theta = math.pi / 2
+    print('theta = ', theta, ', sin(theta) = ', math.sin(theta) )
+
+    # Para ángulos en sistema sexagesimal primero transformar a radianes
+    GRADOS_A_RADIAN = math.pi / 180
+    beta = 45  # 45 grados
+    print(f'beta: {beta} grados')  # Utilizando f-strings
+    print(f'tan(beta) = {math.tan(beta * GRADOS_A_RADIAN)}')
+
+    # Las funciones inversas dan los ángulos en radianes.
+    # Podemos transformar a grados si lo deseamos.
+    RADIAN_A_GRADOS = 1 / GRADOS_A_RADIAN
+    gama = math.acos(math.sqrt(2) / 2)
+    print(f'acos(sqrt(2)/2) en grados: {gama * RADIAN_A_GRADOS}')
+    print()  # Línea en blanco
+
+Con respecto a los f-strings:
+
+- Los **f-strings nos permiten utilizar el contenido de variables,
+o ejecutar código en general,
+dentro de un string**;
+    La sintaxis es
+
+        f'... {codigo} ...'
+    dónde el prefijo **f**
+    indica que el string será un f-string,
+    y el código es colocado entre llaves.
+    El intérprete automáticamente transforma (parsea) el resultado a un `str` y lo une al resto del string
+
+**Note como se ha evitado el uso de *números mágicos***
+(constantes numéricas directamente en el código sin explicación)
+**para transformar entre radianes y grados**
+(ver variables);
+el contexto de las constantes es importante,
+además, si introducimos un bug y repetimos la constante en múltiples lugares, tendríamos que ir y corregir cada una de sus apariciones.
+También,
+**observa como expresamos
+RADIAN_A_GRADOS = 1 / GRADOS_A_RADIAN,
+en lugar de 180 / math.pi**,
+ya que de esta manera se expresa la relación entre las dos constantes,
+y al corregir una,
+la segunda se corrige automáticamente
+(hay excepciones a esta regla que pueden darse por cuestiones de precisión en los cálculos).
+Por último,
+nota el uso de
+**snake_case
+en la declaración de las variables**,
+y el uso de **mayúsculas para constantes globales**.
+
+Por cierto,
+`math` incluye funciones para transformar entre los sistemas sexagesimal y circular (radianes)
+(ver `math.degrees` y `math.radians`).
+
+A continuación agregamos algunas funciones hiperbólicas a nuestro archivo.
+En el caso del módulo `math`,
+estas funciones están definidas para cualquier número real
+(si necesitamos emplear números complejos,
+python incluye el módulo `cmath`)
+y nos regresa un `float`.
+
+    print('Funciones hiperbólicas')
+
+    # coseno hiperbólico
+    print(f'cosh(1.5) = {math.cosh(1.5)}')
+    # arco seno hiperbólico (inversa del seno hiperbólico)
+    print(f'asinh(1) = {math.asinh(1)}')
+    print()
+
+Para tomar el logarítmo de una base deseada empleamos
+
+    # Logarítmos
+    print('Logaritmos')
 
     # logarítmo de base e
-    y = math.e
-    print(f'y = {y}, ln(y) = {math.log(y)}', )
-
+    y = math.e  # constante de Euler
+    print('y =  ', y)
+    print(f'ln(y) = {math.log(y)}') # Utilizando f-strings
     # logaritmo de base 2, 10 y cualesquiera
+    print(f'log_2(16) = {math.log2(16)}')
+    print(f'log_10(100) = {math.log10(100)}')
+    print(f'log_3(27) = {math.log(27, 3)}')
+    print()
+
+Por último,
+mostramos algunos ejemplos de funciones de probabilidad y estadística
+
+    # Probabilidad y estadística
+    print("Funciones en Probabilidad y Estadística")
+
+    print('factorial de un entero n (número de permutaciones de n objetos)')
+    print(f'4! = {math.factorial(4)}')
+    print('Combinaciones con dos elementos de un conjunto de cuatro elementos')
+    print('(todos los subconjuntos de dos elementos)')
+    print(f'comb(4, 2) = {math.comb(4, 2)}')
+    print('Permutaciones con tres elementos tomados de un conjunto de cuatro elementos')
+    print('(el orden importa en las permutaciones)')
+    print(f'perm(4, 3) = {math.perm(4, 3)}')
+    print('Función error')
+    print(f'erf(1.0) = {math.erf(1.0)}')
 
 #### Notas sobre objetos numéricos
 
