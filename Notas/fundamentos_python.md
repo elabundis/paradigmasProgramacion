@@ -509,15 +509,20 @@ Para funciones complejas no incluidas u operaciones con vectores,
 podemos utilizar una librería externa especializada como
 **numpy** o **scipy**.
 
-El módulo **math** incluye
-constantes típicas
+El módulo **math** incluye:
+* constantes típicas
 ($\pi$, $e$),
-funciones comunes
+* funciones comunes
 (raíz cuadrada, exponencial, logarítmo),
-funciones trigonométricas
+* funciones trigonométricas
 (coseno, seno hiperbólico),
-así como funciones encontradas en probabilidad y estadística
+* funciones encontradas en probabilidad y estadística
 (factorial, combinaciones, permutaciones, función error).
+
+Una lista completa de las funciones
+(con su respectiva documentación)
+la puedes ver
+[aquí](https://docs.python.org/3.13/library/math.html).
 
 Para importar un módulo incluido en la librería estándar,
 utilizamos el comando `import` seguido por el nombre de este.
