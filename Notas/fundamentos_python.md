@@ -568,7 +568,7 @@ a partir del cual,
 el intérprete descarta todo a la derecha.
 Note que estos pueden colocarse en cualquier parte de una línea.
 
-Un detalle importante a mencionar; 
+Un detalle importante a mencionar;
 se debe tener cuidado al comparar la igualdad de dos números de tipo `float`;
 **no es recomendable comparar números reales con el operador `==`**.
 Esto debido a la precisión finita de la computadora
@@ -892,7 +892,8 @@ A continuación algunos ejemplos.
     In [20]: nombre[0:10:2]
     Out[20]: 'MraRj'
 
-Cuando no declaramos **end** automáticamente se selecciona el índice del último carácter más uno.
+Cuando no declaramos **end**,
+la selección llega hasta el último carácter:
 
     In [21]: nombre[2:]
     Out[21]: 'ria Rojas'
@@ -900,7 +901,9 @@ Cuando no declaramos **end** automáticamente se selecciona el índice del últi
     In [22]: nombre[2::2]
     Out[22]: 'raRjs'
 
-Si no declaramos **start** se selecciona para este parámetro el índice cero. Por ejemplo,
+Por otro lado,
+**start** toma el valor cero si no es declarado.
+Por ejemplo,
 
     In [23]: nombre[:7]
     Out[23]: 'Maria R'
