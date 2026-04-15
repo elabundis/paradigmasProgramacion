@@ -568,7 +568,7 @@ a partir del cual,
 el intérprete descarta todo a la derecha.
 Note que estos pueden colocarse en cualquier parte de una línea.
 
-Un detalle importante a mencionar; 
+Un detalle importante a mencionar;
 se debe tener cuidado al comparar la igualdad de dos números de tipo `float`;
 **no es recomendable comparar números reales con el operador `==`**.
 Esto debido a la precisión finita de la computadora
@@ -734,6 +734,31 @@ etc.
 Los objetos `complex` representan tanto la parte real como la parte imaginaria mediante **binary64**.
 
 ### Strings (str)
+#### Operaciones básicas
+
+Los operadores encontrados en aritmética básica toman un significado distinto dependiendo del tipo de datos sobre los que operen.
+En el caso de strings,
+python define la suma de strings y
+su multiplicación por un número entero.
+
+La sumatoria conduce a la **concatenación**:
+
+    >>> print("Hola" + " Mundo" + "!")
+    'Hola Mundo!'
+
+mientras que la **multiplicación por un entero** como en
+
+    >>> print(3*"Ja")
+    'JaJaJa'
+
+repite el string multiplicado
+(debido a que la multiplicación se interpreta como sumatoria).
+Desde luego podemos combinar las operaciones recordando que el lenguaje tiene su orden de precedencia:
+
+    >>> saludo = 2*'¡' + 'Hola' + 2*'!'
+    >>> saludo
+    '¡¡Hola!!'
+
 #### Métodos
 
 Antes de continuar utilicemos un intérprete más avanzado que el que viene de manera estándar con python.
@@ -867,7 +892,8 @@ A continuación algunos ejemplos.
     In [20]: nombre[0:10:2]
     Out[20]: 'MraRj'
 
-Cuando no declaramos **end** automáticamente se selecciona el índice del último carácter más uno.
+Cuando no declaramos **end**,
+la selección llega hasta el último carácter:
 
     In [21]: nombre[2:]
     Out[21]: 'ria Rojas'
@@ -875,7 +901,9 @@ Cuando no declaramos **end** automáticamente se selecciona el índice del últi
     In [22]: nombre[2::2]
     Out[22]: 'raRjs'
 
-Si no declaramos **start** se selecciona para este parámetro el índice cero. Por ejemplo,
+Por otro lado,
+**start** toma el valor cero si no es declarado.
+Por ejemplo,
 
     In [23]: nombre[:7]
     Out[23]: 'Maria R'
@@ -911,32 +939,6 @@ se selecciona el primer carácter. Vea los siguientes ejemplos
     Out[30]: 'oR airaM'
 
 ¿Cómo invierto el string por completo?
-
-#### Operaciones básicas
-
-Los operadores encontrados en aritmética básica toman un significado distinto dependiendo del tipo de datos sobre los que operen.
-En el caso de strings,
-python define la suma de strings y
-su multiplicación por un número entero.
-
-La sumatoria conduce a la **concatenación**:
-
-    In [31]: print("Hola" + " Mundo" + "!")
-    Out[31]: 'Hola Mundo!'
-
-mientras que la **multiplicación por un entero** como en
-
-    In [32]: print(3*"Ja")
-    Out[32]: 'JaJaJa'
-
-repite el string multiplicado
-(debido a que la multiplicación se interpreta como sumatoria).
-Desde luego podemos combinar las operaciones recordando que el lenguaje tiene su orden de precedencia:
-
-    In [33]: saludo = 2*'¡' + 'Hola' + 2*'!'
-
-    In [34]: saludo
-    Out[34]: '¡¡Hola!!'
 
 ## Loops
 
