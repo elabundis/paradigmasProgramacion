@@ -759,6 +759,82 @@ Desde luego podemos combinar las operaciones recordando que el lenguaje tiene su
     >>> saludo
     '¡¡Hola!!'
 
+#### Comparaciones
+
+Podemos comparar dos strings utilizando los operadores de comparación;
+`>`, `>=`, `==`, `!=`, `<`, `<=`.
+Estos comparan carácter a carácter utilizando el orden lexicográfico,
+es decir,
+de acuerdo al diccionario.
+Específicamente,
+utilizan el código unicode durante la operación.
+
+* Para verificar si dos strings son indénticos utilizamos `==`,
+  mientras que `!=` nos informa si los strings son distintos.
+
+* El resto de operadores nos permiten determinar el orden alfabético entre dos strings,
+  comparando el valor unicode del primer caracter que difiera entre estos.
+
+Tenemos, por ejemplo
+
+    >>> 'cargo' < 'cargamento'
+    False
+
+ya que la 'o' es mayor a la 'a'.
+Por otro lado,
+
+    >>> 'mate  ' > 'mate'
+    True
+
+debido a los caracteres extra en `'mate  '`.
+También,
+
+    >>> 'hola' == 'Hola'
+    False
+
+ya que los valores unicode de 'H' y 'h' son distintos.
+De hecho,
+en este caso
+
+    >>> 'hola' > 'Hola'
+    True
+
+ya que las mayúsculas van antes que las minúsculas en unicode.
+**Para conocer el valor unicode de un caracter,
+utilizamos la función `ord`**
+(acepta *strings* de un sólo caracter,
+*strings* más grandes generarán un error):
+
+    >>> ord('H')
+    72
+
+    >>> ord('h')
+    104
+
+Observamos que las comparaciones se pueden concatenar
+(al igual que con objetos numéricos)
+
+    >>> print( 'cajon' < 'cancion' < 'casa' )
+
+Por último,
+hacemos mención de la palabra reservada `is`,
+la cuál puede confundirse con el operador `==`;
+mientras que el operador `==`,
+verifica si dos *strings* son idénticos en valor,
+`is` checa si dos variables apuntan al mismo objeto en memoria.
+De esta manera
+
+    >>> x = 'bye' + '!'
+    >>> y = 'bye' + '!'
+    >>> z = x
+    >>> print(x == y)
+    >>> print(x is y)
+    >>> print(z is x)
+
+Nota: Para checar si dos objetos son idénticos en python se utiliza la función `id`;
+esta mapea cada objeto a un entero único,
+el cuál típicamente es la dirección del objeto.
+
 #### Métodos
 
 Antes de continuar utilicemos un intérprete más avanzado que el que viene de manera estándar con python.
