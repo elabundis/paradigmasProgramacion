@@ -944,6 +944,56 @@ se selecciona el primer carácter. Vea los siguientes ejemplos
 
 ## Decisiones
 
+El control de flujo en python se lleva acabo con las palabras reservadas:
+`if` - `elif` - `else`,
+utilizando la siguiente sintaxis
+
+    if condicion_1:
+        bloque_1
+    elif condicion_2:
+        bloque_2
+    ...
+    else:
+        bloque_n
+
+    mas_codigo
+
+dónde las condiciones `elif` y `else` son **opcionales**.
+Observa que los bloques se encuentran indentados
+(con sangría)
+con respecto a cada una de las palabras reservadas.
+Cada `condicion_x` debe corresponder a un valor booleano,
+tras el cual se debe incluir dos puntos.
+
+Al concluir con los bloques,
+se debe eliminar la indentación como se aprecia en la linea:
+`mas_codigo`.
+
+El flujo opera de la siguiente manera:
+* Se evalúa la **condicion_1** y se verifica si esta es `True`.
+  De no ser así,
+  se evalúa la **condicion_2** para checar si esta es `True`.
+  El proceso continúa hasta encontrar una condición verdadera.
+  Posteriormente,
+  se ejecuta el bloque al interior de dicha condición,
+  e inmediatamente después,
+  se transfiere el control a la línea `mas_codigo`,
+  es decir,
+  fuera de la estructura.
+
+* Si ninguna condición es `True`,
+  entonces se ejecuta el bloque de `else`
+  (si dicha condición existe).
+
+El uso de la indentación para indicar la región de cada bloque,
+es parte de la filosofía de python;
+al no utilizar algún tipo de paréntesis como separador,
+la escritura y lectura se asemeja más al lenguaje natural,
+ofreciendo,
+desde su perspectiva,
+mayor claridad.
+
+
 ## Funciones
 ## Estructuras de Datos
 
