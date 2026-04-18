@@ -1018,6 +1018,151 @@ se selecciona el primer carácter. Vea los siguientes ejemplos
 
 ## Loops
 
+Para repetir un conjunto de declaraciones en python,
+contamos con dos  tipos de estructuras: `for` y `while`.
+
+El bucle `for` presenta la siguiente sintaxis:
+
+    for variable in iterable:
+        linea_1
+        linea_2
+        ...
+        linea_n
+
+donde el `iterable`, como ya mencionamos anteriormente,
+es un objeto capaz de regresar sus elementos uno a la vez
+(`str`, `list`, `tuple`, `dict`),
+y las lineas,
+representan un conjunto de instrucciones a repetir.
+Observa los dos puntos delante del `iterable`
+y la indentación que se le debe dar al bloque de instrucciones.
+
+Los bucles `for` operan de la siguiente manera;
+
+* A la `variable` se le asigna el primer elemento de `iterable`
+  y ejecuta cada una de las instrucciones en el bloque
+  de arriba hacia abajo
+  (`linea_1` a `linea_n`).
+
+* Al finalizar,
+  el flujo regresa para asignarle a la `variable` el segundo valor de `iterable` y volver a ejecutar las instrucciones.
+* Este proceso se repite para cada uno de los elementos en `iterable`.
+
+Antes de ver un ejemplo,
+veamos un objeto muy útil para la estructura `for`,
+el objeto `range`.
+Este objeto se utiliza para generar una secuencia de enteros con espaciamiento constante.
+Podemos generar una secuencia de enteros del 0 al 9 mediante
+
+    >>> x = range(10)
+    >>> type(x)
+    >>> print(x)
+    >>> print( list(x) )
+
+Utilizamos el comando `list`
+para transforma el objeto en una lista,
+ya que el objeto `range` no muestra sus elementos.
+Si deseamos un entero inicial distinto a cero,
+digamos de 2 a 8, utilizamos
+
+    >>> y = range(2, 9)
+
+La función range también acepta un argumento para la separación entre enteros.
+Por ejemplo, si deseamos los enteros impares del 1 al 13
+
+    >>> z = range(1, 14, 2)
+
+Regresando a los bucles `for`,
+estos se utilizan cuando conocemos el número exacto de iteraciones,
+o si este se encuentra determinado por la longitud de una sequencia.
+A continuación mostramos algunos ejemplos.
+
+Utilizando la secuencia de enteros range
+
+    # Imprime del 0 al 5
+    for i in range(6):
+        print(i)
+
+    # Imprime los número pares del 2 hasta el 8
+    for j in range(2, 9, 2):
+        print(j)
+
+Con los elementos de un string
+
+    saludo = '¡Hola!'
+    for char in saludo:
+        print(char)
+
+o los de una lista
+
+    ingredientes = [
+        'camaron', 'tomate', 'cebolla', 'chile serrano',
+        'cilantro', 'limon', 'pepino'
+    ]
+    print('Ingredientes para un ceviche:')
+    for ingredient in ingredientes:
+        print(ingredient)
+
+Las temperaturas de grados Celsius a Farenheit
+
+    # Tamaño de un grado Celsius en Farenheit
+    one_deg = 9 / 5
+    # Origen de Celsius (0) en Farenheit
+    origin_F = 32
+
+    # De cero a cien grados en pasos de diez grados
+    print('Celsius', 'Farenheit')
+    for Celsius in range(0, 101, 10):
+        Farenheit = Celsius * one_deg + origin_F
+        print(Celsius, Farenheit)
+
+Como mencionamos al principio de esta sección,
+contamos con un segunda estructura para la repetición de instrucciones,
+el búcle `while`.
+Este sigue la sintaxis
+
+    while condicion:
+        linea_1
+        ...
+        linea_n
+
+donde la `condicion` es un booleano.
+
+En este caso;
+
+* El intérprete checa el valor de `condicion`.
+Si el valor es `False`,
+el flujo se pasa automáticamente debajo del bloque,
+sin ejecutar instrucciones.
+Si el valor es `True`,
+se ejecuta la `linea_1`
+hasta llegar a la `linea_n`.
+Posteriormente,
+el flujo regresa arriba y verifica el valor de `condicion`,
+repitiéndose el proceso.
+
+* Para no caer en un bucle infinito,
+  debemos asegurarnos
+  que las lineas del bloque
+  transformen la `condicion` a `False`
+  después de un número finito de repeticiones de este.
+
+En ocasiones,
+no deseamos ejecutar todas las lineas dentro de un bloque,
+ya sea un bucle de tipo `for` o `while`.
+Para esto,
+contamos con los comandos:
+`break` y `continue`.
+
+El comando `break`,
+transfiere el flujo hacia la primer linea debajo
+(afuera)
+del bucle.
+Por su parte,
+`continue` lo transfiere al principio del bucle;
+en el caso de `for`,
+la `variable` tomará el siguiente valor del `iterable`.
+
 ## Decisiones
 
 El control de flujo en python se lleva acabo con las palabras reservadas:
