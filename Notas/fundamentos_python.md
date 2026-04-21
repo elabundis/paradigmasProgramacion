@@ -1316,6 +1316,38 @@ repitiéndose el proceso.
   transformen la `condicion` a `False`
   después de un número finito de repeticiones de este.
 
+
+A continuación implementamos un juego de la rueda de la fortuna.
+
+    import random
+    import time
+
+    import tqdm  # Este módulo es externo y debe instalarse
+
+    # Enteros presentes en la rueda
+    rango = (0, 10)
+
+    # Selecciona un numero ganador arbitrareo para el juego
+    numero_ganador = random.randint(0, 10)
+
+    # Al inicio no hay ganador
+    ganador = False
+    while (not ganador):
+        input('Tira de la rueda ')
+        # Da tiempo para que la rueda gire
+        # Para mayor diversion agreguemos barra de progreso
+        for i in tqdm.tqdm( range(10) ):
+            time.sleep(0.2)
+        numero = random.randint(0, 10)
+        print(numero)
+        if numero == numero_ganador:
+            print('Ganaste!')
+            ganador = True
+        else:
+            print('Sigue intentando')
+            print()
+
+
 En ocasiones,
 no deseamos ejecutar todas las lineas dentro de un bloque,
 ya sea un bucle de tipo `for` o `while`.
