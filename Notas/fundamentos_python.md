@@ -1068,6 +1068,122 @@ ofreciendo,
 desde su perspectiva,
 mayor claridad.
 
+Ejemplo 1: Encuentra si el usuario nos da un entero par o impar.
+
+```python
+# Encuentra si el entero es par o impar
+x = int(input('Introduzca un entero: '))
+if(x % 2 == 0):
+    print(f'{x} es un numero par')
+else:
+    print(f'{x} es impar')
+```
+
+Ejemplo 2: Se hace una venta de boletos de loteria con las siguientes reglas:
+* Si compras hasta 20 boletos, el precio por boleto es de $100.
+* Si compras más de 20 boletos y menos de 30, se te da un precio de $90.
+* Si compras 30 o más boletos, obtienes un precio de $60.
+
+Crea un programa que me de el precio para cualquier cantidad de boletos deseados.
+
+```python
+# Compra de boletos
+boletos = int(input('Numero de boletos: '))
+if boletos < 21:
+    costo_boleto = 100
+elif boletos < 30:
+    costo_boleto = 90
+else:
+    costo_boleto = 60
+
+costo_total = boletos * costo_boleto
+print(f"Pagar: {costo_total}")
+```
+
+(Tengo dinero para comprar 20 boletos. ¿Será inteligente de mi parte comprar 20 boletos?)
+
+Si nuestro bloque `if`
+consiste en una sola declaración,
+python nos permite la siguiente sintaxis corta
+(esto solo se recomienda si el cuerpo del `if` es muy corto):
+
+```python
+estudiantes = ['Pedro', 'Laura']
+activo = False
+
+persona = 'Laura'
+if persona in estudiantes: activo = True
+
+print(f'Activo: {activo}')
+```
+
+Por último,
+en python se cuenta con las
+**expresiones condicionales**.
+Estas son sentencias de una linea para una declaración
+`if`-`else`,
+cuya sintaxis es:
+
+```python
+valor_si_True if condicion else valor_si_falso
+```
+
+En este caso,
+se evalúa la `condicion`;
+si esta es verdadera se regresa el valor `valor_si_True`,
+en caso contrario se regresa `valor_si_falso`.
+Ejemplo:
+
+```python
+x = -5
+signo = 'positivo' if x > 0 else 'negativo'
+
+print(signo)
+```
+
+Ejercicios:
+
+* Programa que lea la calificación en porcentaje de un estudiante y retorne su calificación en formato de letras.
+  Considere la siguiente relación:
+
+  <table>
+  <tr>
+      <td>A</td>
+      <td>90-100</td>
+  </tr>
+  <tr>
+      <td>B</td>
+      <td>80-89</td>
+  </tr>
+  <tr>
+      <td>C</td>
+      <td>70-79</td>
+  </tr>
+  <tr>
+      <td>D</td>
+      <td>60-69</td>
+  </tr>
+  <tr>
+      <td>F</td>
+      <td>0-59</td>
+  </tr>
+  </table>
+
+* Implemente el algoritmo de FizzBuzz.
+
+  Para un entero `i` de 1 a 20:
+
+    * Si 3 y 5 dividen a `i`, imprime: 'FizzBuzz'
+    * De no ser así, si 3 divide a `i`, imprime: 'Fizz'
+    * De no ser así, si 5 divide a `i`, imprime: 'Buzz'
+    * En cualquier otro caso imprime `i`.
+
+* Programa que, dados tres enteros, diga cuál es el menor.
+
+* Cree un programa que lea la edad de una persona y,
+  mediante una expresión condicional
+  (una sola linea),
+  retorne a **stdout** si la persona es adulta o menor de edad.
 
 ## Loops
 
