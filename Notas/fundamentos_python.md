@@ -1316,6 +1316,14 @@ repitiéndose el proceso.
   transformen la `condicion` a `False`
   después de un número finito de repeticiones de este.
 
+Un ejemplo sencillo se muestra a continuación
+
+```python
+entero = int(input('Introduzca un entero: '))
+while entero > 0:
+    entero -= 1
+    print(entero)
+```
 
 A continuación implementamos un juego de la rueda de la fortuna.
 
@@ -1363,6 +1371,28 @@ Por su parte,
 `continue` lo transfiere al principio del bucle;
 en el caso de `for`,
 la `variable` tomará el siguiente valor del `iterable`.
+
+
+Creemos un programa que lea las calificaciones de un estudiante,
+las almacene en una lista y luego nos entregue el promedio.
+El programa debe funcionar para distintas clases,
+es decir,
+el numero de calificaciones es desconocido de antemano.
+
+```python
+calificaciones = []
+msg = 'Introduzca calificación (seleccione "end" para terminar): '
+while True:
+    grade = input(msg)
+    if grade.lower() == 'end':
+        print('Listo\n')
+        break
+    # No olvidemos transformar a un tipo numérico
+    grade = float(grade)
+    calificaciones.append(grade)
+promedio = sum(calificaciones) / len(calificaciones)
+print(f"Promedio: {promedio}")
+```
 
 
 ## Funciones
