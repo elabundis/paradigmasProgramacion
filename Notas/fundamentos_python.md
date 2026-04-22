@@ -1394,6 +1394,20 @@ promedio = sum(calificaciones) / len(calificaciones)
 print(f"Promedio: {promedio}")
 ```
 
+Ejercicios
+
+Cree un programa que lea dos enteros,
+**a** y **b**,
+donde **b** es distinto a cero.
+Utilizando solo las operaciones algebraicas básicas
+de suma y/o resta,
+el programa nos debe dar el número entero de veces
+que **b** cabe en **a**
+(`a // b`),
+así como el residuo
+(`a % b`).
+Obviamente no se permite utilizar `/`, `//`, ni `%`,
+solo la suma y la resta.
 
 ## Funciones
 ## Estructuras de Datos
