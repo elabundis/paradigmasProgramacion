@@ -1410,6 +1410,361 @@ Obviamente no se permite utilizar `/`, `//`, ni `%`,
 solo la suma y la resta.
 
 ## Funciones
+
+La sintaxis para la creación de funciones en python es la siguiente:
+
+```python
+def nombre_funcion(arg1, arg2, ..., argN):
+    '''
+    docstring
+    '''
+    declaraciones
+    return expresion
+```
+
+De acuerdo a las recomendaciones PEP8,
+el nombre de la función `nombre_funcion`,
+debería ser descriptivo,
+usar un verbo,
+así como un formato snake_case.
+
+Los valores `arg1` hasta `argN` se conocen como parámetros,
+siendo estos opcionales.
+La sección **docstring** (opcional)
+se refiere a lineas de texto que documentan nuestra función.
+Es esta,
+se anota el propósito de la función,
+el tipo de datos de entrada y salida,
+y en ocasiones detalles de implementación.
+Para funciones sencillas una línea puede ser suficiente,
+pero es común que esta sección se extienda.
+Ver
+[numpy docstyle](https://numpydoc.readthedocs.io/en/latest/format.html)
+dónde se aborda un estilo de documentación muy empleado,
+y luego visita
+[aquí](https://numpydoc.readthedocs.io/en/latest/example.html#example)
+para ver un ejemplo.
+
+Para regresar un valor,
+las funciones utilizan la palabra reservada `return`
+seguida de la variable u objeto deseado.
+Cuando el intérprete encuentra la palabra `return`,
+el flujo retorna inmediatamente a la línea desde dónde se invocó la función,
+sin importar si esta contiene  más lineas.
+
+Si una función no cuenta con la palabra `return`,
+el intérprete ejecuta todas las lineas de codigo,
+de arriba a abajo,
+y retorna el valor `None`,
+es decir,
+agrega como última línea para la función:
+`return None`.
+
+Una función sencilla puede verse así
+
+```python
+def saludar():
+    return '¡Hola Matrix!'
+
+saludo = saludar()
+print(saludo)
+```
+la cual no toma argumentos y regresa la palabra `'Hola!'`.
+
+Al estar planeando una aplicación,
+es común anotar las funciones que requeriremos
+para realizar la tarea sin aún ingresar su contenido.
+Debido a que las funciones forzosamente deben tener al menos una linea en su cuerpo,
+podemos usar en este caso la palabra reservada `pass`,
+y de esta manera evitar que el intérprete arroje un error,
+como en
+
+```python
+def aceleracion(planeta):
+    pass
+
+def distancia(gravedad, vel_inicial, tiempo):
+    pass
+```
+
+Al llamar una función,
+se crea un espacio local
+(scope local)
+con los parámetros de la función
+(las variables),
+a los cuales se le asignan los valores con que fue llamada esta.
+Por ejemplo,
+
+```python
+import math
+
+def distancia(x, y):
+    """Regresa la distancia del origen a un punto dado.
+
+    """
+    dist = math.sqrt(x**2 + y**2)
+    return dist
+
+coor_x, coor_y = (3.0, 4.0)
+print(distancia(coor_x, coor_y))
+```
+
+En el programa anterior,
+python crea en el scope global los nombres:
+`math`, `distancia`, `coor_x` y `coor_y`,
+dónde las variables
+`coor_x` y `coor_y` toman los valores de 3.0 y 4.0,
+respectivamente.
+Al invocar la función `distancia`,
+se crea un scope local con las variables `x`, `y`,
+las cuales toman los valores anteriores.
+Posteriormente,
+se crea la variable local `dist` y se regresa su valor,
+retornando el flujo a la línea desde donde se llamo la función.
+En este momento se elimina el scope local,
+borrando todas sus variables.
+
+### Parámetros opcionales
+
+En python podemos asignar valores por default a los parámetros deseados de una función.
+De esta manera podemos llamarla sin especificar un valor para estos argumentos.
+
+La regla a respetar es que
+**los parámetros opcionales deben aparecer al final**,
+después de todos los obligatorios. Por ejemplo:
+
+```python
+def obtener_altura(tiempo, gravedad=9.8):
+    """Distancia que recorre un objeto que se deja caer desde reposo.
+
+    Parameters
+    ----------
+    tiempo : float o int
+        `tiempo` de caída libre.
+    gravedad : float, optional
+        aceleración constante del objeto.
+
+    Returns
+    -------
+    float
+        La distancia recorrida por un objeto que experimenta aceleración
+        constante.
+
+    """
+    return (gravedad * tiempo**2) / 2
+
+# Altura de un pozo donde una piedra tarda 4 segundos en caer
+print(obtener_altura(4))
+```
+
+Mientras que **una función especificada mediante**
+
+```python
+def sumar(a=3, b):
+    return a + b
+```
+
+**retorna un error.**
+
+Para llamar a la función `obtener_altura`,
+podemos utilizar
+
+```python
+h_Tierra = obtener_altura(5)
+```
+
+en cuyo caso se asignan al scope local las variables
+`tiempo = 5` y `gravedad = 9.8`.
+O bien,
+podemos llamar a la función mediante
+
+```python
+h_Luna = obtener_altura(5, 1.62)
+```
+
+en cuyo caso se tendrá
+`tiempo = 5` y `gravedad = 1.62`.
+
+En ambos casos,
+respetamos el orden de los argumentos.
+Podemos también introducir los parámetros en el orden deseado utilizando sus nombres.
+Por ejemplo,
+
+```python
+h_Sol = obtener_altura(gravedad=274.2, tiempo=5)
+```
+
+Nota:
+**No se pueden utilizar argumentos de posición después de un argumento de nombre (keyword argument)**;
+Por ejemplo,
+para la función
+
+```python
+def sumar(a, b, c=1):
+    return a + b + c
+```
+
+es correcto llamarla de las siguientes formas:
+
+```python
+sumar(3, b=4)
+sumar(3, b=4, c=-2)
+```
+
+pero las siguiente invocaciones retornan error de sintaxis (SyntaxError)
+
+```python
+sumar(a=3, 4)
+sumar(3, b=4, 4)
+```
+
+ya que aparecen argumentos de posición después de un argumento de keyword.
+
+
+### Funciones lambda
+
+En python contamos con un segundo tipo de funciones,
+conocidas como **funciones lambda**.
+Estas funciones,
+también llamadas en ocasiones **funciones anónimas**,
+se describen en una sola línea y no tienen un nombre
+(de ahí el nombre de anónimas)
+a menos que sean almacenadas.
+
+La instrucción
+
+```python
+lambda var1, ..., varN: expresion
+```
+
+regresa una función lambda con los `N` argumentos
+`var1, var2, ..., varN`.
+La declaración `expresion` indica la operación  que llevará acabo la función y no requiere la palabra `return`.
+Observa que aunque podemos declarar la cantidad de argumentos deseados (o no declarar ninguno),
+solo podemos introducir una expresión.
+
+Estas funciones normalmente se utilizan como argumentos para funciones de mayor orden como
+`map`, `filter`, `sort`,
+las cuales requieren de una función para operar.
+Sin embargo, también se pueden utilizar para declarar una operación sencilla que se está repitiendo en distintos lugares de nuestro código. Por ejemplo
+
+```python
+es_par = lambda x: x % 2 == 0
+
+a = 11
+print( es_par(a) )
+```
+
+o bien
+
+```python
+# Genera una parabola
+x = [2, 4, 6, 8]
+y = list(map( lambda num: num**2, x ))
+```
+
+Observa que estas funciones no tienen **docstring** ni tampoco pueden incluir bucles `for` ni decisiones con `if`.
+
+A continuación mostramos un ejemplo más
+
+```python
+def log_2(x: int) -> tuple[int, int]:
+    """Logaritmo entero de base 2 de un entero y su residuo.
+
+    Regresa el entero 'm' más grande, tal que 2**m <= x,
+    así como el residuo dado por x - 2**m.
+
+    Parameters
+    ----------
+    x : int
+        Un entero mayor a cero.
+
+    Returns
+    -------
+    logaritmo : int
+        Logaritmo de base 2 de `x`.
+    residuo : int
+        El residuo restante.
+
+    Raises
+    ------
+    ValueError
+        Si el argumento no es un entero positivo.
+
+    Notes
+    -----
+    Se utilizan solo las operaciones aritméticas básicas.
+    """
+    # Checa que la entrada sea de tipo apropiado
+    # De no ser así termina el programa con un error ValueError
+    if not isinstance(x, int) or x <= 0:
+        raise ValueError("El valor debe ser un entero positivo.")
+
+    # El residuo se repite en diferentes secciones.
+    # Es más adecuado determinarlo con una función.
+    get_residue = lambda valor, potencia: valor - potencia
+
+    # Caso base
+    if x == 1:
+        log = 0
+        residuo = 0
+        return (log, residuo)
+    # En cualquier otro caso
+    count = 1
+    potencia = 2
+    residuo = get_residue(x, potencia)
+    while residuo > 0:
+        count += 1
+        potencia *= 2
+        residuo = get_residue(x, potencia)
+    # El residuo es cero o negativo en este punto
+    # Actualiza count y residuo en el caso que residuo sea negativo
+    if residuo < 0:
+        count -= 1
+        potencia //= 2 # esto es: potencia = potencia // 2
+        residuo = get_residue(x, potencia)
+    # count y residuo son correctos ahora
+    log = count
+    return (log, residuo)
+
+x = int(input('Da un entero positivo: '))
+print(f"(log_2, residuo) = {log_2(x)}")
+```
+
+Ejercicios
+
+Utiliza `map` y una **función lambda** para crear una lista con 101 coordenadas equidistantes del 0 al 1. Clave: recuerda la función `range`.
+
+Grafica la función exponencial negativa `exp(-x)` en el dominio
+`[-1, 3]` utilizando 101 puntos equidistantes.
+Para esto,
+llena el código en las siguientes funciones
+
+```python
+import math
+import matplotlib.pyplot as plt
+
+def exponencial_negativa(x0: float, xf: float, num: int) -> list[float]:
+    """Agregar docstring
+
+    """
+    pass
+
+def graficar(x , y):
+    """Agregar docstring
+
+    """
+    pass
+
+x, y = exponencial_negativa(-1, 3)
+graficar(x, y)
+```
+Utiliza la la función `pyplot` de la librería externa `matplotlib`
+para generar la gráfica.
+Clave: investiga como funciona `pyplot` para generar una línea.
+Haz que el rango de valores en x sea de [-2, 4] y en y de [-1, 3].
+
+
 ## Estructuras de Datos
 
 </div>
