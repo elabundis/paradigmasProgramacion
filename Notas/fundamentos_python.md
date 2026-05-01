@@ -1185,6 +1185,76 @@ Ejercicios:
   (una sola linea),
   retorne a **stdout** si la persona es adulta o menor de edad.
 
+## Secuencias
+
+En python,
+una **secuencia**,
+es una colección de objetos que tiene un orden,
+de tal manera que cada elemento se identifica por un índice entero,
+el cual comienza en cero.
+Toda secuencia tiene una longitud,
+definida como su número de elementos,
+la cual se puede obtener mediante la función `len`.
+Una secuencia
+puede ser mutable,
+es decir,
+sus elementos pueden cambiar después de la creación,
+o inmutable.
+
+Python cuenta con las siguientes secuencias:
+`list` (mutable),
+`tuple` (inmutable),
+`range` (inmutable),
+`str` (inmutable),
+`byte` (inmutable)
+y
+`bytearray` (mutable).
+
+Estas estructuras de datos permiten las operaciones de
+
+* indexar,
+* rebanado (slicing),
+* iteración.
+
+Estas tres operaciones funcionan tal como en el caso de los strings.
+A continuación mostramos algunos ejemplos,
+los cuales debes correr desde tu intérprete:
+
+```python
+In [1]: lista = [2.0, 'hola', True]
+
+In [2]: tupla = ('bye', False, 3)
+
+In [3]: rango = range(10)  # Enteros del 0 al 9
+
+In [4]: print(type(lista), type(tupla), type(rango))
+
+In [5]: lista[1]
+
+In [6]: tupla[-1]
+
+In [7]: rango[3]
+
+In [8]: lista[-2:]
+
+In [9]: tupla[:2]
+
+In [10]: rango
+
+In [11]: rango[2:5]
+
+In [12]: list(rango[2:5])
+
+In [13]: for val in tupla:
+            print(val)
+
+In [14]: for num in rango:
+             print(num)
+
+In [15]: len(rango)
+```
+
+
 ## Loops
 
 Para repetir un conjunto de declaraciones en python,
