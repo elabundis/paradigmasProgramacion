@@ -1280,6 +1280,21 @@ In [14]: for num in rango:
 In [15]: len(rango)
 ```
 
+Otra operación que soportan frecuentemente las secuencias,
+aunque no siempre (`range` no lo soporta),
+es la concatenación.
+Esta se logra mediante la adición como en
+
+```python
+In[16]: frutas = ('manzana', 'plátano')
+
+In[16]: verduras = ('tomate', 'cebolla', 'papa')
+
+In [16]: frutas + verduras
+Out[16]: ('manzana', 'plátano', 'tomate', 'cebolla', 'papa')
+```
+
+Discutiremos la secuencia range en la siguiente sección sobre bucles.
 
 ## Loops
 
