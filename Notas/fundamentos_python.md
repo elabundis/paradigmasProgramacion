@@ -1188,35 +1188,61 @@ Ejercicios:
 ## Secuencias
 
 En python,
-una **secuencia**,
-es una colección de objetos que tiene un orden,
-de tal manera que cada elemento se identifica por un índice entero,
-el cual comienza en cero.
-Toda secuencia tiene una longitud,
-definida como su número de elementos,
-la cual se puede obtener mediante la función `len`.
-Una secuencia
-puede ser mutable,
-es decir,
-sus elementos pueden cambiar después de la creación,
-o inmutable.
+una **secuencia** es una colección de objetos ordenados,
+de tal manera que cada elemento se identifica por un índice entero.
 
-Python cuenta con las siguientes secuencias:
-`list` (mutable),
-`tuple` (inmutable),
-`range` (inmutable),
-`str` (inmutable),
-`byte` (inmutable)
+Definimos como secuencia todo objeto de python que cumpla con las siguientes tres condiciones:
+
+1. Es **iterable**:
+
+    El objeto tiene elementos sobre los cuales podemos iterar en un bucle `for`.
+
+2. Tiene una **longitud** la cual se obtiene mediante la función `len`:
+
+    Se llama longitud al número de elementos que contiene.
+
+3. Se puede acceder a sus elementos mediante corchetes `[]`,
+utilizando un **índice** entero el cual **empieza en cero**:
+
+    Los elementos tienen un orden fijo y predecible.
+
+Las secuencias se pueden clasificar en
+**mutables** e **inmutables**;
+llamamos mutables a aquellas cuyos elementos pueden cambiar después de su creación.
+
+Python cuenta con las siguientes secuencias principales:
+* `list` (mutable),
+* `tuple` (inmutable),
+* `range` (inmutable),
+* `str` (inmutable),
+* `byte` (inmutable)
 y
-`bytearray` (mutable).
+* `bytearray` (mutable).
 
-Estas estructuras de datos permiten las operaciones de
+Además de las propiedades descritas para toda secuencia,
+estos tipos soportan el rebanado (*slicing*),
+en el cuál se utiliza un rango de índices para obtener
+nuevos objetos del mismo tipo,
+pero solo con los elementos dados por dicho rango.
+Por ejemplo,
+si declaramos la lista
+`L = [2, 6.1, 'a', 'b']`,
+entonces `L[1:3]` regresa `[6.1, 'a']`,
+es decir,
+una nueva lista cuyos elementos corresponden a los índices `1` y `2` de `L`.
 
-* indexar,
-* rebanado (slicing),
-* iteración.
+> [!NOTE]
+>
+> No todas las secuencias  te permiten el *slicing*.
+> Un ejemplo es el objeto `deque`
+> (*double end queue*)
+> del módulo `collections` de la librería estándar.
+> El `deque` es una estructura similar a una lista,
+> dónde las operaciones para agregar a la cola (append) y
+> eliminar el elemento en la cola (pop),
+> son operaciones muy eficientes
+> (tiene orden O(1) en lugar de O(n) de una lista).
 
-Estas tres operaciones funcionan tal como en el caso de los strings.
 A continuación mostramos algunos ejemplos,
 los cuales debes correr desde tu intérprete:
 
