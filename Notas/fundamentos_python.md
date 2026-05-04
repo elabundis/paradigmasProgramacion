@@ -759,6 +759,82 @@ Desde luego podemos combinar las operaciones recordando que el lenguaje tiene su
     >>> saludo
     '¡¡Hola!!'
 
+#### Comparaciones
+
+Podemos comparar dos strings utilizando los operadores de comparación;
+`>`, `>=`, `==`, `!=`, `<`, `<=`.
+Estos comparan carácter a carácter utilizando el orden lexicográfico,
+es decir,
+de acuerdo al diccionario.
+Específicamente,
+utilizan el código unicode durante la operación.
+
+* Para verificar si dos strings son indénticos utilizamos `==`,
+  mientras que `!=` nos informa si los strings son distintos.
+
+* El resto de operadores nos permiten determinar el orden alfabético entre dos strings,
+  comparando el valor unicode del primer caracter que difiera entre estos.
+
+Tenemos, por ejemplo
+
+    >>> 'cargo' < 'cargamento'
+    False
+
+ya que la 'o' es mayor a la 'a'.
+Por otro lado,
+
+    >>> 'mate  ' > 'mate'
+    True
+
+debido a los caracteres extra en `'mate  '`.
+También,
+
+    >>> 'hola' == 'Hola'
+    False
+
+ya que los valores unicode de 'H' y 'h' son distintos.
+De hecho,
+en este caso
+
+    >>> 'hola' > 'Hola'
+    True
+
+ya que las mayúsculas van antes que las minúsculas en unicode.
+**Para conocer el valor unicode de un caracter,
+utilizamos la función `ord`**
+(acepta *strings* de un sólo caracter,
+*strings* más grandes generarán un error):
+
+    >>> ord('H')
+    72
+
+    >>> ord('h')
+    104
+
+Observamos que las comparaciones se pueden concatenar
+(al igual que con objetos numéricos)
+
+    >>> print( 'cajon' < 'cancion' < 'casa' )
+
+Por último,
+hacemos mención de la palabra reservada `is`,
+la cuál puede confundirse con el operador `==`;
+mientras que el operador `==`,
+verifica si dos *strings* son idénticos en valor,
+`is` checa si dos variables apuntan al mismo objeto en memoria.
+De esta manera
+
+    >>> x = 'bye' + '!'
+    >>> y = 'bye' + '!'
+    >>> z = x
+    >>> print(x == y)
+    >>> print(x is y)
+    >>> print(z is x)
+
+Nota: Para checar si dos objetos son idénticos en python se utiliza la función `id`;
+esta mapea cada objeto a un entero único,
+el cuál típicamente es la dirección del objeto.
+
 #### Métodos
 
 Antes de continuar utilicemos un intérprete más avanzado que el que viene de manera estándar con python.
@@ -940,11 +1016,1071 @@ se selecciona el primer carácter. Vea los siguientes ejemplos
 
 ¿Cómo invierto el string por completo?
 
-## Loops
 
 ## Decisiones
 
+El control de flujo en python se lleva acabo con las palabras reservadas:
+`if` - `elif` - `else`,
+utilizando la siguiente sintaxis
+
+    if condicion_1:
+        bloque_1
+    elif condicion_2:
+        bloque_2
+    ...
+    else:
+        bloque_n
+
+    mas_codigo
+
+dónde las condiciones `elif` y `else` son **opcionales**.
+Observa que los bloques se encuentran indentados
+(con sangría)
+con respecto a cada una de las palabras reservadas.
+Cada `condicion_x` debe corresponder a un valor booleano,
+tras el cual se debe incluir dos puntos.
+
+Al concluir con los bloques,
+se debe eliminar la indentación como se aprecia en la linea:
+`mas_codigo`.
+
+El flujo opera de la siguiente manera:
+* Se evalúa la **condicion_1** y se verifica si esta es `True`.
+  De no ser así,
+  se evalúa la **condicion_2** para checar si esta es `True`.
+  El proceso continúa hasta encontrar una condición verdadera.
+  Posteriormente,
+  se ejecuta el bloque al interior de dicha condición,
+  e inmediatamente después,
+  se transfiere el control a la línea `mas_codigo`,
+  es decir,
+  fuera de la estructura.
+
+* Si ninguna condición es `True`,
+  entonces se ejecuta el bloque de `else`
+  (si dicha condición existe).
+
+El uso de la indentación para indicar la región de cada bloque,
+es parte de la filosofía de python;
+al no utilizar algún tipo de paréntesis como separador,
+la escritura y lectura se asemeja más al lenguaje natural,
+ofreciendo,
+desde su perspectiva,
+mayor claridad.
+
+Ejemplo 1: Encuentra si el usuario nos da un entero par o impar.
+
+```python
+# Encuentra si el entero es par o impar
+x = int(input('Introduzca un entero: '))
+if(x % 2 == 0):
+    print(f'{x} es un numero par')
+else:
+    print(f'{x} es impar')
+```
+
+Ejemplo 2: Se hace una venta de boletos de loteria con las siguientes reglas:
+* Si compras hasta 20 boletos, el precio por boleto es de $100.
+* Si compras más de 20 boletos y menos de 30, se te da un precio de $90.
+* Si compras 30 o más boletos, obtienes un precio de $60.
+
+Crea un programa que me de el precio para cualquier cantidad de boletos deseados.
+
+```python
+# Compra de boletos
+boletos = int(input('Numero de boletos: '))
+if boletos < 21:
+    costo_boleto = 100
+elif boletos < 30:
+    costo_boleto = 90
+else:
+    costo_boleto = 60
+
+costo_total = boletos * costo_boleto
+print(f"Pagar: {costo_total}")
+```
+
+(Tengo dinero para comprar 20 boletos. ¿Será inteligente de mi parte comprar 20 boletos?)
+
+Si nuestro bloque `if`
+consiste en una sola declaración,
+python nos permite la siguiente sintaxis corta
+(esto solo se recomienda si el cuerpo del `if` es muy corto):
+
+```python
+estudiantes = ['Pedro', 'Laura']
+activo = False
+
+persona = 'Laura'
+if persona in estudiantes: activo = True
+
+print(f'Activo: {activo}')
+```
+
+Por último,
+en python se cuenta con las
+**expresiones condicionales**.
+Estas son sentencias de una linea para una declaración
+`if`-`else`,
+cuya sintaxis es:
+
+```python
+valor_si_True if condicion else valor_si_falso
+```
+
+En este caso,
+se evalúa la `condicion`;
+si esta es verdadera se regresa el valor `valor_si_True`,
+en caso contrario se regresa `valor_si_falso`.
+Ejemplo:
+
+```python
+x = -5
+signo = 'positivo' if x > 0 else 'negativo'
+
+print(signo)
+```
+
+Ejercicios:
+
+* Programa que lea la calificación en porcentaje de un estudiante y retorne su calificación en formato de letras.
+  Considere la siguiente relación:
+
+  <table>
+  <tr>
+      <td>A</td>
+      <td>90-100</td>
+  </tr>
+  <tr>
+      <td>B</td>
+      <td>80-89</td>
+  </tr>
+  <tr>
+      <td>C</td>
+      <td>70-79</td>
+  </tr>
+  <tr>
+      <td>D</td>
+      <td>60-69</td>
+  </tr>
+  <tr>
+      <td>F</td>
+      <td>0-59</td>
+  </tr>
+  </table>
+
+* Implemente el algoritmo de FizzBuzz.
+
+  Para un entero `i` de 1 a 20:
+
+    * Si 3 y 5 dividen a `i`, imprime: 'FizzBuzz'
+    * De no ser así, si 3 divide a `i`, imprime: 'Fizz'
+    * De no ser así, si 5 divide a `i`, imprime: 'Buzz'
+    * En cualquier otro caso imprime `i`.
+
+* Programa que, dados tres enteros, diga cuál es el menor.
+
+* Cree un programa que lea la edad de una persona y,
+  mediante una expresión condicional
+  (una sola linea),
+  retorne a **stdout** si la persona es adulta o menor de edad.
+
+## Secuencias
+
+En python,
+una **secuencia** es una colección de objetos ordenados,
+de tal manera que cada elemento se identifica por un índice entero.
+
+Definimos como secuencia todo objeto de python que cumpla con las siguientes tres condiciones:
+
+1. Es **iterable**:
+
+    El objeto tiene elementos sobre los cuales podemos iterar en un bucle `for`.
+
+2. Tiene una **longitud** la cual se obtiene mediante la función `len`:
+
+    Se llama longitud al número de elementos que contiene.
+
+3. Se puede acceder a sus elementos mediante corchetes `[]`,
+utilizando un **índice** entero el cual **empieza en cero**:
+
+    Los elementos tienen un orden fijo y predecible.
+
+Las secuencias se pueden clasificar en
+**mutables** e **inmutables**;
+llamamos mutables a aquellas cuyos elementos pueden cambiar después de su creación.
+
+Python cuenta con las siguientes secuencias principales:
+* `list` (mutable),
+* `tuple` (inmutable),
+* `range` (inmutable),
+* `str` (inmutable),
+* `byte` (inmutable)
+y
+* `bytearray` (mutable).
+
+Observemos estas tres propiedades:
+
+```python
+In [1]: lista = [2.0, 'hola', True]
+
+In [2]: tupla = ('bye', False, 3)
+
+In [3]: rango = range(10)  # Enteros del 0 al 9
+
+In [4]: print(type(lista), type(tupla), type(rango))
+
+In [5]: lista[1]
+
+In [6]: tupla[-1]
+
+In [7]: rango[3]
+
+In [8]: print(len(rango), len(tupla))
+
+In [9]: for num in rango:
+   ...:     print(num)
+
+In [10]: for elem in lista:
+    ...:    print(elem)
+
+In [11]: for char in 'Hello!':
+    ...:    print(char)
+```
+
+En esta parte hemos hecho uso del bucle `for`
+el cual discutiremos en la siguiente sección junto a la secuencia `range`.
+
+### Creación de listas y tuplas
+
+Además del uso de corchetes y paréntesis para crear una lista o tupla,
+respectivamente,
+contamos con constructores de estas clases.
+Para la creación de una lista a partir de un iterable,
+contamos con la función `list`,
+mientas que para una tupla existe `tuple`.
+
+Cuando `list` recibe un iterable
+regresa una nueva lista con los elementos del iterable.
+Si el argumento recibido ya es una lista,
+entonces retorna una copia superficial
+(*shallow copy*)
+de la misma,
+y si no se introduce ningún argumento,
+retorna una lista vacía.
+Las mismas reglas aplican para `tuple`.
+
+> [!NOTE]
+>
+> Recordamos que un iterable es cualquier objeto que tiene elementos sobre los que es posible iterar en un bucle `for`;
+> todas las secuencias son iterables pero existen también otros objetos sobre los que podemos iterar
+> (diccionarios, conjuntos, generadores, etc.).
+
+Por ejemplo,
+
+```python
+In [1]: lista = list('Robocop')
+
+In [2]: lista_vacia = list()
+
+In [3]: tupla = tuple([True, True, False])
+
+In [4]: print(lista, lista_vacia, tupla)
+
+In [5]: lista_copia = list(lista)
+
+In [6]: print(id(lista), id(lista_copia))
+```
+
+Para crear listas vacías basta con
+`L = []` o bien `L = list()`,
+mientras que para una tupla vacía tenemos
+`t = ()` o `t = tuple()`.
+El caso de una tupla con un sólo elemento es especial,
+y se logra mediante
+`tupla = (3,)` (observa la coma);
+la asignación `t = (3)`
+resulta en que `t` es el `int` 3,
+no una tupla con ese elemento.
+
+Por otro lado,
+python transforma valores separados por una coma en una tupla
+de manera implícita, de tal manera que
+
+```python
+In [1]: carros = 'Versa', 'Civic', 'K4'
+
+In [2]: print(type(carros))
+<class 'tuple'>
+```
+
+Las listas y las tuplas pueden contener elementos de cualquier tipo,
+de tal manera que una tupla puede contener otra tupla
+
+```python
+tupla = ('Maria', 'Roberto', (12, 15))
+```
+
+o bien otro iterador
+```python
+tupla = ('Maria', [True, False], range(10))
+```
+
+Por último,
+cuando tenemos una secuencia con pocos elementos,
+podemos extraerlos mediante
+
+```python
+nombre, edad, altura = ['Maria', 19, 1.62]
+
+grupo, ids = '5_1', [153642, 762231, 384994]
+
+punto = (-1.2, 3.8, 1.4)
+
+x, y, z = punto
+```
+
+
+### Rebanado (*slicing*)
+
+Además de las propiedades descritas para toda secuencia,
+las secuencias principales mencionadas anteriormente
+**soportan el rebanado** (*slicing*).
+Este utiliza un rango de índices para obtener
+nuevos objetos del mismo tipo,
+pero solo con los elementos dados por el rango.
+Por ejemplo,
+si declaramos la lista
+`L = [2, 6.1, 'a', 'b']`,
+entonces `L[1:3]` regresa `[6.1, 'a']`,
+es decir,
+una nueva lista cuyos elementos corresponden a los índices `1` y `2` de `L`.
+
+> [!NOTE]
+>
+> No todas las secuencias  te permiten el *slicing*.
+> Un ejemplo es el objeto mutable `deque`
+> (*double end queue*)
+> del módulo `collections` de la librería estándar.
+> El `deque` es una estructura similar a una lista,
+> dónde las operaciones para agregar y
+> eliminar elementos al principio o fin de la secuencia
+> son operaciones muy eficientes
+> (tiene orden O(1) en lugar de O(n) de una lista).
+
+Las reglas para el *slicing* fueron abordadas con los *strings*.
+Aquí unos ejemplos
+
+```python
+tupla = tuple('abcdefgh')
+personajes_avatar = ['Aang', 'Katara', 'Sokka', 'Toph', 'Zuko']
+
+print(tupla)
+print(tupla[0:3])
+print(tupla[1:7])
+print(tupla[1:7:2])
+print(tupla[1::2])
+
+print(lista[:2])
+print(lista[-2:])
+print(lista[1:])
+print(lista[::2])
+print(lista[::-1])
+```
+
+### Concatenación
+
+Otra operación que las secuencias soportan frecuentemente,
+aunque no siempre,
+es la concatenación;
+`range` no la soporta pero las demás secuencias principales sí.
+Esta se logra mediante la adición como mostramos abajo.
+
+```python
+In[1]: frutas = ('manzana', 'plátano')
+
+In[2]: verduras = ('tomate', 'cebolla', 'papa')
+
+In [3]: frutas + verduras
+Out[3]: ('manzana', 'plátano', 'tomate', 'cebolla', 'papa')
+```
+
+Para lograr la concatenación,
+debemos emplear secuencias del mismo tipo;
+**si intentamos concatenar una lista con una tupla obtendremos un**
+`TypeError`.
+La excepción son las secuencias `byte` y `bytearray`,
+las cuales pueden mezclarse.
+La operación de concatenación mediante `+` resulta en un nuevo objeto:
+
+```python
+ciudades_sin = ['Culiacán', 'Mochis']
+ciudades_jal = ['Arandas']
+
+ciudades = ciudades_sin + ciudades_jal
+print(f"id(ciudades_sin): {id(ciudades_sin)}")
+print(f"id(ciudades_jal): {id(ciudades_jal)}")
+print(f"id(ciudades): {id(ciudades)}")
+```
+
+Sin embargo,
+**si utilizamos el operador de asignación aumentado** `+=`
+para llevar acabo una concatenación
+**en una lista (objeto mutable)**,
+**el resultado corresponderá al mismo objeto** pero con nuevos elementos.
+**Para objetos inmutables** como una tupla o un string,
+**el resultado siempre será un nuevo objeto**.
+Aquí un ejemplo para una lista
+
+```python
+# Definir lista (mutable) y mostrar id
+alturas_estudiantes = [1.68, 1.79]
+print(f'alturas_estudiantes = {alturas_estudiantes}')
+print(f"id de lista 'alturas_estudiantes': {id(alturas_estudiantes)}")
+print()  # línea en blanco
+
+# Concatenar mediante += y mostrar id
+nuevas_alturas = [1.73, 1.82, 1.70]
+alturas_estudiantes += nuevas_alturas
+print(alturas_estudiantes)
+print(f"id de 'alturas_estudiantes' posterior a '+=': {id(alturas_estudiantes)}")
+```
+
+Y acá para un string
+
+```python
+# Definir string (inmutable) y mostrar id
+estudiantes = 'Juan, Maria'
+print(f'estudiantes = {estudiantes}')
+print(f"id de string 'estudiantes' (inmutable): {id(estudiantes)}")
+print()  # línea en blanco
+
+# Concatenar mediante += y mostrar id
+estudiantes += ', Rosa'
+print(estudiantes)
+print(f"id de 'estudiantes' posterior a '+=': {id(estudiantes)}")
+```
+
+> [!NOTE]
+>
+> Cada que utilizamos la concatenación,
+> python aloja memoria para el nuevo objeto que resulta de la operación,
+> dejando intactos a los objetos usados en la suma.
+> Además del gasto de memoria,
+> debemos considerar que esto genera un pequeño *overhead*.
+> Debemos tener especial consideración cuando realizamos concatenaciones dentro de un bucle,
+> lo cual genera un costo en tiempo de ejecución de orden cuadrático y puede generarse mucho uso de memoria.
+> Para solventar esta situación,
+> en el caso de un objeto mutable como la lista,
+> contamos con el método `extend` o el operador `+=`,
+> y en el caso de strings tenemos a `join`.
+
+### Métodos
+
+
+## Loops
+
+Para repetir un conjunto de declaraciones en python,
+contamos con dos  tipos de estructuras: `for` y `while`.
+
+El bucle `for` presenta la siguiente sintaxis:
+
+    for variable in iterable:
+        linea_1
+        linea_2
+        ...
+        linea_n
+
+donde el `iterable`, como ya mencionamos anteriormente,
+es un objeto capaz de regresar sus elementos uno a la vez
+(`str`, `list`, `tuple`, `dict`),
+y las lineas,
+representan un conjunto de instrucciones a repetir.
+Observa los dos puntos delante del `iterable`
+y la indentación que se le debe dar al bloque de instrucciones.
+
+Los bucles `for` operan de la siguiente manera;
+
+* A la `variable` se le asigna el primer elemento de `iterable`
+  y ejecuta cada una de las instrucciones en el bloque
+  de arriba hacia abajo
+  (`linea_1` a `linea_n`).
+
+* Al finalizar,
+  el flujo regresa para asignarle a la `variable` el segundo valor de `iterable` y volver a ejecutar las instrucciones.
+* Este proceso se repite para cada uno de los elementos en `iterable`.
+
+Antes de ver un ejemplo,
+veamos un objeto muy útil para la estructura `for`,
+el objeto `range`.
+Este objeto se utiliza para generar una secuencia de enteros con espaciamiento constante.
+Podemos generar una secuencia de enteros del 0 al 9 mediante
+
+    >>> x = range(10)
+    >>> type(x)
+    >>> print(x)
+    >>> print( list(x) )
+
+Utilizamos el comando `list`
+para transforma el objeto en una lista,
+ya que el objeto `range` no muestra sus elementos.
+Si deseamos un entero inicial distinto a cero,
+digamos de 2 a 8, utilizamos
+
+    >>> y = range(2, 9)
+
+La función range también acepta un argumento para la separación entre enteros.
+Por ejemplo, si deseamos los enteros impares del 1 al 13
+
+    >>> z = range(1, 14, 2)
+
+Regresando a los bucles `for`,
+estos se utilizan cuando conocemos el número exacto de iteraciones,
+o si este se encuentra determinado por la longitud de una sequencia.
+A continuación mostramos algunos ejemplos.
+
+Utilizando la secuencia de enteros range
+
+    # Imprime del 0 al 5
+    for i in range(6):
+        print(i)
+
+    # Imprime los número pares del 2 hasta el 8
+    for j in range(2, 9, 2):
+        print(j)
+
+Con los elementos de un string
+
+    saludo = '¡Hola!'
+    for char in saludo:
+        print(char)
+
+o los de una lista
+
+    ingredientes = [
+        'camaron', 'tomate', 'cebolla', 'chile serrano',
+        'cilantro', 'limon', 'pepino'
+    ]
+    print('Ingredientes para un ceviche:')
+    for ingredient in ingredientes:
+        print(ingredient)
+
+Las temperaturas de grados Celsius a Farenheit
+
+    # Tamaño de un grado Celsius en Farenheit
+    one_deg = 9 / 5
+    # Origen de Celsius (0) en Farenheit
+    origin_F = 32
+
+    # De cero a cien grados en pasos de diez grados
+    print('Celsius', 'Farenheit')
+    for Celsius in range(0, 101, 10):
+        Farenheit = Celsius * one_deg + origin_F
+        print(Celsius, Farenheit)
+
+Como mencionamos al principio de esta sección,
+contamos con un segunda estructura para la repetición de instrucciones,
+el búcle `while`.
+Este sigue la sintaxis
+
+    while condicion:
+        linea_1
+        ...
+        linea_n
+
+donde la `condicion` es un booleano.
+
+En este caso;
+
+* El intérprete checa el valor de `condicion`.
+Si el valor es `False`,
+el flujo se pasa automáticamente debajo del bloque,
+sin ejecutar instrucciones.
+Si el valor es `True`,
+se ejecuta la `linea_1`
+hasta llegar a la `linea_n`.
+Posteriormente,
+el flujo regresa arriba y verifica el valor de `condicion`,
+repitiéndose el proceso.
+
+* Para no caer en un bucle infinito,
+  debemos asegurarnos
+  que las lineas del bloque
+  transformen la `condicion` a `False`
+  después de un número finito de repeticiones de este.
+
+Un ejemplo sencillo se muestra a continuación
+
+```python
+entero = int(input('Introduzca un entero: '))
+while entero > 0:
+    entero -= 1
+    print(entero)
+```
+
+A continuación implementamos un juego de la rueda de la fortuna.
+
+    import random
+    import time
+
+    import tqdm  # Este módulo es externo y debe instalarse
+
+    # Enteros presentes en la rueda
+    rango = (0, 10)
+
+    # Selecciona un numero ganador arbitrareo para el juego
+    numero_ganador = random.randint(0, 10)
+
+    # Al inicio no hay ganador
+    ganador = False
+    while (not ganador):
+        input('Tira de la rueda ')
+        # Da tiempo para que la rueda gire
+        # Para mayor diversion agreguemos barra de progreso
+        for i in tqdm.tqdm( range(10) ):
+            time.sleep(0.2)
+        numero = random.randint(0, 10)
+        print(numero)
+        if numero == numero_ganador:
+            print('Ganaste!')
+            ganador = True
+        else:
+            print('Sigue intentando')
+            print()
+
+
+En ocasiones,
+no deseamos ejecutar todas las lineas dentro de un bloque,
+ya sea un bucle de tipo `for` o `while`.
+Para esto,
+contamos con los comandos:
+`break` y `continue`.
+
+El comando `break`,
+transfiere el flujo hacia la primer linea debajo
+(afuera)
+del bucle.
+Por su parte,
+`continue` lo transfiere al principio del bucle;
+en el caso de `for`,
+la `variable` tomará el siguiente valor del `iterable`.
+
+
+Creemos un programa que lea las calificaciones de un estudiante,
+las almacene en una lista y luego nos entregue el promedio.
+El programa debe funcionar para distintas clases,
+es decir,
+el numero de calificaciones es desconocido de antemano.
+
+```python
+calificaciones = []
+msg = 'Introduzca calificación (seleccione "end" para terminar): '
+while True:
+    grade = input(msg)
+    if grade.lower() == 'end':
+        print('Listo\n')
+        break
+    # No olvidemos transformar a un tipo numérico
+    grade = float(grade)
+    calificaciones.append(grade)
+promedio = sum(calificaciones) / len(calificaciones)
+print(f"Promedio: {promedio}")
+```
+
+Ejercicios
+
+Cree un programa que lea dos enteros,
+**a** y **b**,
+donde **b** es distinto a cero.
+Utilizando solo las operaciones algebraicas básicas
+de suma y/o resta,
+el programa nos debe dar el número entero de veces
+que **b** cabe en **a**
+(`a // b`),
+así como el residuo
+(`a % b`).
+Obviamente no se permite utilizar `/`, `//`, ni `%`,
+solo la suma y la resta.
+
 ## Funciones
-## Estructuras de Datos
+
+La sintaxis para la creación de funciones en python es la siguiente:
+
+```python
+def nombre_funcion(arg1, arg2, ..., argN):
+    '''
+    docstring
+    '''
+    declaraciones
+    return expresion
+```
+
+De acuerdo a las recomendaciones PEP8,
+el nombre de la función `nombre_funcion`,
+debería ser descriptivo,
+usar un verbo,
+así como un formato snake_case.
+
+Los valores `arg1` hasta `argN` se conocen como parámetros,
+siendo estos opcionales.
+La sección **docstring** (opcional)
+se refiere a lineas de texto que documentan nuestra función.
+Es esta,
+se anota el propósito de la función,
+el tipo de datos de entrada y salida,
+y en ocasiones detalles de implementación.
+Para funciones sencillas una línea puede ser suficiente,
+pero es común que esta sección se extienda.
+Ver
+[numpy docstyle](https://numpydoc.readthedocs.io/en/latest/format.html)
+dónde se aborda un estilo de documentación muy empleado,
+y luego visita
+[aquí](https://numpydoc.readthedocs.io/en/latest/example.html#example)
+para ver un ejemplo.
+
+Para regresar un valor,
+las funciones utilizan la palabra reservada `return`
+seguida de la variable u objeto deseado.
+Cuando el intérprete encuentra la palabra `return`,
+el flujo retorna inmediatamente a la línea desde dónde se invocó la función,
+sin importar si esta contiene  más lineas.
+
+Si una función no cuenta con la palabra `return`,
+el intérprete ejecuta todas las lineas de codigo,
+de arriba a abajo,
+y retorna el valor `None`,
+es decir,
+agrega como última línea para la función:
+`return None`.
+
+Una función sencilla puede verse así
+
+```python
+def saludar():
+    return '¡Hola Matrix!'
+
+saludo = saludar()
+print(saludo)
+```
+la cual no toma argumentos y regresa la palabra `'Hola!'`.
+
+Al estar planeando una aplicación,
+es común anotar las funciones que requeriremos
+para realizar la tarea sin aún ingresar su contenido.
+Debido a que las funciones forzosamente deben tener al menos una linea en su cuerpo,
+podemos usar en este caso la palabra reservada `pass`,
+y de esta manera evitar que el intérprete arroje un error,
+como en
+
+```python
+def aceleracion(planeta):
+    pass
+
+def distancia(gravedad, vel_inicial, tiempo):
+    pass
+```
+
+Al llamar una función,
+se crea un espacio local
+(scope local)
+con los parámetros de la función
+(las variables),
+a los cuales se le asignan los valores con que fue llamada esta.
+Por ejemplo,
+
+```python
+import math
+
+def distancia(x, y):
+    """Regresa la distancia del origen a un punto dado.
+
+    """
+    dist = math.sqrt(x**2 + y**2)
+    return dist
+
+coor_x, coor_y = (3.0, 4.0)
+print(distancia(coor_x, coor_y))
+```
+
+En el programa anterior,
+python crea en el scope global los nombres:
+`math`, `distancia`, `coor_x` y `coor_y`,
+dónde las variables
+`coor_x` y `coor_y` toman los valores de 3.0 y 4.0,
+respectivamente.
+Al invocar la función `distancia`,
+se crea un scope local con las variables `x`, `y`,
+las cuales toman los valores anteriores.
+Posteriormente,
+se crea la variable local `dist` y se regresa su valor,
+retornando el flujo a la línea desde donde se llamo la función.
+En este momento se elimina el scope local,
+borrando todas sus variables.
+
+### Parámetros opcionales
+
+En python podemos asignar valores por default a los parámetros deseados de una función.
+De esta manera podemos llamarla sin especificar un valor para estos argumentos.
+
+La regla a respetar es que
+**los parámetros opcionales deben aparecer al final**,
+después de todos los obligatorios. Por ejemplo:
+
+```python
+def obtener_altura(tiempo, gravedad=9.8):
+    """Distancia que recorre un objeto que se deja caer desde reposo.
+
+    Parameters
+    ----------
+    tiempo : float o int
+        `tiempo` de caída libre.
+    gravedad : float, optional
+        aceleración constante del objeto.
+
+    Returns
+    -------
+    float
+        La distancia recorrida por un objeto que experimenta aceleración
+        constante.
+
+    """
+    return (gravedad * tiempo**2) / 2
+
+# Altura de un pozo donde una piedra tarda 4 segundos en caer
+print(obtener_altura(4))
+```
+
+Mientras que **una función especificada mediante**
+
+```python
+def sumar(a=3, b):
+    return a + b
+```
+
+**retorna un error.**
+
+Para llamar a la función `obtener_altura`,
+podemos utilizar
+
+```python
+h_Tierra = obtener_altura(5)
+```
+
+en cuyo caso se asignan al scope local las variables
+`tiempo = 5` y `gravedad = 9.8`.
+O bien,
+podemos llamar a la función mediante
+
+```python
+h_Luna = obtener_altura(5, 1.62)
+```
+
+en cuyo caso se tendrá
+`tiempo = 5` y `gravedad = 1.62`.
+
+En ambos casos,
+respetamos el orden de los argumentos.
+Podemos también introducir los parámetros en el orden deseado utilizando sus nombres.
+Por ejemplo,
+
+```python
+h_Sol = obtener_altura(gravedad=274.2, tiempo=5)
+```
+
+Nota:
+**No se pueden utilizar argumentos de posición después de un argumento de nombre (keyword argument)**;
+Por ejemplo,
+para la función
+
+```python
+def sumar(a, b, c=1):
+    return a + b + c
+```
+
+es correcto llamarla de las siguientes formas:
+
+```python
+sumar(3, b=4)
+sumar(3, b=4, c=-2)
+```
+
+pero las siguiente invocaciones retornan error de sintaxis (SyntaxError)
+
+```python
+sumar(a=3, 4)
+sumar(3, b=4, 4)
+```
+
+ya que aparecen argumentos de posición después de un argumento de keyword.
+
+
+### Funciones lambda
+
+En python contamos con un segundo tipo de funciones,
+conocidas como **funciones lambda**.
+Estas funciones,
+también llamadas en ocasiones **funciones anónimas**,
+se describen en una sola línea y no tienen un nombre
+(de ahí el nombre de anónimas)
+a menos que sean almacenadas.
+
+La instrucción
+
+```python
+lambda var1, ..., varN: expresion
+```
+
+regresa una función lambda con los `N` argumentos
+`var1, var2, ..., varN`.
+La declaración `expresion` indica la operación  que llevará acabo la función y no requiere la palabra `return`.
+Observa que aunque podemos declarar la cantidad de argumentos deseados (o no declarar ninguno),
+solo podemos introducir una expresión.
+
+Estas funciones normalmente se utilizan como argumentos para funciones de mayor orden como
+`map`, `filter`, `sort`,
+las cuales requieren de una función para operar.
+Sin embargo, también se pueden utilizar para declarar una operación sencilla que se está repitiendo en distintos lugares de nuestro código. Por ejemplo
+
+```python
+es_par = lambda x: x % 2 == 0
+
+a = 11
+print( es_par(a) )
+```
+
+o bien
+
+```python
+# Genera una parabola
+x = [2, 4, 6, 8]
+y = list(map( lambda num: num**2, x ))
+```
+
+Observa que estas funciones no tienen **docstring** ni tampoco pueden incluir bucles `for` ni decisiones con `if`.
+
+A continuación mostramos un ejemplo más
+
+```python
+def log_2(x: int) -> tuple[int, int]:
+    """Logaritmo entero de base 2 de un entero y su residuo.
+
+    Regresa el entero 'm' más grande, tal que 2**m <= x,
+    así como el residuo dado por x - 2**m.
+
+    Parameters
+    ----------
+    x : int
+        Un entero mayor a cero.
+
+    Returns
+    -------
+    logaritmo : int
+        Logaritmo de base 2 de `x`.
+    residuo : int
+        El residuo restante.
+
+    Raises
+    ------
+    ValueError
+        Si el argumento no es un entero positivo.
+
+    Notes
+    -----
+    Se utilizan solo las operaciones aritméticas básicas.
+    """
+    # Checa que la entrada sea de tipo apropiado
+    # De no ser así termina el programa con un error ValueError
+    if not isinstance(x, int) or x <= 0:
+        raise ValueError("El valor debe ser un entero positivo.")
+
+    # El residuo se repite en diferentes secciones.
+    # Es más adecuado determinarlo con una función.
+    get_residue = lambda valor, potencia: valor - potencia
+
+    # Caso base
+    if x == 1:
+        log = 0
+        residuo = 0
+        return (log, residuo)
+    # En cualquier otro caso
+    count = 1
+    potencia = 2
+    residuo = get_residue(x, potencia)
+    while residuo > 0:
+        count += 1
+        potencia *= 2
+        residuo = get_residue(x, potencia)
+    # El residuo es cero o negativo en este punto
+    # Actualiza count y residuo en el caso que residuo sea negativo
+    if residuo < 0:
+        count -= 1
+        potencia //= 2 # esto es: potencia = potencia // 2
+        residuo = get_residue(x, potencia)
+    # count y residuo son correctos ahora
+    log = count
+    return (log, residuo)
+
+x = int(input('Da un entero positivo: '))
+print(f"(log_2, residuo) = {log_2(x)}")
+```
+
+Ejercicios
+
+1. Cree una función que regrese si un niño tiene la altura para subirse a un juego.
+La función debe aceptar la altura (en metros) de un niño y si esta es mayor a 1.5
+la función debe retornar el booleano True. En otro caso debe regresar False.
+
+2. Cree una función que le de un mensaje de bienvenida a un usuario.
+La función debe pedirle al usuario que teclee su nombre y debe regresar
+un string que contenga un mensaje de bienvenida con el nombre del usuario
+(no se vale que sólo incluya el nombre de la persona).
+
+3. Cree una función para calcular el precio de un producto con el interés correspondiente.
+La función debe aceptar un precio y un interés (en porcentaje) y debe regresar el precio final.
+
+4. Cree una función que calcule el área de un triángulo dadas sus tres longitudes
+mediante la fórmula de Herón: [ver aquí](https://es.wikipedia.org/wiki/Fórmula_de_Herón)
+
+5. Utiliza `map` y una **función lambda** para crear una lista con 101 coordenadas equidistantes del 0 al 1. Clave: recuerda la función `range`.
+
+6. Grafica la función Gaussiana `exp(-x**2)` en el dominio
+`[-3, 3]` utilizando 201 puntos equidistantes y la librería `matplotlib`.
+Para esto,
+llena el código en las siguientes funciones
+
+```python
+import math
+import matplotlib.pyplot as plt
+
+# La siguiente función debe calcular la función Gaussiana en los puntos deseados.
+# Los parámetros de entrada están dados por el punto de inicio x0, el final xf,
+# y el numero de puntos en ese intervalo.
+# La función debe regresar una tupla con dos listas:
+# La primer lista debe contener los valores en x,
+# y la segunda los valores de la Gaussiana en cada punto.
+def exponencial_negativa(x0: float, xf: float, num: int) -> tuple(list[float], list[float]):
+    """Agregar docstring
+
+    """
+    pass
+
+# La siguiente función debe aceptar listas con las coordenadas en 'x' y en 'y',
+# y debe graficarlos mediante una línea contínua de color rojo, grosor de linea de 1pt,
+# ejes X de [-4, 4] y ejes Y de [-0.5, 0.5]
+def graficar(x , y):
+    """Agregar docstring
+
+    """
+    pass
+
+x, y = exponencial_negativa(-3, 3, 201)
+graficar(x, y)
+```
+Utiliza la la función `pyplot` de la librería externa `matplotlib`
+para generar la gráfica.
+Clave: investiga como funciona `pyplot` para generar una línea.
+
+
+## Colecciones
 
 </div>
