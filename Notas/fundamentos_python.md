@@ -2026,10 +2026,25 @@ print(f"(log_2, residuo) = {log_2(x)}")
 
 Ejercicios
 
-Utiliza `map` y una **función lambda** para crear una lista con 101 coordenadas equidistantes del 0 al 1. Clave: recuerda la función `range`.
+1. Cree una función que regrese si un niño tiene la altura para subirse a un juego.
+La función debe aceptar la altura (en metros) de un niño y si esta es mayor a 1.5
+la función debe retornar el booleano True. En otro caso debe regresar False.
 
-Grafica la función exponencial negativa `exp(-x)` en el dominio
-`[-1, 3]` utilizando 101 puntos equidistantes.
+2. Cree una función que le de un mensaje de bienvenida a un usuario.
+La función debe pedirle al usuario que teclee su nombre y debe regresar
+un string que contenga un mensaje de bienvenida con el nombre del usuario
+(no se vale que sólo incluya el nombre de la persona).
+
+3. Cree una función para calcular el precio de un producto con el interés correspondiente.
+La función debe aceptar un precio y un interés (en porcentaje) y debe regresar el precio final.
+
+4. Cree una función que calcule el área de un triángulo dadas sus tres longitudes
+mediante la fórmula de Herón: [ver aquí](https://es.wikipedia.org/wiki/Fórmula_de_Herón)
+
+5. Utiliza `map` y una **función lambda** para crear una lista con 101 coordenadas equidistantes del 0 al 1. Clave: recuerda la función `range`.
+
+6. Grafica la función Gaussiana `exp(-x**2)` en el dominio
+`[-3, 3]` utilizando 201 puntos equidistantes y la librería `matplotlib`.
 Para esto,
 llena el código en las siguientes funciones
 
@@ -2037,27 +2052,35 @@ llena el código en las siguientes funciones
 import math
 import matplotlib.pyplot as plt
 
-def exponencial_negativa(x0: float, xf: float, num: int) -> list[float]:
+# La siguiente función debe calcular la función Gaussiana en los puntos deseados.
+# Los parámetros de entrada están dados por el punto de inicio x0, el final xf,
+# y el numero de puntos en ese intervalo.
+# La función debe regresar una tupla con dos listas:
+# La primer lista debe contener los valores en x,
+# y la segunda los valores de la Gaussiana en cada punto.
+def exponencial_negativa(x0: float, xf: float, num: int) -> tuple(list[float], list[float]):
     """Agregar docstring
 
     """
     pass
 
+# La siguiente función debe aceptar listas con las coordenadas en 'x' y en 'y',
+# y debe graficarlos mediante una línea contínua de color rojo, grosor de linea de 1pt,
+# ejes X de [-4, 4] y ejes Y de [-0.5, 0.5]
 def graficar(x , y):
     """Agregar docstring
 
     """
     pass
 
-x, y = exponencial_negativa(-1, 3)
+x, y = exponencial_negativa(-3, 3, 201)
 graficar(x, y)
 ```
 Utiliza la la función `pyplot` de la librería externa `matplotlib`
 para generar la gráfica.
 Clave: investiga como funciona `pyplot` para generar una línea.
-Haz que el rango de valores en x sea de [-2, 4] y en y de [-1, 3].
 
 
-## Estructuras de Datos
+## Colecciones
 
 </div>
