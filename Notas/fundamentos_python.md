@@ -1219,32 +1219,7 @@ Python cuenta con las siguientes secuencias principales:
 y
 * `bytearray` (mutable).
 
-Además de las propiedades descritas para toda secuencia,
-estos tipos soportan el rebanado (*slicing*),
-en el cuál se utiliza un rango de índices para obtener
-nuevos objetos del mismo tipo,
-pero solo con los elementos dados por dicho rango.
-Por ejemplo,
-si declaramos la lista
-`L = [2, 6.1, 'a', 'b']`,
-entonces `L[1:3]` regresa `[6.1, 'a']`,
-es decir,
-una nueva lista cuyos elementos corresponden a los índices `1` y `2` de `L`.
-
-> [!NOTE]
->
-> No todas las secuencias  te permiten el *slicing*.
-> Un ejemplo es el objeto `deque`
-> (*double end queue*)
-> del módulo `collections` de la librería estándar.
-> El `deque` es una estructura similar a una lista,
-> dónde las operaciones para agregar a la cola (append) y
-> eliminar el elemento en la cola (pop),
-> son operaciones muy eficientes
-> (tiene orden O(1) en lugar de O(n) de una lista).
-
-A continuación mostramos algunos ejemplos,
-los cuales debes correr desde tu intérprete:
+Observemos estas tres propiedades:
 
 ```python
 In [1]: lista = [2.0, 'hola', True]
@@ -1261,40 +1236,247 @@ In [6]: tupla[-1]
 
 In [7]: rango[3]
 
-In [8]: lista[-2:]
+In [8]: print(len(rango), len(tupla))
 
-In [9]: tupla[:2]
+In [9]: for num in rango:
+   ...:     print(num)
 
-In [10]: rango
+In [10]: for elem in lista:
+    ...:    print(elem)
 
-In [11]: rango[2:5]
-
-In [12]: list(rango[2:5])
-
-In [13]: for val in tupla:
-            print(val)
-
-In [14]: for num in rango:
-             print(num)
-
-In [15]: len(rango)
+In [11]: for char in 'Hello!':
+    ...:    print(char)
 ```
 
-Otra operación que soportan frecuentemente las secuencias,
-aunque no siempre (`range` no lo soporta),
-es la concatenación.
-Esta se logra mediante la adición como en
+En esta parte hemos hecho uso del bucle `for`
+el cual discutiremos en la siguiente sección junto a la secuencia `range`.
+
+### Creación de listas y tuplas
+
+Además del uso de corchetes y paréntesis para crear una lista o tupla,
+respectivamente,
+contamos con constructores de estas clases.
+Para la creación de una lista a partir de un iterable,
+contamos con la función `list`,
+mientas que para una tupla existe `tuple`.
+
+Cuando `list` recibe un iterable
+regresa una nueva lista con los elementos del iterable.
+Si el argumento recibido ya es una lista,
+entonces retorna una copia superficial
+(*shallow copy*)
+de la misma,
+y si no se introduce ningún argumento,
+retorna una lista vacía.
+Las mismas reglas aplican para `tuple`.
+
+> [!NOTE]
+>
+> Recordamos que un iterable es cualquier objeto que tiene elementos sobre los que es posible iterar en un bucle `for`;
+> todas las secuencias son iterables pero existen también otros objetos sobre los que podemos iterar
+> (diccionarios, conjuntos, generadores, etc.).
+
+Por ejemplo,
 
 ```python
-In[16]: frutas = ('manzana', 'plátano')
+In [1]: lista = list('Robocop')
 
-In[16]: verduras = ('tomate', 'cebolla', 'papa')
+In [2]: lista_vacia = list()
 
-In [16]: frutas + verduras
-Out[16]: ('manzana', 'plátano', 'tomate', 'cebolla', 'papa')
+In [3]: tupla = tuple([True, True, False])
+
+In [4]: print(lista, lista_vacia, tupla)
+
+In [5]: lista_copia = list(lista)
+
+In [6]: print(id(lista), id(lista_copia))
 ```
 
-Discutiremos la secuencia range en la siguiente sección sobre bucles.
+Para crear listas vacías basta con
+`L = []` o bien `L = list()`,
+mientras que para una tupla vacía tenemos
+`t = ()` o `t = tuple()`.
+El caso de una tupla con un sólo elemento es especial,
+y se logra mediante
+`tupla = (3,)` (observa la coma);
+la asignación `t = (3)`
+resulta en que `t` es el `int` 3,
+no una tupla con ese elemento.
+
+Por otro lado,
+python transforma valores separados por una coma en una tupla
+de manera implícita, de tal manera que
+
+```python
+In [1]: carros = 'Versa', 'Civic', 'K4'
+
+In [2]: print(type(carros))
+<class 'tuple'>
+```
+
+Las listas y las tuplas pueden contener elementos de cualquier tipo,
+de tal manera que una tupla puede contener otra tupla
+
+```python
+tupla = ('Maria', 'Roberto', (12, 15))
+```
+
+o bien otro iterador
+```python
+tupla = ('Maria', [True, False], range(10))
+```
+
+Por último,
+cuando tenemos una secuencia con pocos elementos,
+podemos extraerlos mediante
+
+```python
+nombre, edad, altura = ['Maria', 19, 1.62]
+
+grupo, ids = '5_1', [153642, 762231, 384994]
+
+punto = (-1.2, 3.8, 1.4)
+
+x, y, z = punto
+```
+
+
+### Rebanado (*slicing*)
+
+Además de las propiedades descritas para toda secuencia,
+las secuencias principales mencionadas anteriormente
+**soportan el rebanado** (*slicing*).
+Este utiliza un rango de índices para obtener
+nuevos objetos del mismo tipo,
+pero solo con los elementos dados por el rango.
+Por ejemplo,
+si declaramos la lista
+`L = [2, 6.1, 'a', 'b']`,
+entonces `L[1:3]` regresa `[6.1, 'a']`,
+es decir,
+una nueva lista cuyos elementos corresponden a los índices `1` y `2` de `L`.
+
+> [!NOTE]
+>
+> No todas las secuencias  te permiten el *slicing*.
+> Un ejemplo es el objeto mutable `deque`
+> (*double end queue*)
+> del módulo `collections` de la librería estándar.
+> El `deque` es una estructura similar a una lista,
+> dónde las operaciones para agregar y
+> eliminar elementos al principio o fin de la secuencia
+> son operaciones muy eficientes
+> (tiene orden O(1) en lugar de O(n) de una lista).
+
+Las reglas para el *slicing* fueron abordadas con los *strings*.
+Aquí unos ejemplos
+
+```python
+tupla = tuple('abcdefgh')
+personajes_avatar = ['Aang', 'Katara', 'Sokka', 'Toph', 'Zuko']
+
+print(tupla)
+print(tupla[0:3])
+print(tupla[1:7])
+print(tupla[1:7:2])
+print(tupla[1::2])
+
+print(lista[:2])
+print(lista[-2:])
+print(lista[1:])
+print(lista[::2])
+print(lista[::-1])
+```
+
+### Concatenación
+
+Otra operación que las secuencias soportan frecuentemente,
+aunque no siempre,
+es la concatenación;
+`range` no la soporta pero las demás secuencias principales sí.
+Esta se logra mediante la adición como mostramos abajo.
+
+```python
+In[1]: frutas = ('manzana', 'plátano')
+
+In[2]: verduras = ('tomate', 'cebolla', 'papa')
+
+In [3]: frutas + verduras
+Out[3]: ('manzana', 'plátano', 'tomate', 'cebolla', 'papa')
+```
+
+Para lograr la concatenación,
+debemos emplear secuencias del mismo tipo;
+**si intentamos concatenar una lista con una tupla obtendremos un**
+`TypeError`.
+La excepción son las secuencias `byte` y `bytearray`,
+las cuales pueden mezclarse.
+La operación de concatenación mediante `+` resulta en un nuevo objeto:
+
+```python
+ciudades_sin = ['Culiacán', 'Mochis']
+ciudades_jal = ['Arandas']
+
+ciudades = ciudades_sin + ciudades_jal
+print(f"id(ciudades_sin): {id(ciudades_sin)}")
+print(f"id(ciudades_jal): {id(ciudades_jal)}")
+print(f"id(ciudades): {id(ciudades)}")
+```
+
+Sin embargo,
+**si utilizamos el operador de asignación aumentado** `+=`
+para llevar acabo una concatenación
+**en una lista (objeto mutable)**,
+**el resultado corresponderá al mismo objeto** pero con nuevos elementos.
+**Para objetos inmutables** como una tupla o un string,
+**el resultado siempre será un nuevo objeto**.
+Aquí un ejemplo para una lista
+
+```python
+# Definir lista (mutable) y mostrar id
+alturas_estudiantes = [1.68, 1.79]
+print(f'alturas_estudiantes = {alturas_estudiantes}')
+print(f"id de lista 'alturas_estudiantes': {id(alturas_estudiantes)}")
+print()  # línea en blanco
+
+# Concatenar mediante += y mostrar id
+nuevas_alturas = [1.73, 1.82, 1.70]
+alturas_estudiantes += nuevas_alturas
+print(alturas_estudiantes)
+print(f"id de 'alturas_estudiantes' posterior a '+=': {id(alturas_estudiantes)}")
+```
+
+Y acá para un string
+
+```python
+# Definir string (inmutable) y mostrar id
+estudiantes = 'Juan, Maria'
+print(f'estudiantes = {estudiantes}')
+print(f"id de string 'estudiantes' (inmutable): {id(estudiantes)}")
+print()  # línea en blanco
+
+# Concatenar mediante += y mostrar id
+estudiantes += ', Rosa'
+print(estudiantes)
+print(f"id de 'estudiantes' posterior a '+=': {id(estudiantes)}")
+```
+
+> [!NOTE]
+>
+> Cada que utilizamos la concatenación,
+> python aloja memoria para el nuevo objeto que resulta de la operación,
+> dejando intactos a los objetos usados en la suma.
+> Además del gasto de memoria,
+> debemos considerar que esto genera un pequeño *overhead*.
+> Debemos tener especial consideración cuando realizamos concatenaciones dentro de un bucle,
+> lo cual genera un costo en tiempo de ejecución de orden cuadrático y puede generarse mucho uso de memoria.
+> Para solventar esta situación,
+> en el caso de un objeto mutable como la lista,
+> contamos con el método `extend` o el operador `+=`,
+> y en el caso de strings tenemos a `join`.
+
+### Métodos
+
 
 ## Loops
 
