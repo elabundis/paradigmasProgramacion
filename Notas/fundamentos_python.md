@@ -1475,7 +1475,106 @@ print(f"id de 'estudiantes' posterior a '+=': {id(estudiantes)}")
 > contamos con el método `extend` o el operador `+=`,
 > y en el caso de strings tenemos a `join`.
 
-### Métodos
+### Métodos para listas y tuplas
+
+Las listas y tuplas siendo objetos como todo en python,
+tienen métodos que actúan sobre las instancias creadas.
+
+Las listas al ser objetos mutables nos permiten cambiar elementos,
+agregar y eliminarlos.
+
+Ocurre frecuentemente que desconocemos el contenido de una lista por adelantado.
+Es común que empecemos con una lista vacía y agreguemos elementos durante la marcha con el comando `append`
+
+```python
+alumnos = []
+alumnos.append('Mayra')
+alumnos.append('Jose')
+alumnos.append('Arturo')
+
+print(alumnos)
+```
+
+Para hacerlo más interesante podemos agregar aleatoriedad con el módulo `random`
+
+```python
+import random
+
+dado = (1, 2, 3, 4, 5, 6)
+juego = []  # lista vacía
+for i in range(10): # esto hará que el bucle corra 10 veces
+    lanzamiento = random.choice(dado)
+    juego.append(lanzamiento)
+print(juego)
+```
+
+Como ya sabemos,
+podemos mandar llamar un elemento de la lista
+(o cualquier secuencia)
+utilizando su índice dentro de corchetes
+(**recordemos que el índice inicial es cero**).
+Esta misma notación se emplea para modificar un elemento.
+Por ejemplo
+
+```python
+>>> libros = ['Farenheit 451', 'Un mundo feliz', '1984']
+>>> libros[2] = 'Donde habitan las sirenas' # cambiar elemento 2
+>>> print(libros)
+['Farenheit 451', 'Un mundo feliz', 'Donde habitan las sirenas']
+```
+
+donde hemos modificado el elemento con índice 2.
+
+Por otro lado,
+para eliminar un elemento tenemos varias opciones.
+Podemos utilizar el comando `del` seguido del elemnto a eliminar como en
+
+```python
+calificaciones = [9.3, 8.2, 7.5, 8.8]
+
+del calificaciones[1]  # elimina elemento con índice 1
+print(calificaciones)  # resultado:[9.3, 7.5, 8.8]
+```
+
+También contamos con el método `pop`.
+Este acepta un índice,
+regresando y eliminando el elemento correspondiente.
+Si no se le da un argumento regresa y elimina el último.
+
+```python
+>>> L = [2, 4, 6, 8, 10]
+>>> L.pop() # retorna y elimina el último elemento
+10
+>>> print(L)
+[2, 4, 6, 8]
+>>> L.pop(2) # retorna y elimina el elemento con índice 2
+6
+>>> print(L)
+[2, 4, 8]
+```
+
+Para eliminar la primera aparición de un elemento que tiene cierto valor,
+utilizamos el método `remove`
+e introducimos dicho valor.
+Por ejemplo,
+
+```python
+mis_frutas = ['pera', 'manzana', 'fresa', 'manzana']
+mis_frutas.remove('manzana')
+print(mis_frutas)  # imprime ['pera', 'fresa', 'manzana']
+```
+
+De esta manera,
+eliminamos la primera aparición de 'manzana'.
+Por último,
+para eliminar todos los elementos de una lista
+contamos con su método `clear`.
+
+```python
+L = [3, 5, 8, 1, 0, 3]
+L.clear()
+print(L)  # imprime []
+```
 
 
 ## Loops
