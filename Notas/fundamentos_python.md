@@ -1587,6 +1587,43 @@ Por ejemplo
 ```
 
 donde hemos modificado el elemento con índice 2.
+Si deseamos modificar más de un elemento debemos utilizar
+*slicing* mediante la sintaxis
+
+```python
+lista[start:end] = [elementos] # cualquier iterable a la derecha
+```
+
+dónde `start` es inclusivo y `end` exclusivo.
+Si el rebanado y el iterable a la derecha contienen el mismo número de elementos,
+el resultado es modificar los elementos correspondientes a los índices. Por ejemplo,
+
+```python
+alturas = [1.73, 1.82, 1.76, 1.90, 1.80]
+# Modificar los elementos 2 y 3
+alturas[2:4] = (1.68, 1.79)
+print(alturas)  # [1.73, 1.82, 1.68, 1.79, 1.80]
+```
+
+Esta estrategia modifica la lista,
+no crea una nueva.
+Si el número de elementos en el iterable es menor a los elementos dados por los índices,
+la lista reducirá su tamaño.
+Si por el contrario,
+el iterable contiene más elementos,
+la lista crecerá.
+
+```python
+alturas = [1.73, 1.82, 1.76, 1.90, 1.80]
+# Menos elementos que el rango
+alturas[2:4] = [1.95]
+print(alturas)  # [1.73, 1.82, 1.95, 1.80]
+
+# Más elementos que el rango
+letras = ['a', 'b', 'c', 'd', 'e']
+letras[1:3] = ['A', 'B', 'C']
+print(letras)  # ['a', 'A', 'B', 'C', 'd', 'e']
+```
 
 #### Eliminar elementos
 
@@ -1629,8 +1666,21 @@ mis_frutas.remove('manzana')
 print(mis_frutas)  # imprime ['pera', 'fresa', 'manzana']
 ```
 
-De esta manera,
-eliminamos la primera aparición de 'manzana'.
+nos permite eliminar la primera aparición de 'manzana'.
+
+Si deseamos eliminar más de un elemento podemos utilizar el rebanado mediante
+
+```python
+list[start:end] = []  # cualquier iterable vacío a la derecha
+```
+
+Para eliminar los elementos 1 y 2 podemos ejecutar entonces
+
+```python
+consonantes = ['b', 'e', 'i', 'f', 'g']
+consonantes[1:3] = []  #  ['b', 'f', 'g']
+```
+
 Por último,
 para eliminar todos los elementos de una lista
 contamos con su método `clear`.
