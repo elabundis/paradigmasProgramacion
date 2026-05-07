@@ -893,6 +893,42 @@ podemos acceder a la entrada (código) de la celda número 6 mediante `In[6]` o 
 La última salida se almacena en la variable `_`
 y la última entrada en `_i`.
 
+Un método muy útil es `join`,
+el cual crea un string uniendo los elemento de un objeto iterable
+como una lista, tupla, diccionario, etc
+(definición más abajo)
+con el separador que yo desee.
+La sintaxis es la siguiente
+
+```python
+separador.join(iterable)
+```
+
+dónde el `separador` es un string y el `iterable` solo debe tener strings como elementos.
+Por ejemplo,
+
+```python
+cafes = ' '.join(['capuchino', 'latte'])
+print(cafes)  #  'capuchino latte'
+```
+
+crea un string uniendo cada elemento de la lista con un espacio como separador.
+O podemos ejecutar
+
+```python
+# unir mediante coma y espacio
+bebidas = ', '.join(('jugo', 'cerveza', 'tequila'))
+print(bebidas)  #  'jugo, cerveza, tequila'
+
+# unir mediante renglón nuevo
+cafes = '\n'.join(('espresso', 'frappé'))
+print(cafes)
+```
+
+para unir los elementos de una tupla mediante una coma y un espacio,
+o bien mediante un nuevo renglón.
+Este método regresa un nuevo string y no afecta el `iterable`.
+
 Continuando con el uso de strings,
 también podemos combinar **palabras reservadas** con nuestros strings.
 Por ejemplo,
