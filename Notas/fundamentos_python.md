@@ -1475,13 +1475,18 @@ print(f"id de 'estudiantes' posterior a '+=': {id(estudiantes)}")
 > contamos con el método `extend` o el operador `+=`,
 > y en el caso de strings tenemos a `join`.
 
-### Métodos para listas y tuplas
+### Métodos para listas
 
-Las listas y tuplas siendo objetos como todo en python,
-tienen métodos que actúan sobre las instancias creadas.
+Las listas y tuplas son objetos como todo en python.
+Como tal,
+tienen métodos que actúan sobre sus instancias.
 
-Las listas al ser objetos mutables nos permiten cambiar elementos,
+Las listas,
+al ser objetos mutables,
+nos permiten cambiar elementos,
 agregar y eliminarlos.
+
+#### Agregar elementos
 
 Ocurre frecuentemente que desconocemos el contenido de una lista por adelantado.
 Es común que empecemos con una lista vacía y agreguemos elementos durante la marcha con el comando `append`
@@ -1564,6 +1569,8 @@ L[3:3] = 'Hola'
 print(L)  #  [5, 9, 1, 'H', 'o', 'l', 'a', 0, 3]
 ```
 
+#### Modificar elementos
+
 Como ya sabemos,
 podemos mandar llamar un elemento de la lista
 (o cualquier secuencia)
@@ -1581,9 +1588,11 @@ Por ejemplo
 
 donde hemos modificado el elemento con índice 2.
 
+#### Eliminar elementos
+
 Por otro lado,
 para eliminar un elemento tenemos varias opciones.
-Podemos utilizar el comando `del` seguido del elemnto a eliminar como en
+Podemos utilizar el comando `del` seguido del elemento a eliminar como en
 
 ```python
 calificaciones = [9.3, 8.2, 7.5, 8.8]
