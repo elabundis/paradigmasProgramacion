@@ -1508,6 +1508,62 @@ for i in range(10): # esto hará que el bucle corra 10 veces
 print(juego)
 ```
 
+Como hemos visto,
+`append` agrega un elemento al final de la lista pero
+¿Qué tal si quiero agregar un elemento en cualquier ubicación de la lista?
+Para eso contamos con el método `insert(indice, elem)`
+
+```python
+L = ['a', 'b', 'd', 'e']
+L.insert(2, 'c')  # Inserta 'c' en el índice 2
+print(L)  # ['a', 'b', 'c', 'd', 'e']
+```
+
+También contamos con la opción de agregar varios elemento al final de la lista.
+Para lograr esto ya hemos hablado sobre la concatenación.
+Sin embargo,
+contamos también con el método `extend(iterable)`.
+La diferencia en este caso es que no se crea una nueva lista
+sino que se agregan los elementos de un `iterable` al final de la lista original.
+Otra diferencia es que se permite usar cualquier `iterable`,
+mientras con la concatenación solo podemos utilizar otra lista.
+
+```python
+L = [1, 2, 3, 4]
+L.extend((5, 6))
+print(L)  #  [1, 2, 3, 4, 5, 6]
+```
+
+Por último,
+podemos utilizar *slicing* para insertar la cantidad deseada de elementos en una posición deseada.
+La sintaxis es la siguiente:
+
+```python
+lista[indice:indice] = [elementos]  # cualquier iterable a la derecha
+```
+
+Lo que hacemos es indicar el índice dónde queremos realizar la inserción
+de los elementos que introduzcamos en el iterable de la derecha.
+Por ejemplo,
+
+```python
+L = [5, 9, 1, 0, 3]
+L[2:2] = [7]
+print(L)  #  [5, 9, 7, 1, 0, 3]
+```
+
+Observa que ocupamos utilizar un iterable del lado derecho incluso para introducir un elemento.
+También hacemos notar que los elementos que ya se encontraban en la lista se recorren en orden sin eliminarlos.
+Además,
+esta operación modifica el contenido de la lista pero no crea una lista nueva.
+El objeto que se encuentra a la derecha puede ser cualquier iterable
+
+```python
+L = [5, 9, 1, 0, 3]
+L[3:3] = 'Hola'
+print(L)  #  [5, 9, 1, 'H', 'o', 'l', 'a', 0, 3]
+```
+
 Como ya sabemos,
 podemos mandar llamar un elemento de la lista
 (o cualquier secuencia)
