@@ -733,7 +733,87 @@ etc.
 
 Los objetos `complex` representan tanto la parte real como la parte imaginaria mediante **binary64**.
 
+
 ### Strings (str)
+
+Un **string** es un objeto que actúa como contenedor de caracteres.
+En términos de python un string es un **iterable**,
+esto es,
+un objeto que es capaz de regresar sus elementos uno a la vez;
+los elementos de un **string** son cada uno de sus caracteres.
+
+Para crear un string podemos utilizar comillas simples
+
+```python
+saludo = 'Hola'
+```
+
+comillas dobles
+
+```python
+frase = "corre Forest"
+```
+
+o bien transformando un objeto en un string mediante la función `str`
+(de forma más precisa este es un constructor de objetos de clase `str`)
+
+```python
+altura = str(1.80)  #  '1.80'
+```
+
+> [!NOTE]
+>
+> Podemos aplicar la función `str` a cualquier objeto en python.
+> Esto debido a que todos los objetos heredan de la clase `object`
+> y esta implementa el método `__str__`
+> (método dunder o de doble guión bajo).
+
+Este método también nos permite crear strings vacíos mediante
+
+```python
+msg = str()  #  ''
+```
+
+lo cuál se puede lograr con `msg = ''` si prefieres.
+
+Si nuestro objeto debe contener una comilla `'`,
+debemos definir el string utilizando comillas dobles `"`:
+```python
+negocio = "Joe's"
+print(negocio)  #  Joe's
+```
+
+De igual manera,
+utilizamos `'` si necesitamos incluir `"`.
+
+Para iterar sobre cada uno de los elementos de un string utilizamos la estructura `for`
+
+```python
+>>> fruta = 'pera'
+>>> for char in fruta:
+...     print(char)
+...
+p
+e
+r
+a
+```
+
+Los strings son iterables de un tipo especial conocido como **secuencias**
+cuyas características se discutirán en la siguiente sección;
+**no todos los iterables son secuencias**.
+
+Una función muy útil para toda secuencia es
+`len`,
+la cuál regresa su número de elementos.
+Por ejemplo,
+
+```python
+>>> texto = 'Mi perrito'
+>>> len(texto)
+10
+```
+
 #### Operaciones básicas
 
 Los operadores encontrados en aritmética básica toman un significado distinto dependiendo del tipo de datos sobre los que operen.
@@ -945,40 +1025,26 @@ o para verificar que una cadena no aparece en el string
     In [11] 'rojas' not in nombre
     Out[11] True
 
-Un **string** es un objeto **iterable**,
-esto es,
-un objeto que es capaz de regresar sus elementos uno a la vez;
-los elementos de un **string** son cada uno de sus caracteres.
-Una función muy útil para todo objeto iterable es
-`len`,
-la cuál regresa el número de elementos del iterable.
-Por ejemplo,
-
-    In [12]: len(texto)
-    Out[12]: 18
-
-Para acceder a los elementos del string utilizamos índices como se muestra a continuación.
-
 #### Indexación
 
 Los strings cuentan con índices para cada carácter comenzando en cero.
 Esto nos permite extraer información o seleccionar parte de este.
 
-    In [13]: nombre[2]
-    Out[13]: 'r'
+    In [12]: nombre[2]
+    Out[12]: 'r'
 
-    In [14]: nombre.find('a')
-    Out[14]: 1
+    In [13]: nombre.find('a')
+    Out[13]: 1
 
-    In [15]: nombre.find('jas')
-    Out[15]: 8
+    In [14]: nombre.find('jas')
+    Out[14]: 8
 
-    In [16]: nombre.find('Jas')
-    Out[16]: -1
+    In [15]: nombre.find('Jas')
+    Out[15]: -1
 
-    In [17]: nombre.replace('Maria', 'Elena')
+    In [16]: nombre.replace('Maria', 'Elena')
 
-    In [18]: nombre_correcto = nombre.replace('Maria', 'Elena')
+    In [17]: nombre_correcto = nombre.replace('Maria', 'Elena')
 
 #### Slicing
 
