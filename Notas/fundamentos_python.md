@@ -1011,21 +1011,28 @@ para unir los elementos de una tupla mediante una coma y un espacio,
 o bien mediante un nuevo renglón.
 Este método regresa un nuevo string y no afecta el `iterable`.
 
-Continuando con el uso de strings,
-también podemos combinar **palabras reservadas** con nuestros strings.
+#### Membresía
+
+Para verificar si un conjunto contiguo de caracteres,
+conocido como substring,
+pertenece a un string,
+contamos con la **palabra reservada** `in`.
 Por ejemplo,
-para verificar si una cadena de caracteres está contenida en nuestro string
 
-    In [9] 'Rojas' in nombre
-    Out[9] True
+```python
+In [1] estudiante = 'Estudiante ID\nScarlett 201456'
 
-o para verificar que una cadena no aparece en el string
+In [2] '201456' in estudiante
+Out[2] True
+```
 
-    In [10] 'rojas' in nombre
-    Out[10] False
+Si deseas checar que un substring no pertenezca a un string,
+contamos con `not in`:
 
-    In [11] 'rojas' not in nombre
-    Out[11] True
+```python
+In [3] 'Bart' not in nombre
+Out[3] True
+```
 
 #### Indexación
 
