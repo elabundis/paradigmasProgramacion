@@ -956,11 +956,13 @@ Experimentar con algunos métodos:
 
     In [5]: nombre.capitalize()
 
-    In [6]: texto = ' Tenemos espacio  '
+    In [6]: nombre_correcto = nombre.replace('Maria', 'Elena')
 
-    In [7]: texto.strip()
+    In [7]: texto = ' Tenemos espacio  '
 
-    In [8]: texto.lstrip()
+    In [8]: texto.strip()
+
+    In [9]: texto.lstrip()
 
 Por cierto,
 en ipython se almacena el historial de la entrada y salida en las variables
@@ -1042,9 +1044,6 @@ Esto nos permite extraer información o seleccionar parte de este.
     In [15]: nombre.find('Jas')
     Out[15]: -1
 
-    In [16]: nombre.replace('Maria', 'Elena')
-
-    In [17]: nombre_correcto = nombre.replace('Maria', 'Elena')
 
 #### Slicing
 
