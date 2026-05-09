@@ -1036,21 +1036,63 @@ Out[3] True
 
 #### Indexación
 
-Los strings cuentan con índices para cada carácter comenzando en cero.
-Esto nos permite extraer información o seleccionar parte de este.
+Los strings
+(al igual que toda secuencia)
+cuentan con índices que identifican cada carácter
+(elemento).
+Estos índices comienzan en cero y
+nos permite extraer uno o más elementos de la secuencia.
 
-    In [12]: nombre[2]
-    Out[12]: 'r'
+Aquí mostramos un string con sus índices correspondientes:
 
-    In [13]: nombre.find('a')
-    Out[13]: 1
+| 0 | 1 | 2 | 3 | 4 |
+| - | - | - | - | - |
+| p | a | s | t | o |
 
-    In [14]: nombre.find('jas')
-    Out[14]: 8
+```python
+palabra = 'pasto'
+In [13]: palabra[2]
+Out[13]: 's'
+```
 
-    In [15]: nombre.find('Jas')
-    Out[15]: -1
+También podemos referirnos a los elementos de una secuencia mediante índices negativos.
+En este caso,
+el último carácter toma el índice -1,
+el penúltimo -2 y así sucesivamente.
 
+| -5 | -4 | -3 | -2 | -1 |
+| -- | -- | -- | -- | -- |
+|  p |  a |  s |  t |  o |
+
+Los índices negativos nos facilitan llamar caracteres al final de la secuencia fácilmente.
+
+```python
+palabra = 'pasto'
+In [14]: palabra[-2]
+Out[14]: 't'
+```
+
+También contamos con un método que nos regresa el índice de la primera aparición de un carácter
+o substring en un string dado,
+el método `find`.
+Si el método encuentra el substring,
+regresa el índice de ínicio,
+en caso contrario regresa `-1`
+(nunca regresa un error).
+Por ejemplo,
+
+```python
+In [1]: obra_civil = 'carretera'
+
+In [2]: obra_civil.find('a')
+Out[2]: 1
+
+In [3]: obra_civil.find('ete')
+Out[3]: 4
+
+In [4]: obra_civil.find('Era')
+Out[4]: -1
+```
 
 #### Slicing
 
