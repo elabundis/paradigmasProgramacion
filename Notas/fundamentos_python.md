@@ -1330,21 +1330,6 @@ o bien otro iterador
 tupla = ('Maria', [True, False], range(10))
 ```
 
-Por último,
-cuando tenemos una secuencia con pocos elementos,
-podemos extraerlos mediante
-
-```python
-nombre, edad, altura = ['Maria', 19, 1.62]
-
-grupo, ids = '5_1', [153642, 762231, 384994]
-
-punto = (-1.2, 3.8, 1.4)
-
-x, y, z = punto
-```
-
-
 ### Rebanado (*slicing*)
 
 Además de las propiedades descritas para toda secuencia,
@@ -1390,6 +1375,101 @@ print(lista[-2:])
 print(lista[1:])
 print(lista[::2])
 print(lista[::-1])
+```
+
+### Desempaquetado
+
+Cuando tenemos un **iterable** con pocos elementos,
+podemos extraerlos utilizando una tupla o lista
+del lado izquierdo de una asignación,
+con una
+variable por elemento
+como mostramos a continuación
+
+```python
+(nombre, edad, altura) = ['Maria', 19, 1.62]
+[a, b] = "Hi"
+```
+
+Ya que python crea de manera implícita una tupla al separar valores por una coma,
+podemos omitir el paréntesis de una tupla y declarar
+
+```python
+grupo, ids = '5_1', [153642, 762231, 384994]  #  tuplas ambos lados
+
+punto = (-1.2, 3.8, 1.4)
+x, y, z = punto
+```
+
+Hacemos notar que el desempaquetado funciona con cualquier iterable,
+no solo secuencias.
+
+Esta funcionalidad nos permite escribir código más limpio y legible que la utilización de índices para tales casos.
+Hay ocasiones que son de bastante ayuda,
+como al iterar sobre un iterable que contiene iterables.
+Por ejemplo,
+digamos que contamos con la siguiente información
+
+```python
+examenes = [('Luis', 8), ('Penelope', 9), ('Liz', 7)]
+```
+
+y deseamos agregar la calificación de cada estudiante a otras calificaciones que ya tenemos en una base de datos.
+Si no contaramos con el desempaquetado,
+tendríamos que iterar por cada elemento,
+el cual es una tupla,
+y después indexar para extraer cada elemento.
+Observa que
+
+```python
+for examen in examenes:
+    print(examen)
+```
+
+retorna
+
+```python
+('Luis', 8)
+('Penelope', 9)
+('Liz', 7)
+```
+
+lo que muestra que cada elemento es una tupla.
+Utilizando el desempaquetado en la propia declaración de `for` resulta en
+
+```python
+for estudiante, calif in examenes:
+    print(estudiante)
+    print(calif)
+    print()  #  línea en blanco
+```
+
+obteniendo acceso a cada elemento de la tupla directamente.
+
+El desempaquetado también nos permite lidiar con
+iterables de longitud variable,
+o bien para capturar elementos restantes,
+utilizando el operador `*`.
+Esta operación captura los elementos que sobren en una nueva lista.
+Por ejemplo,
+
+```python
+id, *info = (125631, 'cocinero', 22, '6 meses')
+print(id)  #  125631
+print(info)  #  ['cocinero', 22, '6 meses']
+```
+
+El número de variables al emplear `*` debe ser menor o igual a los elementos en el iterable.
+Es posible utilizar `*` en cualquier variable,
+no solo la del final
+
+```python
+negocio, *trabajadores, direccion = (
+    'sushi', 'Hulk', 'Thor', 'Viuda Negra', 'Cd. Universitaria'
+    )
+print(negocio)  #  'sushi'
+print(trabajadores)  #  ['Hulk', 'Thor', 'Viuda Negra']
+print(direccion)  #  'Cd. Universitaria'
 ```
 
 ### Concatenación
