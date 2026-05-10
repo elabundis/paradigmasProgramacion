@@ -1446,24 +1446,22 @@ for estudiante, calif in examenes:
 
 obteniendo acceso a cada elemento de la tupla directamente.
 
-El desempaquetado también nos permite lidiar con
-iterables de longitud variable,
-o bien para capturar elementos restantes,
-utilizando el operador `*`.
-Esta operación captura los elementos que sobren en una nueva lista.
+#### Desempaquetado extendido
+
+Por último,
+discutimos otro uso importante.
+Existe una sintaxis de desempaquetado que nos permite atrapar múltiples elementos de un iterable en vez de uno a la vez;
+al agregar un prefijo `*` a una variable,
+esta se convierte en **atrapa todo**,
+capturando en una **lista** todos los valores que no fueron asignados a las variables normales
+(**obligatorias**).
 Por ejemplo,
 
 ```python
 id, *info = (125631, 'cocinero', 22, '6 meses')
 print(id)  #  125631
 print(info)  #  ['cocinero', 22, '6 meses']
-```
 
-El número de variables al emplear `*` debe ser menor o igual a los elementos en el iterable.
-Es posible utilizar `*` en cualquier variable,
-no solo la del final
-
-```python
 negocio, *trabajadores, direccion = (
     'sushi', 'Hulk', 'Thor', 'Viuda Negra', 'Cd. Universitaria'
     )
@@ -1471,6 +1469,64 @@ print(negocio)  #  'sushi'
 print(trabajadores)  #  ['Hulk', 'Thor', 'Viuda Negra']
 print(direccion)  #  'Cd. Universitaria'
 ```
+
+El número de variables obligatorias
+(sin `*`)
+debe ser menor o igual a los elementos en el iterable;
+en el caso de ser igual,
+la lista de la variable *estrellada* estará vacía.
+
+```python
+*a, b, c = [3, 4]
+print(a)
+print(b)
+print(c)
+# Imprime
+# []
+# 3
+# 4
+```
+
+Observa que
+
+```python
+numeros = range(5)
+val1, *val2, val3 = numeros # val1=0, val2=[1, 2, 3], val3=4
+```
+
+es mucho más claro que
+
+```python
+numeros = range(5)
+val1, val2, val3 = numeros[0], numeros[1:-1], numeros[-1]
+```
+
+Esta sintaxis también se puede emplear durante la asignación en un bucle `for`
+
+```python
+serie_avatar = (
+    ('Aang', 'Avatar', 112),
+    ('Katara', 'Maestra agua', 14),
+    ('Sokka', 'Simple humano', 15),
+    )
+for name, *info in serie_avatar:
+    print(name)
+    print(info)
+    print()
+```
+el cual produce
+
+```python
+Aang
+['Avatar', 112]
+
+Katara
+['Maestra agua', 14]
+
+Sokka
+['Simple humano', 15]
+```
+
 
 ### Concatenación
 
