@@ -1251,6 +1251,16 @@ In [11]: for char in 'Hello!':
 En esta parte hemos hecho uso del bucle `for`
 el cual discutiremos en la siguiente sección junto a la secuencia `range`.
 
+> [!NOTE]
+>
+> Observa que todas las secuencias son iterables por definición.
+> Sin embargo,
+> existen también otros objetos sobre los que podemos iterar
+> que no permiten el uso de índices,
+> es decir,
+> existen iterables que no son secuencias
+> (diccionarios, conjuntos, generadores, etc.).
+
 ### Creación de listas y tuplas
 
 Además del uso de corchetes y paréntesis para crear una lista o tupla,
@@ -1269,12 +1279,6 @@ de la misma,
 y si no se introduce ningún argumento,
 retorna una lista vacía.
 Las mismas reglas aplican para `tuple`.
-
-> [!NOTE]
->
-> Recordamos que un iterable es cualquier objeto que tiene elementos sobre los que es posible iterar en un bucle `for`;
-> todas las secuencias son iterables pero existen también otros objetos sobre los que podemos iterar
-> (diccionarios, conjuntos, generadores, etc.).
 
 Por ejemplo,
 
