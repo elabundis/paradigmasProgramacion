@@ -1831,6 +1831,55 @@ L.clear()
 print(L)  # imprime []
 ```
 
+### Métodos para tuplas
+
+Debido aque las tuplas son inmutables,
+no podemos agregar,
+eliminar,
+ni modificar elementos.
+Para estas estructuras contamos con dos métodos:
+`count` y `index`.
+
+El primer método tiene la sintaxis
+`count(elemento)`
+y cuenta el número de apariciones del `elemento` dado
+
+```python
+tupla = (3, 4, [1, 2], [1], [3], [1, 2])
+print(tupla.count(3))
+print(tupla.count([1, 2]))
+
+palabra = tuple('pelele')
+print(palabra.count('e'))
+```
+
+El segundo toma la forma
+`index(elemento, start, stop)`,
+donde los índices `start` y `stop` son opcionales.
+Este método regresa el índice menor donde el `elemento` se encuentra;
+solo busca en los elementos comprendidos desde el índice `start` (inclusivo)
+hasta el `stop` (exclusivo).
+Por default,
+`start` es cero
+y `stop` es el final
+(en realidad es un entero grandísimo).
+
+```python
+tupla = (35, 12, 39, 15, 12)
+print(tupla.index(12))  #  1
+
+palabra = tuple('pelele')
+print(palabra.index('e', 2))  # 3 (start=2, stop=final)
+```
+
+Si el elemento no se encuentra,
+el método regresa un `ValueError`:
+
+```python
+tupla = (35, 12, 39, 15, 12)
+tupla.index(10)  #  ValueError
+```
+
 
 ## Loops
 
