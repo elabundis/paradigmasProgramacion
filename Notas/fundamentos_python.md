@@ -2946,12 +2946,12 @@ mediante la fórmula de Herón: [ver aquí](https://es.wikipedia.org/wiki/Fórmu
 
 5. Utiliza `map` y una **función lambda** para crear una lista con 101 coordenadas equidistantes del 0 al 1. Clave: recuerda la función `range`.
 
-6. Grafica la función Gaussiana `exp(-x**2)` en el dominio
+6. Grafica la función Gaussiana $\exp(-x^2)$ en el dominio
 `[-3, 3]` mediante una línea continua utilizando 201 puntos equidistantes y la librería `matplotlib`.
 La línea debe tener color rojo y un grosor de 1pt,
 además,
-el eje **X** debe comprender [-3.5, 3.5]
-y el eje **Y** debe cubrir [-0.25, 1.25].
+el eje $X$ debe comprender [-3.5, 3.5]
+y el eje $Y$ debe cubrir [-0.25, 1.25].
 Para esto,
 llena el código en las siguientes funciones
 
@@ -2967,7 +2967,8 @@ import matplotlib.pyplot as plt
 # La función debe regresar una tupla con dos listas:
 # La primer lista debe contener los valores en x,
 # y la segunda los valores de la Gaussiana en cada punto.
-def Gaussiana(x0: float, xf: float, num: int) -> tuple(list[float], list[float]):
+def Gaussiana(x0: float, xf: float, num: int) -> tuple(
+        list[float], list[float]):
     """Agregar docstring
 
     """
