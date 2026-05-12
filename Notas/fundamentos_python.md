@@ -1261,6 +1261,64 @@ el cual discutiremos en la siguiente sección junto a la secuencia `range`.
 > existen iterables que no son secuencias
 > (diccionarios, conjuntos, generadores, etc.).
 
+En ocasiones debemos tratar con secuencias muy largas.
+Para tales casos es recomendable utilizar la
+**continuación implícita de líneas de python**;
+los paréntesis, corchetes y llaves
+se pueden extender a lo largo de líneas en python,
+luego el intérprete se encarga de procesar el contenido
+en un solo objeto.
+
+La recomendación en PEP8
+([ver aquí](https://peps.python.org/pep-0008/#code-lay-out))
+para listas y tuplas
+es mantener líneas de código a un máximo de 79 caracteres
+y utilizar la continuación implícita de líneas.
+Al cerrar la lista o la tupla,
+tenemos dos opciones de alineación:
+
+1. Alineamos el corchete o paréntesis (o llave) con el primer carácter de la última línea
+
+```python
+comidas = [
+    'tacos', 'carnitas', 'sushi',
+    'pizza', 'pozole', 'menudo',
+    ]
+```
+
+2. Alineamos con respecto al primer caracter de la linea que comenzó la construcción multinlínea
+
+```python
+comidas = (
+    'tacos', 'carnitas', 'sushi',
+    'pizza', 'pozole', 'menudo',
+)
+```
+
+Por cierto,
+la continuación implícita funciona en todos los casos,
+al definir una función o realizar una operación:
+
+```python
+# Se recomienda alinear argumentos con el delimitador de apertura
+def my_fun(arg1, arg2, arg3,
+           arg4, arg5):
+    pass
+
+# O cuando tenemos una función con nombre largo
+# alineamos con cuatro espacios abajo de su nombre
+def este_nombre_esta_largo(arg1, arg2,
+        arg3, arg4, arg5):
+    pass
+
+# En una operación largas
+mensaje = 'Este es un mensaje: '
+nombre = 'jesus'
+resultado = ( mensaje.upper() + 'Hello ' +
+    f'{nombre.title()}' + '!' )
+print(resultado)  #  esto es un string no una tupla
+```
+
 ### Creación de listas y tuplas
 
 Además del uso de corchetes y paréntesis para crear una lista o tupla,
