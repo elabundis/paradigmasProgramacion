@@ -733,7 +733,87 @@ etc.
 
 Los objetos `complex` representan tanto la parte real como la parte imaginaria mediante **binary64**.
 
+
 ### Strings (str)
+
+Un **string** es un objeto que actúa como contenedor de caracteres.
+En términos de python un string es un **iterable**,
+esto es,
+un objeto que es capaz de regresar sus elementos uno a la vez;
+los elementos de un **string** son cada uno de sus caracteres.
+
+Para crear un string podemos utilizar comillas simples
+
+```python
+saludo = 'Hola'
+```
+
+comillas dobles
+
+```python
+frase = "corre Forest"
+```
+
+o bien transformando un objeto en un string mediante la función `str`
+(de forma más precisa este es un constructor de objetos de clase `str`)
+
+```python
+altura = str(1.80)  #  '1.80'
+```
+
+> [!NOTE]
+>
+> Podemos aplicar la función `str` a cualquier objeto en python.
+> Esto debido a que todos los objetos heredan de la clase `object`
+> y esta implementa el método `__str__`
+> (método dunder o de doble guión bajo).
+
+Este método también nos permite crear strings vacíos mediante
+
+```python
+msg = str()  #  ''
+```
+
+lo cuál se puede lograr con `msg = ''` si prefieres.
+
+Si nuestro objeto debe contener una comilla `'`,
+debemos definir el string utilizando comillas dobles `"`:
+```python
+negocio = "Joe's"
+print(negocio)  #  Joe's
+```
+
+De igual manera,
+utilizamos `'` si necesitamos incluir `"`.
+
+Para iterar sobre cada uno de los elementos de un string utilizamos la estructura `for`
+
+```python
+>>> fruta = 'pera'
+>>> for char in fruta:
+...     print(char)
+...
+p
+e
+r
+a
+```
+
+Los strings son iterables de un tipo especial conocido como **secuencias**
+cuyas características se discutirán en la siguiente sección;
+**no todos los iterables son secuencias**.
+
+Una función muy útil para toda secuencia es
+`len`,
+la cuál regresa su número de elementos.
+Por ejemplo,
+
+```python
+>>> texto = 'Mi perrito'
+>>> len(texto)
+10
+```
+
 #### Operaciones básicas
 
 Los operadores encontrados en aritmética básica toman un significado distinto dependiendo del tipo de datos sobre los que operen.
@@ -876,11 +956,13 @@ Experimentar con algunos métodos:
 
     In [5]: nombre.capitalize()
 
-    In [6]: texto = ' Tenemos espacio  '
+    In [6]: nombre_correcto = nombre.replace('Maria', 'Elena')
 
-    In [7]: texto.strip()
+    In [7]: texto = ' Tenemos espacio  '
 
-    In [8]: texto.lstrip()
+    In [8]: texto.strip()
+
+    In [9]: texto.lstrip()
 
 Por cierto,
 en ipython se almacena el historial de la entrada y salida en las variables
@@ -893,56 +975,124 @@ podemos acceder a la entrada (código) de la celda número 6 mediante `In[6]` o 
 La última salida se almacena en la variable `_`
 y la última entrada en `_i`.
 
-Continuando con el uso de strings,
-también podemos combinar **palabras reservadas** con nuestros strings.
-Por ejemplo,
-para verificar si una cadena de caracteres está contenida en nuestro string
+Un método muy útil es `join`,
+el cual crea un string uniendo los elemento de un objeto iterable
+como una lista, tupla, diccionario, etc
+(definición más abajo)
+con el separador que yo desee.
+La sintaxis es la siguiente
 
-    In [9] 'Rojas' in nombre
-    Out[9] True
+```python
+separador.join(iterable)
+```
 
-o para verificar que una cadena no aparece en el string
-
-    In [10] 'rojas' in nombre
-    Out[10] False
-
-    In [11] 'rojas' not in nombre
-    Out[11] True
-
-Un **string** es un objeto **iterable**,
-esto es,
-un objeto que es capaz de regresar sus elementos uno a la vez;
-los elementos de un **string** son cada uno de sus caracteres.
-Una función muy útil para todo objeto iterable es
-`len`,
-la cuál regresa el número de elementos del iterable.
+dónde el `separador` es un string y el `iterable` solo debe tener strings como elementos.
 Por ejemplo,
 
-    In [12]: len(texto)
-    Out[12]: 18
+```python
+cafes = ' '.join(['capuchino', 'latte'])
+print(cafes)  #  'capuchino latte'
+```
 
-Para acceder a los elementos del string utilizamos índices como se muestra a continuación.
+crea un string uniendo cada elemento de la lista con un espacio como separador.
+O podemos ejecutar
+
+```python
+# unir mediante coma y espacio
+bebidas = ', '.join(('jugo', 'cerveza', 'tequila'))
+print(bebidas)  #  'jugo, cerveza, tequila'
+
+# unir mediante renglón nuevo
+cafes = '\n'.join(('espresso', 'frappé'))
+print(cafes)
+```
+
+para unir los elementos de una tupla mediante una coma y un espacio,
+o bien mediante un nuevo renglón.
+Este método regresa un nuevo string y no afecta el `iterable`.
+
+#### Membresía
+
+Para verificar si un conjunto contiguo de caracteres,
+conocido como substring,
+pertenece a un string,
+contamos con la **palabra reservada** `in`.
+Por ejemplo,
+
+```python
+In [1] estudiante = 'Estudiante ID\nScarlett 201456'
+
+In [2] '201456' in estudiante
+Out[2] True
+```
+
+Si deseas checar que un substring no pertenezca a un string,
+contamos con `not in`:
+
+```python
+In [3] 'Bart' not in nombre
+Out[3] True
+```
 
 #### Indexación
 
-Los strings cuentan con índices para cada carácter comenzando en cero.
-Esto nos permite extraer información o seleccionar parte de este.
+Los strings
+(al igual que toda secuencia)
+cuentan con índices que identifican cada carácter
+(elemento).
+Estos índices comienzan en cero y
+nos permite extraer uno o más elementos de la secuencia.
 
-    In [13]: nombre[2]
-    Out[13]: 'r'
+Aquí mostramos un string con sus índices correspondientes:
 
-    In [14]: nombre.find('a')
-    Out[14]: 1
+| 0 | 1 | 2 | 3 | 4 |
+| - | - | - | - | - |
+| p | a | s | t | o |
 
-    In [15]: nombre.find('jas')
-    Out[15]: 8
+```python
+palabra = 'pasto'
+In [13]: palabra[2]
+Out[13]: 's'
+```
 
-    In [16]: nombre.find('Jas')
-    Out[16]: -1
+También podemos referirnos a los elementos de una secuencia mediante índices negativos.
+En este caso,
+el último carácter toma el índice -1,
+el penúltimo -2 y así sucesivamente.
 
-    In [17]: nombre.replace('Maria', 'Elena')
+| -5 | -4 | -3 | -2 | -1 |
+| -- | -- | -- | -- | -- |
+|  p |  a |  s |  t |  o |
 
-    In [18]: nombre_correcto = nombre.replace('Maria', 'Elena')
+Los índices negativos nos facilitan llamar caracteres al final de la secuencia fácilmente.
+
+```python
+palabra = 'pasto'
+In [14]: palabra[-2]
+Out[14]: 't'
+```
+
+También contamos con un método que nos regresa el índice de la primera aparición de un carácter
+o substring en un string dado,
+el método `find`.
+Si el método encuentra el substring,
+regresa el índice de ínicio,
+en caso contrario regresa `-1`
+(nunca regresa un error).
+Por ejemplo,
+
+```python
+In [1]: obra_civil = 'carretera'
+
+In [2]: obra_civil.find('a')
+Out[2]: 1
+
+In [3]: obra_civil.find('ete')
+Out[3]: 4
+
+In [4]: obra_civil.find('Era')
+Out[4]: -1
+```
 
 #### Slicing
 
