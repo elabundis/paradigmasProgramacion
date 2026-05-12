@@ -1615,6 +1615,77 @@ print(f"id de 'estudiantes' posterior a '+=': {id(estudiantes)}")
 > contamos con el método `extend` o el operador `+=`,
 > y en el caso de strings tenemos a `join`.
 
+### Comparaciones
+
+La mayoría de las secuencias principales soportan los operadores de comparación ordinarios:
+`>`, `>=`, `==`, `!=`, `<` y `<=`.
+Las comparaciones en todos los casos son lexicográficas,
+es decir,
+se comparan los elementos índice por índice de la secuencia.
+
+> [!NOTE]
+> Las secuencias principales soportan `==` y `!=`, pero `range` no soporta comparaciones de desigualdad
+
+El operador `==` realiza una serie de comparaciones:
+checa que las dos secuencias sean del mismo tipo,
+checa que ambas tengan la misma longitud
+y finalmente checa la igualdad de cada elemento mediante
+`a[j] == b[j]`,
+dónde `a` y `b` son las dos secuencias.
+Si alguna de estas comparaciones falla regresa `False`.
+Por ejemplo,
+
+```python
+print([1, 2, 3] == [1.0, 2+0j, 3])  #  True
+
+print([1, 2, 3] == [2, 1, 3])  #  False (lexicografía)
+
+print([1, 2, 3] == (1, 2, 3))  #  False  (tipos)
+
+print([1, 2, 3] == [1, 2, 3, 3])  #  False  (longitud)
+```
+
+Oberva que `==` nunca regresa una `Exception` (error).
+
+Reglas similares aplican para `!=` el cual checa que las secuencias sean distintas:
+
+```python
+print([1, 2, 3] != [2, 1, 3])  #  True
+
+print([1, 2, 3] != [1.0, 2+0j, 3])  #  False
+
+print([1, 2, 3] != (1, 2, 3))  #  True
+
+print([1, 2, 3] != [1, 2, 3, 3])  #  True
+```
+
+Los operadores `>` y `<` solo comparan secuencias del mismo tipo;
+`[3, 1] > (1, 0)` regresa un `TypeError`.
+El resultado de la comparación resulta del primer elemento que sea distinto en ambas secuencias.
+Por ejemplo,
+
+```python
+print((5, 3, 8) < (5, 6, 1))  #  True (ya que 3 < 6)
+
+print([5, 3, 8] > [5, 3, -2, 9])  #  True (ya que 8 > -2)
+
+print('cazo' > 'carretera')  #  True (ya que 'z' > 'r')
+                              #  (o bien ord('z') > ord('r'))
+```
+
+En el caso de que una secuencia este contenida en otra del mismo tipo pero con más elementos decimos que la secuencia grande es mayor, esto es
+
+```python
+print('Caborca' > 'Cabo')  #  True
+
+print([1, 2, 3] < [1, 2, 3, 0])  #  True
+```
+
+Las mismas reglas aplican para `>=` y `<=`;
+se compara el primer elemento distinto en las secuencias mediante el operador correspondiente,
+además,
+una secuencia contenida en otra más grande se considera menor.
+
 ### Métodos para listas
 
 Las listas y tuplas son objetos como todo en python.
