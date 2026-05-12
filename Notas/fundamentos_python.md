@@ -1951,6 +1951,227 @@ tupla = (35, 12, 39, 15, 12)
 tupla.index(10)  #  ValueError
 ```
 
+### Funciones para iterables
+
+Habiendo discutido los métodos para las secuencias principales,
+mostramos ahora algunas funciones que aplican para todo **iterable**.
+
+Las siguientes funciones toman a un iterable como argumento:
+
+* `list`, `tuple`, `set`, `dict`
+
+    Estas funciones crean una lista, tupla, conjunto o diccionario, respectivamente, a partir de los elementos del iterable.
+
+    ```python
+    estudiantes = set(['Carlos', 'Laura', 'Liza'])
+    print(estudiantes)  #  {'Carlos', 'Liza', 'Laura'}
+    ```
+
+* `sum`
+
+    Retorna la suma de los elementos en el iterable
+
+    ```python
+    # suma los enteros del 0 al 100
+    print(sum(range(101)))   # ¿Puedes hacerlo a mano?
+    ```
+
+* `max`, `min`
+
+    Retorna el valor máximo o mínimo de un iterable.
+    Se permite introducir más de un argumeto;
+    en este caso se retorna el argumento de valor máximo o mínimo.
+
+    > [!NOTE]
+    >
+    > Para obtener dicho valor,
+    > python itera sobre cada elemento del iterador,
+    > o sobre los argumentos,
+    > y emplea el operador `>` en el caso de `max`,
+    > o `<` en el caso de `min`.
+    > No se permiten números complejos por default
+    > ya que no están definidas las comparaciones
+    > (`>` o `<`)
+    > para este tipo.
+
+    Para un solo iterable tenemos
+
+    ```python
+    # tupla
+    calif = (8.4, 9.3, 9.7, 8.1)
+    print(max(calif))  #  9.7
+
+    # conjunto
+    palabras = {'carro', 'carretera'}
+    print(min(palabras))  #  'carretera'  (¿Porqué?)
+
+    # string
+    print(min('estupendo'))  #  ¿Qué imprime?
+
+    # lista de tuplas
+    # comparación elemento a elemento (tupla vs tupla)
+    precios = [
+        ('manzana', 10.25),
+        ('platano', 27.90),
+        ('mango', 36.99)
+        ]
+    print(min(precios))  # ('mango', 36.99)  (¿Porqué?)
+    ```
+
+    Observa que en el último ejemplo la comparación es entre tuplas;
+    lo que estamos obteniendo es la comparación del primer elemento entre tuplas.
+    Si lo que deseamos es el precio mínimo,
+    debemos comparar los segundos elementos.
+
+    Python nos permite utilizar una función de un solo argumento
+    para personalizar el criterio de comparación
+    mediante la opción `key`.
+    Por ejemplo,
+    si deseamos comparar los precios en el caso anterior
+
+    ```python
+    print(min(precios, key=lambda elem:elem[1]))  # ('manzana', 10.25)
+    ```
+
+    donde la función lambda
+    (ver sección sobre funciones)
+    se ejecuta para cada elemento del iterable y posteriormente se realiza la comparación con `<`.
+
+    Este mismo truco lo puedo utilizar para comparar números complejos,
+    los cuales compararé utilizando su módulo
+    (el módulo de un número complejo
+    $\sqrt{{\Re(x)}^2 + {\Im(x)}^2}$
+    se encuentra mediante la función `abs` de python)
+
+    ```python
+    print(abs(3+4j))  #  5.0 (math.sqrt(5^2 + 12^2))
+    print(abs(4j))  #  4.0
+    print(abs(-3))  #  3.0
+
+    psi = [3+4j, 4j, -3]
+    print(max(psi, key=abs))  #  (3+4j)
+    ```
+
+    En caso de que el iterable este vacío,
+    estas funciones retornan un `ValueError`;
+    podemos evitar esto utilizando el argumento opcional `default`
+    con el valor deseado para estos casos.
+    Por ejemplo,
+
+    ```python
+    # lista vacía
+    valor_maximo = max([], default='empty')
+    print(valor_maximo)  #  'empty'
+    ```
+
+    Finalmente, para más de un argumento
+
+    ```python
+    # Esta notación permite extraer una objeto dentro de un módulo
+    # (constante, función, clase)
+    from math import pi   # extraer el número pi del módulo math
+    print(max(3, pi, 2.7))  #  3.14159...
+    ```
+
+* `sorted`
+
+    Regresa una nueva lista con los elementos ordenados de un iterable sin modificarlo.
+
+    ```python
+    lista = [4, 9, 1, -3, 5, 4]
+    lista_ordenada = sorted(lista)
+
+    print(f'lista: {lista}')
+    print(f'lista_ordenada: {lista_ordenada}') # [-3, 1, 4, 4, 5, 9]
+
+    # `sorted` regresa una lista nueva para todo iterable
+    print(f"id(lista): {id(lista)}")
+    print(f"id(lista_ordenada): {id(lista_ordenada)}")
+
+    # `sorted` ordena cada elemento de un iterable con las reglas
+    # que apliquen a los elementos que se tengan (tuplas aquí).
+    precios = (
+        ('manzana', 10.25),
+        ('platano', 27.90),
+        ('mango', 36.99)
+        )
+    print(sorted(precios))  # lista de tuplas con frutas ordenadas
+                            # [('mango', 36.99),
+                            #  ('manzana', 10.25),
+                            #  ('platano', 27.90)]
+    ```
+
+    Esta función también cuenta con el parámetro opcional `key` para personalizar el criterio de ordenamiento
+    (recuerda que `key` acepta una función de un argumento).
+    Para ordenar nuestros precios por el valor numérico
+    ejecutamos
+
+    ```python
+    def get_precio(elem):
+        return elem[1]
+    precios_ordenados = sorted(precios, key=get_precio)
+    print(precios_ordenados)  # lista de tuplas con precios ordenados
+    ```
+
+    Además,
+    esta función cuenta con el parámetro opcional `reverse`,
+    el cual nos permite ordenar en orden descendente
+    y el cual es `False` por default
+
+    ```python
+    print(sorted("auwnc", reverse=True))  # ['w', 'u', 'n', 'c', 'a']
+    ```
+
+
+* `any`, `all`
+
+    La función `any` regresa `True` si al menos un elemento en el iterable es verdadero,
+    en caso contrario `False`.
+
+    Siendo más específicos,
+    la función itera sobre los elementos,
+    ejecutando `bool(elem)` en cada elemento `elem`;
+    en el momento que `bool` resulte en `True`,
+    la función regresa `True` inmediatamente sin checar otros miembros.
+
+    > [!NOTE]
+    >
+    > Un objeto `obj` para el cual `bool(obj)` regrese `True`
+    > se llama *truthy*,
+    > en caso contrario se conoce como *falsy*.
+    >
+    > Valores *falsy*:
+    >
+    > * False
+    > * número cero:
+    >       `0`, `0.0`, `0j`
+    > * iterables vacíos:
+    >       `[]`, `()`, `''`, `{}`, `set()`, `range(0)`
+    > * objeto nulo:
+    >       `None`
+    >
+    > Valores *truthy*:
+    >
+    > * Todo lo demás
+    > (esto incluye `'0'`, `[None]`, `[()]`)
+    >
+    >   ¿Qué piensas de `([])`?
+
+    Por su parte `all` regresa `True` solo si todos los elementos son *truthy*.
+
+    ```python
+    print(any([False, 0, 1]))  #  True
+
+    tupla = (0==1, 3>4)
+    print(any(tupla))  #  False
+
+    lista = [4>1, False or True, not False, '0']
+    print(all(lista))  #  True
+
+    rango = range(8)
+    print(all(rango))  #  False
+    ```
+
 
 ## Loops
 
