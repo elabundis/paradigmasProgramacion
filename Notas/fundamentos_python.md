@@ -287,24 +287,105 @@ Ya hemos visto las reglas que tenemos con respecto a los nombres de variables, f
 
 Volvemos a mencionar los tipos de datos básicos en Python
 
-    >>> strings = "Hola Mundo"
-    >>> entero = 5
-    >>> reales = 3.7
-    >>> complejo = 3+4j
-    >>> verdad = True
-    >>> falso = False
+```python
+>>> strings = "Hola Mundo"
+>>> entero = 5
+>>> reales = 3.7
+>>> complejo = 3+4j
+>>> verdad = True
+>>> falso = False
+```
 
 Estas variables almacenan objetos de tipo
 **str**, **int**, **float**, **complex** y **bool**.
-Para ver su tipo basta con ejecutar
+Las variables de tipo string pueden declararse con comillas simples o dobles
 
-    >>> type(verdad)
-    <class 'bool'>
+```python
+>>> otro_string = 'Bye'
+```
 
-Recordamos que estos objetos son del tipo **inmutable** como ya hemos visto en clase,
+Observa que no se requiere declarar el tipo de las variables.
+Además,
+el tipo de una variable puede cambiar después de haber sido creada
+
+```python
+>>> var = True
+>>> var = 9
+```
+
+Para ver el tipo de una variable empleamos
+
+```python
+>>> type(verdad)
+<class 'bool'>
+```
+
+Python es sensible a mayúsculas y minúsculas,
+de tal manera que variables como
+
+```python
+>>> astro = 'Polaris'
+>>> Astro = 'Betelgeuse'
+```
+
+son distintas.
+
+Podemos crear varias variables en un mismo renglón
+
+```python
+>>> pasos = 500; nombre='Laura'; pi = 3.14;
+>>> x, y, z = 10.7, 5.1, -2.3
+>>> a, b, c = 1.0  #  las tres variables toman el valor 1.0
+```
+
+Si realizamos una operación larga y requerimos otro renglón
+contamos con el operador `\` para continuar la linea
+
+```python
+suma = 1 + 2 + 3 + 4 + \
+       5 + 6 + 7
+```
+
+También podemos utilizar paréntesis para una continuación implícita de renglón
+(método preferido)
+
+```python
+suma = (1 + 2 + 3 + 4 +
+       5 + 6 + 7)
+```
+
+Esta característica nos permite unir strings largos de una manera más legible
+
+```python
+>>> poema = ("Dos cuerpos frente a frente "
+             "son a veces raíces "
+             "en la noche enlazadas. "
+             "Octavio Paz")
+>>> print(poema)  #  muestra el `poema` en la terminal (stdout)
+```
+
+Como podemos apreciar,
+los comentarios se crean con el operador `#`;
+todo lo que se encuentre a la derecha de este,
+se considera comentario y es ignorado por el intérprete.
+
+Los objetos mencionados en esta sección son del tipo
+**inmutable**
+(como ya hemos visto en clase),
 es decir,
 no pueden ser modificados;
 cada que creemos haberlos modificado realmente hemos creado un nuevo objeto.
+
+```python
+>>> carros = 'Bently'
+>>> id(carros)  #  dirección de memoria para `carros`
+4316417072  #  este número es distinto para ti
+>>> carros += ', Ferrari'  #  carros = carros + ', Ferrari'
+>>> print(carros)
+Bently, Ferrari
+>>> id(carros)
+4316404400  #  el id ha cambiado al ser un nuevo objeto
+```
 
 ### Precedencia de operadores
 
