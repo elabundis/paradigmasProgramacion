@@ -1251,6 +1251,74 @@ In [11]: for char in 'Hello!':
 En esta parte hemos hecho uso del bucle `for`
 el cual discutiremos en la siguiente sección junto a la secuencia `range`.
 
+> [!NOTE]
+>
+> Observa que todas las secuencias son iterables por definición.
+> Sin embargo,
+> existen también otros objetos sobre los que podemos iterar
+> que no permiten el uso de índices,
+> es decir,
+> existen iterables que no son secuencias
+> (diccionarios, conjuntos, generadores, etc.).
+
+En ocasiones debemos tratar con secuencias muy largas.
+Para tales casos es recomendable utilizar la
+**continuación implícita de líneas de python**;
+los paréntesis, corchetes y llaves
+se pueden extender a lo largo de líneas en python,
+luego el intérprete se encarga de procesar el contenido
+en un solo objeto.
+
+La recomendación en PEP8
+([ver aquí](https://peps.python.org/pep-0008/#code-lay-out))
+para listas y tuplas
+es mantener líneas de código a un máximo de 79 caracteres
+y utilizar la continuación implícita de líneas.
+Al cerrar la lista o la tupla,
+tenemos dos opciones de alineación:
+
+1. Alineamos el corchete o paréntesis (o llave) con el primer carácter de la última línea
+
+```python
+comidas = [
+    'tacos', 'carnitas', 'sushi',
+    'pizza', 'pozole', 'menudo',
+    ]
+```
+
+2. Alineamos con respecto al primer caracter de la linea que comenzó la construcción multinlínea
+
+```python
+comidas = (
+    'tacos', 'carnitas', 'sushi',
+    'pizza', 'pozole', 'menudo',
+)
+```
+
+Por cierto,
+la continuación implícita funciona en todos los casos,
+al definir una función o realizar una operación:
+
+```python
+# Se recomienda alinear argumentos con el delimitador de apertura
+def my_fun(arg1, arg2, arg3,
+           arg4, arg5):
+    pass
+
+# O cuando tenemos una función con nombre largo
+# alineamos con cuatro espacios abajo de su nombre
+def este_nombre_esta_largo(arg1, arg2,
+        arg3, arg4, arg5):
+    pass
+
+# En una operación largas
+mensaje = 'Este es un mensaje: '
+nombre = 'jesus'
+resultado = ( mensaje.upper() + 'Hello ' +
+    f'{nombre.title()}' + '!' )
+print(resultado)  #  esto es un string no una tupla
+```
+
 ### Creación de listas y tuplas
 
 Además del uso de corchetes y paréntesis para crear una lista o tupla,
@@ -1269,12 +1337,6 @@ de la misma,
 y si no se introduce ningún argumento,
 retorna una lista vacía.
 Las mismas reglas aplican para `tuple`.
-
-> [!NOTE]
->
-> Recordamos que un iterable es cualquier objeto que tiene elementos sobre los que es posible iterar en un bucle `for`;
-> todas las secuencias son iterables pero existen también otros objetos sobre los que podemos iterar
-> (diccionarios, conjuntos, generadores, etc.).
 
 Por ejemplo,
 
@@ -1326,21 +1388,6 @@ o bien otro iterador
 tupla = ('Maria', [True, False], range(10))
 ```
 
-Por último,
-cuando tenemos una secuencia con pocos elementos,
-podemos extraerlos mediante
-
-```python
-nombre, edad, altura = ['Maria', 19, 1.62]
-
-grupo, ids = '5_1', [153642, 762231, 384994]
-
-punto = (-1.2, 3.8, 1.4)
-
-x, y, z = punto
-```
-
-
 ### Rebanado (*slicing*)
 
 Además de las propiedades descritas para toda secuencia,
@@ -1387,6 +1434,157 @@ print(lista[1:])
 print(lista[::2])
 print(lista[::-1])
 ```
+
+### Desempaquetado
+
+Cuando tenemos un **iterable** con pocos elementos,
+podemos extraerlos utilizando una tupla o lista
+del lado izquierdo de una asignación,
+con una
+variable por elemento
+como mostramos a continuación
+
+```python
+(nombre, edad, altura) = ['Maria', 19, 1.62]
+[a, b] = "Hi"
+```
+
+Ya que python crea de manera implícita una tupla al separar valores por una coma,
+podemos omitir el paréntesis de una tupla y declarar
+
+```python
+grupo, ids = '5_1', [153642, 762231, 384994]  #  tuplas ambos lados
+
+punto = (-1.2, 3.8, 1.4)
+x, y, z = punto
+```
+
+Hacemos notar que el desempaquetado funciona con cualquier iterable,
+no solo secuencias.
+
+Esta funcionalidad nos permite escribir código más limpio y legible que la utilización de índices para tales casos.
+Hay ocasiones que son de bastante ayuda,
+como al iterar sobre un iterable que contiene iterables.
+Por ejemplo,
+digamos que contamos con la siguiente información
+
+```python
+examenes = [('Luis', 8), ('Penelope', 9), ('Liz', 7)]
+```
+
+y deseamos agregar la calificación de cada estudiante a otras calificaciones que ya tenemos en una base de datos.
+Si no contaramos con el desempaquetado,
+tendríamos que iterar por cada elemento,
+el cual es una tupla,
+y después indexar para extraer cada elemento.
+Observa que
+
+```python
+for examen in examenes:
+    print(examen)
+```
+
+retorna
+
+```python
+('Luis', 8)
+('Penelope', 9)
+('Liz', 7)
+```
+
+lo que muestra que cada elemento es una tupla.
+Utilizando el desempaquetado en la propia declaración de `for` resulta en
+
+```python
+for estudiante, calif in examenes:
+    print(estudiante)
+    print(calif)
+    print()  #  línea en blanco
+```
+
+obteniendo acceso a cada elemento de la tupla directamente.
+
+#### Desempaquetado extendido
+
+Por último,
+discutimos otro uso importante.
+Existe una sintaxis de desempaquetado que nos permite atrapar múltiples elementos de un iterable en vez de uno a la vez;
+al agregar un prefijo `*` a una variable,
+esta se convierte en **atrapa todo**,
+capturando en una **lista** todos los valores que no fueron asignados a las variables normales
+(**obligatorias**).
+Por ejemplo,
+
+```python
+id, *info = (125631, 'cocinero', 22, '6 meses')
+print(id)  #  125631
+print(info)  #  ['cocinero', 22, '6 meses']
+
+negocio, *trabajadores, direccion = (
+    'sushi', 'Hulk', 'Thor', 'Viuda Negra', 'Cd. Universitaria'
+    )
+print(negocio)  #  'sushi'
+print(trabajadores)  #  ['Hulk', 'Thor', 'Viuda Negra']
+print(direccion)  #  'Cd. Universitaria'
+```
+
+El número de variables obligatorias
+(sin `*`)
+debe ser menor o igual a los elementos en el iterable;
+en el caso de ser igual,
+la lista de la variable *estrellada* estará vacía.
+
+```python
+*a, b, c = [3, 4]
+print(a)
+print(b)
+print(c)
+# Imprime
+# []
+# 3
+# 4
+```
+
+Observa que
+
+```python
+numeros = range(5)
+val1, *val2, val3 = numeros # val1=0, val2=[1, 2, 3], val3=4
+```
+
+es mucho más claro que
+
+```python
+numeros = range(5)
+val1, val2, val3 = numeros[0], numeros[1:-1], numeros[-1]
+```
+
+Esta sintaxis también se puede emplear durante la asignación en un bucle `for`
+
+```python
+serie_avatar = (
+    ('Aang', 'Avatar', 112),
+    ('Katara', 'Maestra agua', 14),
+    ('Sokka', 'Simple humano', 15),
+    )
+for name, *info in serie_avatar:
+    print(name)
+    print(info)
+    print()
+```
+el cual produce
+
+```python
+Aang
+['Avatar', 112]
+
+Katara
+['Maestra agua', 14]
+
+Sokka
+['Simple humano', 15]
+```
+
 
 ### Concatenación
 
@@ -1475,7 +1673,562 @@ print(f"id de 'estudiantes' posterior a '+=': {id(estudiantes)}")
 > contamos con el método `extend` o el operador `+=`,
 > y en el caso de strings tenemos a `join`.
 
-### Métodos
+### Comparaciones
+
+La mayoría de las secuencias principales soportan los operadores de comparación ordinarios:
+`>`, `>=`, `==`, `!=`, `<` y `<=`.
+Las comparaciones en todos los casos son lexicográficas,
+es decir,
+se comparan los elementos índice por índice de la secuencia.
+
+> [!NOTE]
+> Las secuencias principales soportan `==` y `!=`, pero `range` no soporta comparaciones de desigualdad
+
+El operador `==` realiza una serie de comparaciones:
+checa que las dos secuencias sean del mismo tipo,
+checa que ambas tengan la misma longitud
+y finalmente checa la igualdad de cada elemento mediante
+`a[j] == b[j]`,
+dónde `a` y `b` son las dos secuencias.
+Si alguna de estas comparaciones falla regresa `False`.
+Por ejemplo,
+
+```python
+print([1, 2, 3] == [1.0, 2+0j, 3])  #  True
+
+print([1, 2, 3] == [2, 1, 3])  #  False (lexicografía)
+
+print([1, 2, 3] == (1, 2, 3))  #  False  (tipos)
+
+print([1, 2, 3] == [1, 2, 3, 3])  #  False  (longitud)
+```
+
+Oberva que `==` nunca regresa una `Exception` (error).
+
+Reglas similares aplican para `!=` el cual checa que las secuencias sean distintas:
+
+```python
+print([1, 2, 3] != [2, 1, 3])  #  True
+
+print([1, 2, 3] != [1.0, 2+0j, 3])  #  False
+
+print([1, 2, 3] != (1, 2, 3))  #  True
+
+print([1, 2, 3] != [1, 2, 3, 3])  #  True
+```
+
+Los operadores `>` y `<` solo comparan secuencias del mismo tipo;
+`[3, 1] > (1, 0)` regresa un `TypeError`.
+El resultado de la comparación resulta del primer elemento que sea distinto en ambas secuencias.
+Por ejemplo,
+
+```python
+print((5, 3, 8) < (5, 6, 1))  #  True (ya que 3 < 6)
+
+print([5, 3, 8] > [5, 3, -2, 9])  #  True (ya que 8 > -2)
+
+print('cazo' > 'carretera')  #  True (ya que 'z' > 'r')
+                              #  (o bien ord('z') > ord('r'))
+```
+
+En el caso de que una secuencia este contenida en otra del mismo tipo pero con más elementos decimos que la secuencia grande es mayor, esto es
+
+```python
+print('Caborca' > 'Cabo')  #  True
+
+print([1, 2, 3] < [1, 2, 3, 0])  #  True
+```
+
+Las mismas reglas aplican para `>=` y `<=`;
+se compara el primer elemento distinto en las secuencias mediante el operador correspondiente,
+además,
+una secuencia contenida en otra más grande se considera menor.
+
+### Métodos para listas
+
+Las listas y tuplas son objetos como todo en python.
+Como tal,
+tienen métodos que actúan sobre sus instancias.
+
+Las listas,
+al ser objetos mutables,
+nos permiten cambiar elementos,
+agregar y eliminarlos.
+
+#### Agregar elementos
+
+Ocurre frecuentemente que desconocemos el contenido de una lista por adelantado.
+Es común que empecemos con una lista vacía y agreguemos elementos durante la marcha con el comando `append`
+
+```python
+alumnos = []
+alumnos.append('Mayra')
+alumnos.append('Jose')
+alumnos.append('Arturo')
+
+print(alumnos)
+```
+
+Para hacerlo más interesante podemos agregar aleatoriedad con el módulo `random`
+
+```python
+import random
+
+dado = (1, 2, 3, 4, 5, 6)
+juego = []  # lista vacía
+for i in range(10): # esto hará que el bucle corra 10 veces
+    lanzamiento = random.choice(dado)
+    juego.append(lanzamiento)
+print(juego)
+```
+
+Como hemos visto,
+`append` agrega un elemento al final de la lista pero
+¿Qué tal si quiero agregar un elemento en cualquier ubicación de la lista?
+Para eso contamos con el método `insert(indice, elem)`
+
+```python
+L = ['a', 'b', 'd', 'e']
+L.insert(2, 'c')  # Inserta 'c' en el índice 2
+print(L)  # ['a', 'b', 'c', 'd', 'e']
+```
+
+También contamos con la opción de agregar varios elemento al final de la lista.
+Para lograr esto ya hemos hablado sobre la concatenación.
+Sin embargo,
+contamos también con el método `extend(iterable)`.
+La diferencia en este caso es que no se crea una nueva lista
+sino que se agregan los elementos de un `iterable` al final de la lista original.
+Otra diferencia es que se permite usar cualquier `iterable`,
+mientras con la concatenación solo podemos utilizar otra lista.
+
+```python
+L = [1, 2, 3, 4]
+L.extend((5, 6))
+print(L)  #  [1, 2, 3, 4, 5, 6]
+```
+
+Por último,
+podemos utilizar *slicing* para insertar la cantidad deseada de elementos en una posición deseada.
+La sintaxis es la siguiente:
+
+```python
+lista[indice:indice] = [elementos]  # cualquier iterable a la derecha
+```
+
+Lo que hacemos es indicar el índice dónde queremos realizar la inserción
+de los elementos que introduzcamos en el iterable de la derecha.
+Por ejemplo,
+
+```python
+L = [5, 9, 1, 0, 3]
+L[2:2] = [7]
+print(L)  #  [5, 9, 7, 1, 0, 3]
+```
+
+Observa que ocupamos utilizar un iterable del lado derecho incluso para introducir un elemento.
+También hacemos notar que los elementos que ya se encontraban en la lista se recorren en orden sin eliminarlos.
+Además,
+esta operación modifica el contenido de la lista pero no crea una lista nueva.
+El objeto que se encuentra a la derecha puede ser cualquier iterable
+
+```python
+L = [5, 9, 1, 0, 3]
+L[3:3] = 'Hola'
+print(L)  #  [5, 9, 1, 'H', 'o', 'l', 'a', 0, 3]
+```
+
+#### Modificar elementos
+
+Como ya sabemos,
+podemos mandar llamar un elemento de la lista
+(o cualquier secuencia)
+utilizando su índice dentro de corchetes
+(**recordemos que el índice inicial es cero**).
+Esta misma notación se emplea para modificar un elemento.
+Por ejemplo
+
+```python
+>>> libros = ['Farenheit 451', 'Un mundo feliz', '1984']
+>>> libros[2] = 'Donde habitan las sirenas' # cambiar elemento 2
+>>> print(libros)
+['Farenheit 451', 'Un mundo feliz', 'Donde habitan las sirenas']
+```
+
+donde hemos modificado el elemento con índice 2.
+Si deseamos modificar más de un elemento debemos utilizar
+*slicing* mediante la sintaxis
+
+```python
+lista[start:end] = [elementos] # cualquier iterable a la derecha
+```
+
+dónde `start` es inclusivo y `end` exclusivo.
+Si el rebanado y el iterable a la derecha contienen el mismo número de elementos,
+el resultado es modificar los elementos correspondientes a los índices. Por ejemplo,
+
+```python
+alturas = [1.73, 1.82, 1.76, 1.90, 1.80]
+# Modificar los elementos 2 y 3
+alturas[2:4] = (1.68, 1.79)
+print(alturas)  # [1.73, 1.82, 1.68, 1.79, 1.80]
+```
+
+Esta estrategia modifica la lista,
+no crea una nueva.
+Si el número de elementos en el iterable es menor a los elementos dados por los índices,
+la lista reducirá su tamaño.
+Si por el contrario,
+el iterable contiene más elementos,
+la lista crecerá.
+
+```python
+alturas = [1.73, 1.82, 1.76, 1.90, 1.80]
+# Menos elementos que el rango
+alturas[2:4] = [1.95]
+print(alturas)  # [1.73, 1.82, 1.95, 1.80]
+
+# Más elementos que el rango
+letras = ['a', 'b', 'c', 'd', 'e']
+letras[1:3] = ['A', 'B', 'C']
+print(letras)  # ['a', 'A', 'B', 'C', 'd', 'e']
+```
+
+#### Eliminar elementos
+
+Por otro lado,
+para eliminar un elemento tenemos varias opciones.
+Podemos utilizar el comando `del` seguido del elemento a eliminar como en
+
+```python
+calificaciones = [9.3, 8.2, 7.5, 8.8]
+
+del calificaciones[1]  # elimina elemento con índice 1
+print(calificaciones)  # resultado:[9.3, 7.5, 8.8]
+```
+
+También contamos con el método `pop`.
+Este acepta un índice,
+regresando y eliminando el elemento correspondiente.
+Si no se le da un argumento regresa y elimina el último.
+
+```python
+>>> L = [2, 4, 6, 8, 10]
+>>> L.pop() # retorna y elimina el último elemento
+10
+>>> print(L)
+[2, 4, 6, 8]
+>>> L.pop(2) # retorna y elimina el elemento con índice 2
+6
+>>> print(L)
+[2, 4, 8]
+```
+
+Para eliminar la primera aparición de un elemento que tiene cierto valor,
+utilizamos el método `remove`
+e introducimos dicho valor.
+Por ejemplo,
+
+```python
+mis_frutas = ['pera', 'manzana', 'fresa', 'manzana']
+mis_frutas.remove('manzana')
+print(mis_frutas)  # imprime ['pera', 'fresa', 'manzana']
+```
+
+nos permite eliminar la primera aparición de 'manzana'.
+
+Si deseamos eliminar más de un elemento podemos utilizar el rebanado mediante
+
+```python
+list[start:end] = []  # cualquier iterable vacío a la derecha
+```
+
+Para eliminar los elementos 1 y 2 podemos ejecutar entonces
+
+```python
+consonantes = ['b', 'e', 'i', 'f', 'g']
+consonantes[1:3] = []  #  ['b', 'f', 'g']
+```
+
+Por último,
+para eliminar todos los elementos de una lista
+contamos con su método `clear`.
+
+```python
+L = [3, 5, 8, 1, 0, 3]
+L.clear()
+print(L)  # imprime []
+```
+
+### Métodos para tuplas
+
+Debido aque las tuplas son inmutables,
+no podemos agregar,
+eliminar,
+ni modificar elementos.
+Para estas estructuras contamos con dos métodos:
+`count` y `index`.
+
+El primer método tiene la sintaxis
+`count(elemento)`
+y cuenta el número de apariciones del `elemento` dado
+
+```python
+tupla = (3, 4, [1, 2], [1], [3], [1, 2])
+print(tupla.count(3))
+print(tupla.count([1, 2]))
+
+palabra = tuple('pelele')
+print(palabra.count('e'))
+```
+
+El segundo toma la forma
+`index(elemento, start, stop)`,
+donde los índices `start` y `stop` son opcionales.
+Este método regresa el índice menor donde el `elemento` se encuentra;
+solo busca en los elementos comprendidos desde el índice `start` (inclusivo)
+hasta el `stop` (exclusivo).
+Por default,
+`start` es cero
+y `stop` es el final
+(en realidad es un entero grandísimo).
+
+```python
+tupla = (35, 12, 39, 15, 12)
+print(tupla.index(12))  #  1
+
+palabra = tuple('pelele')
+print(palabra.index('e', 2))  # 3 (start=2, stop=final)
+```
+
+Si el elemento no se encuentra,
+el método regresa un `ValueError`:
+
+```python
+tupla = (35, 12, 39, 15, 12)
+tupla.index(10)  #  ValueError
+```
+
+### Funciones para iterables
+
+Habiendo discutido los métodos para las secuencias principales,
+mostramos ahora algunas funciones que aplican para todo **iterable**.
+
+Las siguientes funciones toman a un iterable como argumento:
+
+* `list`, `tuple`, `set`, `dict`
+
+    Estas funciones crean una lista, tupla, conjunto o diccionario, respectivamente, a partir de los elementos del iterable.
+
+    ```python
+    estudiantes = set(['Carlos', 'Laura', 'Liza'])
+    print(estudiantes)  #  {'Carlos', 'Liza', 'Laura'}
+    ```
+
+* `sum`
+
+    Retorna la suma de los elementos en el iterable
+
+    ```python
+    # suma los enteros del 0 al 100
+    print(sum(range(101)))   # ¿Puedes hacerlo a mano?
+    ```
+
+* `max`, `min`
+
+    Retorna el valor máximo o mínimo de un iterable.
+    Se permite introducir más de un argumeto;
+    en este caso se retorna el argumento de valor máximo o mínimo.
+
+    > [!NOTE]
+    >
+    > Para obtener dicho valor,
+    > python itera sobre cada elemento del iterador,
+    > o sobre los argumentos,
+    > y emplea el operador `>` en el caso de `max`,
+    > o `<` en el caso de `min`.
+    > No se permiten números complejos por default
+    > ya que no están definidas las comparaciones
+    > (`>` o `<`)
+    > para este tipo.
+
+    Para un solo iterable tenemos
+
+    ```python
+    # tupla
+    calif = (8.4, 9.3, 9.7, 8.1)
+    print(max(calif))  #  9.7
+
+    # conjunto
+    palabras = {'carro', 'carretera'}
+    print(min(palabras))  #  'carretera'  (¿Porqué?)
+
+    # string
+    print(min('estupendo'))  #  ¿Qué imprime?
+
+    # lista de tuplas
+    # comparación elemento a elemento (tupla vs tupla)
+    precios = [
+        ('manzana', 10.25),
+        ('platano', 27.90),
+        ('mango', 36.99)
+        ]
+    print(min(precios))  # ('mango', 36.99)  (¿Porqué?)
+    ```
+
+    Observa que en el último ejemplo la comparación es entre tuplas;
+    lo que estamos obteniendo es la comparación del primer elemento entre tuplas.
+    Si lo que deseamos es el precio mínimo,
+    debemos comparar los segundos elementos.
+
+    Python nos permite utilizar una función de un solo argumento
+    para personalizar el criterio de comparación
+    mediante la opción `key`.
+    Por ejemplo,
+    si deseamos comparar los precios en el caso anterior
+
+    ```python
+    print(min(precios, key=lambda elem:elem[1]))  # ('manzana', 10.25)
+    ```
+
+    donde la función lambda
+    (ver sección sobre funciones)
+    se ejecuta para cada elemento del iterable y posteriormente se realiza la comparación con `<`.
+
+    Este mismo truco lo puedo utilizar para comparar números complejos,
+    los cuales compararé utilizando su módulo
+    (el módulo de un número complejo
+    $\sqrt{{\Re(x)}^2 + {\Im(x)}^2}$
+    se encuentra mediante la función `abs` de python)
+
+    ```python
+    print(abs(3+4j))  #  5.0 (math.sqrt(5^2 + 12^2))
+    print(abs(4j))  #  4.0
+    print(abs(-3))  #  3.0
+
+    psi = [3+4j, 4j, -3]
+    print(max(psi, key=abs))  #  (3+4j)
+    ```
+
+    En caso de que el iterable este vacío,
+    estas funciones retornan un `ValueError`;
+    podemos evitar esto utilizando el argumento opcional `default`
+    con el valor deseado para estos casos.
+    Por ejemplo,
+
+    ```python
+    # lista vacía
+    valor_maximo = max([], default='empty')
+    print(valor_maximo)  #  'empty'
+    ```
+
+    Finalmente, para más de un argumento
+
+    ```python
+    # Esta notación permite extraer una objeto dentro de un módulo
+    # (constante, función, clase)
+    from math import pi   # extraer el número pi del módulo math
+    print(max(3, pi, 2.7))  #  3.14159...
+    ```
+
+* `sorted`
+
+    Regresa una nueva lista con los elementos ordenados de un iterable sin modificarlo.
+
+    ```python
+    lista = [4, 9, 1, -3, 5, 4]
+    lista_ordenada = sorted(lista)
+
+    print(f'lista: {lista}')
+    print(f'lista_ordenada: {lista_ordenada}') # [-3, 1, 4, 4, 5, 9]
+
+    # `sorted` regresa una lista nueva para todo iterable
+    print(f"id(lista): {id(lista)}")
+    print(f"id(lista_ordenada): {id(lista_ordenada)}")
+
+    # `sorted` ordena cada elemento de un iterable con las reglas
+    # que apliquen a los elementos que se tengan (tuplas aquí).
+    precios = (
+        ('manzana', 10.25),
+        ('platano', 27.90),
+        ('mango', 36.99)
+        )
+    print(sorted(precios))  # lista de tuplas con frutas ordenadas
+                            # [('mango', 36.99),
+                            #  ('manzana', 10.25),
+                            #  ('platano', 27.90)]
+    ```
+
+    Esta función también cuenta con el parámetro opcional `key` para personalizar el criterio de ordenamiento
+    (recuerda que `key` acepta una función de un argumento).
+    Para ordenar nuestros precios por el valor numérico
+    ejecutamos
+
+    ```python
+    def get_precio(elem):
+        return elem[1]
+    precios_ordenados = sorted(precios, key=get_precio)
+    print(precios_ordenados)  # lista de tuplas con precios ordenados
+    ```
+
+    Además,
+    esta función cuenta con el parámetro opcional `reverse`,
+    el cual nos permite ordenar en orden descendente
+    y el cual es `False` por default
+
+    ```python
+    print(sorted("auwnc", reverse=True))  # ['w', 'u', 'n', 'c', 'a']
+    ```
+
+
+* `any`, `all`
+
+    La función `any` regresa `True` si al menos un elemento en el iterable es verdadero,
+    en caso contrario `False`.
+
+    Siendo más específicos,
+    la función itera sobre los elementos,
+    ejecutando `bool(elem)` en cada elemento `elem`;
+    en el momento que `bool` resulte en `True`,
+    la función regresa `True` inmediatamente sin checar otros miembros.
+
+    > [!NOTE]
+    >
+    > Un objeto `obj` para el cual `bool(obj)` regrese `True`
+    > se llama *truthy*,
+    > en caso contrario se conoce como *falsy*.
+    >
+    > Valores *falsy*:
+    >
+    > * False
+    > * número cero:
+    >       `0`, `0.0`, `0j`
+    > * iterables vacíos:
+    >       `[]`, `()`, `''`, `{}`, `set()`, `range(0)`
+    > * objeto nulo:
+    >       `None`
+    >
+    > Valores *truthy*:
+    >
+    > * Todo lo demás
+    > (esto incluye `'0'`, `[None]`, `[()]`)
+    >
+    >   ¿Qué piensas de `([])`?
+
+    Por su parte `all` regresa `True` solo si todos los elementos son *truthy*.
+
+    ```python
+    print(any([False, 0, 1]))  #  True
+
+    tupla = (0==1, 3>4)
+    print(any(tupla))  #  False
+
+    lista = [4>1, False or True, not False, '0']
+    print(all(lista))  #  True
+
+    rango = range(8)
+    print(all(rango))  #  False
+    ```
 
 
 ## Loops
