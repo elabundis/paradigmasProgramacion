@@ -1517,7 +1517,7 @@ comidas = [
     ]
 ```
 
-2. Alineamos con respecto al primer caracter de la linea que comenzó la construcción multinlínea
+2. Alineamos con respecto al primer carácter de la linea que comenzó la construcción multilínea
 
 ```python
 comidas = (
@@ -2333,7 +2333,7 @@ Las siguientes funciones toman a un iterable como argumento:
     se encuentra mediante la función `abs` de python)
 
     ```python
-    print(abs(3+4j))  #  5.0 (math.sqrt(5^2 + 12^2))
+    print(abs(3+4j))  #  5.0 (math.sqrt(3**2 + 4**2))
     print(abs(4j))  #  4.0
     print(abs(-3))  #  3.0
 
