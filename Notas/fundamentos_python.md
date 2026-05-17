@@ -3076,4 +3076,523 @@ Clave: investiga como funciona `pyplot` para generar una línea.
 
 ## Colecciones
 
+En python se utiliza el termino colección para referirse a aquellos objetos
+que contienen un número finito arbitrario
+(cero o más)
+de otros objetos
+(cada uno con su tipo).
+Estas se dividen en tres categorías principales:
+secuencias
+(las que hemos visto a excepción de los *strings*),
+mapeos y conjuntos.
+
+En esencia,
+las colecciones son las listas,
+tuplas, mapeos, conjuntos y
+objetos que se encuentran en el módulo `collections`
+de la librería estándar.
+Hacemos notar que las colecciones son iterables.
+**En esta sección hablamos sobre los mapeos y los conjuntos**.
+
+> [!NOTE]
+>
+> Por cierto,
+> un *strings* no es una colección
+> ya que sus elementos no son objetos distintos almacenados
+> mediante referencias;
+> sus elementos siempre son *strings* nuevos de un sólo carácter.
+
+
+> [!NOTE]
+>
+> Me gustaría darles una definición más precisa de lo que es una colección;
+> una colección es un objeto que es iterable
+> (tiene el método `__iter__` que nos permite iterar en un `for`),
+> tiene un tamaño
+> (posee el método `__len__` permitiendonos usar la función `len`),
+> es un contenedor,
+> (tiene el método `__contains__` que nos permite probar membresía de elementos via `in`)
+> y sus elementos se almacenan mediante referencias,
+> permitiendo que estos puedan ser de cualquier tipo.
+
+### Diccionarios (mapeos)
+
+#### Creación y acceso
+
+Un diccionario es una colección mutable de pares llave-valor
+(mapeo).
+Estos mapean llaves de tipo inmutable
+(str, int, float, tuple)
+a valores de cualquier tipo (mutable e inmutable).
+Cada llave es única pero los valores se pueden repetir.
+
+Podemos crear un diccionario mediante
+
+```python
+# mapea el 'code' a 'BKJ123' y 'route' a ['Mex', 'Frankfurt']
+vuelo = {'code': 'BKJ123', 'route': ['Mex', 'Frankfurt']}
+```
+
+Cada llave se separa de su valor mediante `:`,
+mientras que cada par se separa con comas.
+
+A partir de python 3.7 los diccionarios mantienen el orden de inserción;
+los pares clave-valor introducidos primero permanecen primero.
+
+Otra manera de crearlos es inicializando un diccionario vacío
+para posteriormente agregar cada par llave-valor:
+
+```python
+estudiantes = dict()  #  crea diccionario vacío
+
+# agrega llave '0124' con un valor ['Mario', 9]
+estudiantes['0124'] = ['Mario', 9]
+                                    #
+# agrega llave '3276' con un valor ['Rosa', 10]
+estudiantes['3276'] = ['Rosa', 10]
+
+print(estudiantes)  #  {'0124':['Mario', 9], '3276':['Rosa', 10]}
+```
+
+Y también podemos crearlos mediante un iterable que contenga pares llave-valor:
+
+```python
+my_dict = dict([('a',5), ('d',1)])
+print(my_dict)  #  {'a': 5, 'd': 1}
+```
+
+Para crear diccionarios vacíos tenemos también la opción
+
+```python
+my_dict = {}
+print(type(my_dict))  #  dict
+```
+
+Estas estructuras se emplean para almacenar grandes cantidades de datos de manera eficiente;
+python las implementa
+mediante una técnica conocida como *hashing*,
+permitiéndonos buscar elementos por medio de la llave de manera muy eficiente.
+Para acceder a los valores empleamos la llave correspondiente.
+
+```python
+print(vuelo['code'])  #  'BKJ123'
+print(estudiantes['3276'])  # ['Rosa', 10]
+```
+
+Observa que **los diccionarios no tiene índices**,
+accedemos a los valores mediante llaves,
+por lo tanto no importa en que orden almacenemos la información.
+Y ya que estamos en esto,
+**tampoco soportan el rebanado** (*slicing*).
+
+> [!NOTE]
+>
+> Un mapeo llave-valor podría implementarse mediante una lista de tuplas como `[('a',5), ('b':1)]`,
+> sin embargo,
+> esto sería muy ineficiente para listas grandes;
+> para buscar cualquier llave tendríamos que explorar elemento a elemento de la lista,
+> y en caso de no encontrarse el objeto
+> tendríamos que haber recorrido la lista entera
+> (algorítmo de orden N).
+
+> [!NOTE]
+>
+> Las llaves son *hashable*,
+> lo cual implica que deben ser de tipo inmutable;
+> las llaves no pueden ser listas, otros diccionarios o conjuntos
+> ya que obtendríamos un `TypeError`.
+
+#### Operaciones
+
+Ya hemos visto como buscar y añadir elementos.
+Ahora vemos como modificar y eliminar entradas.
+
+Para modificar valores utilizamos el mismo formato que
+para acceder (corchetes con la llave).
+Si tenemos el siguiente inventario de frutas a vender
+
+```python
+# este formato se conoce como indentación colgada
+inventario = {
+    'manzana': 120,  # podemos agregar comentario
+    'plátano': 400,  # en las líneas que queramos
+    'mango': 220,    # PEP8 recomienda esta coma
+}
+```
+
+cambiamos la cantidad de plátanos mediante
+
+```python
+inventario['plátano'] = 370
+print(inventario)  #  {'manzana': 120, 'plátano': 370, 'mango': 220}
+```
+
+Si nos llegaron 100 plátanos más,
+podemos agregarlos con
+
+```python
+inventario['plátano'] += 100
+print(inventario)  #  {'manzana': 120, 'plátano': 470, 'mango': 220}
+```
+
+Por otro lado,
+si no venderemos más manzanas
+eliminamos el elemento
+
+```python
+del inventario['manzana']
+print(inventario)  #  {'plátano': 470, 'mango': 220}
+```
+
+Si intentamos acceder a un elemento cuya llave no existe,
+obtenemos un `KeyError`
+
+```python
+res = inventario['manzana']
+```
+
+Podemos también checar si una llave existe en el diccionario
+mediante `in` o que no existe con `not in`.
+Por ejemplo,
+
+```python
+print('plátano' in inventario)  #  True
+print('pera' not in inventario)  #  True
+```
+
+Esto lo podemos emplear para evitar
+el error que ocurre con llaves inexistentes
+
+```python
+def tenemos(fruta:str, database:dict) -> bool:
+    if fruta in database:
+        return f'Si hay {fruta}'
+    else:
+        return f'No hay {fruta}'
+
+print(tenemos('mango', inventario))
+print(tenemos('pera', inventario))
+```
+
+Podemos saber el número de elementos mediante `len`
+
+```python
+print(len(inventario))  #  2
+```
+
+y podemos iterar por el diccionario;
+la iteración utiliza el valor de las llaves
+
+```python
+# es recomendable utilizar nombres con significado apropiado
+for fruta in inventario:
+    print(fruta)
+
+# imprime:
+# plátano
+# mango
+```
+
+Las colecciones,
+por definición
+(ver nota en *Colecciones*),
+soportan la iteración,
+la función `len`
+y la palabra reservada `in`.
+
+#### Métodos
+
+Los diccionarios, siendo colecciones mutables,
+tienen métodos tanto para obtener sus elementos como para modificarlos.
+Aquí exploramos los principales.
+
+> [!NOTE]
+>
+> Siempre puedes descubrir los métodos disponibles
+> mediante `dir(dict)`
+> (para listas `dir(list)`, tuplas `dir(tuple)`)
+> y si deseas ayuda para un método,
+> digamos `update`,
+> puedes llamar `help(dict.update)`.
+>
+> Si estas en ipython `dir.` seguide de la tecla `TAB`
+> nos indica los métodos y
+> `dict.update?` o `dict.update??`
+> nos da información sobre el método `update`
+> (con `?` se da el docstring,
+> con `??` trata de darnos también la implementación)
+
+Para obtener la información de las llaves y valores en un diccionario
+contamos con `keys`, `values` y `items`.
+Cada uno de estos métodos regresa un objeto
+que se conoce en python como una vista;
+objetos que funcionan como una promesa de regresar su valor cuando sea requerido en lo que resta del programa,
+es decir,
+tienen evaluación perezosa (*lazy*).
+Por cierto,
+las vistas que regresan estos tres métodos son iterables.
+
+Por su parte `keys` regresa una vista de las llaves:
+
+```python
+spanish = {'Hi': 'Hola', 'Bye': 'Adios', 'world': 'mundo'}
+llaves = spanish.keys()
+print(llaves)  #  dict_keys(['Hi', 'Bye', 'world'])
+```
+
+Una vista se puede transformar en una lista mediante `list`
+(o una tupla con `tuple`)
+
+```python
+llaves_lista = list(llaves)
+```
+
+O podemos iterar por cada uno de sus valores
+
+```python
+for key in llaves:
+    print(f'llave: {key}')
+    print(f'valor: {spanish[key]}')
+    print()
+```
+
+Aunque iterar por las llaves es lo que ocurre por default
+al utilizar `for` con un diccionario y no sería útil llamar este método para dicha tarea.
+
+Luego tenemos a `values`
+el cual regresa una vista de los valores de cada llave:
+
+```python
+print(spanish.values())  #  dict_values(['Hola', 'Adios', 'mundo'])
+```
+
+Finalmente tenemos a `items`,
+el cual regresa una vista que promete tuplas;
+una tupla por cada par llave-valor
+(dos elementos).
+
+```python
+elems = list(spanish.items())
+print(elems)  # [('Hi', 'Hola'), ('Bye', 'Adios'), ('world', 'mundo')]
+
+for item in spanish.items():
+    print(item)
+
+# imprime:
+# ('Hi', 'Hola')
+# ('Bye', 'Adios')
+# ('world', 'mundo')
+```
+
+Desde luego podemos utilizar desempaquetado para acceder a estos valores inmediatamente:
+
+```python
+for llave, valor in spanish.items():
+    print(llave)
+    print(valor)
+    print()
+```
+
+Otro método muy útil es `get`,
+al cual le damos una llave y nos regresa el valor correspondiente.
+Si la llave no se encuentra este regresa `None` por default en vez de un error.
+
+```python
+print(spanish.get('world'))  #  mundo
+print(spanish.get('one') is None)  #  True
+```
+
+Por otro lado,
+podemos agregar un argumento más indicando que valor deseamos
+que regrese la función en caso de no encontrar una llave:
+
+```python
+print(spanish.get('Hi', 'my bad'))  # Hola
+print(spanish.get('one', 'my bad'))  # my bad
+```
+
+Esta función resulta muy útil al procesar texto y contar la ocurrencia de palabras en un diccionario.
+Por ejemplo,
+
+```python
+texto = 'al pan pan y al vino vino'
+my_dict = {}
+for word in texto.split():
+    my_dict[word] = my_dict.get(word, 0) + 1
+print(my_dict)
+```
+
+Al definir un diccionario mencionamos que es mutable.
+En tales casos debemos tener cuidado con los alias;
+otras variables que hacen referencia al mismo objeto
+y que al modificarse alteran el contenido de la variable original.
+Para crear una copia superficial de un diccionario contamos con `copy`
+
+```python
+frecuencias = {'carro': 3, 'alto': 5}
+
+frec_alias = frecuencias
+frec_copy = frecuencias.copy()
+
+# modificar alias y copia
+frec_alias['bajo'] = 1
+frec_copy['estrella'] = 4
+
+# alterar el alias afecta al mutable original
+print(frecuencias)  #  {'carro': 3, 'alto': 5, 'bajo': 1}
+# pero siempre podemos trabajar con una copia
+print(frec_copy)  #  {'carro': 3, 'alto': 5, 'estrella': 4}
+```
+
+Si requerimos una copia profunda de una colección podemos hacer uso del módulo `copy`,
+el cual contiene la función `deepcopy` para este fin
+
+```python
+import copy
+
+
+my_dict = {'a': 5, 'b': 'Hi', 'c':[-3, 7]}
+
+# una copia superficial no crea nuevos objetos para los elementos
+# de tal manera que modificar un valor mutable de la copia
+# también afectará al diccionario original
+dict_copy = my_dict.copy()
+dict_copy['c'][0] = 5
+print(my_dict)  #  {'a': 5, 'b': 'Hi', 'c':[5, 7]}
+
+# con `deepcopy` tenemos realmente dos diccionarios independientes
+dict_deep = copy.deepcopy(my_dict)
+dict_deep['c'][0] = 10
+print(dict_deep)  #  {'a': 5, 'b': 'Hi', 'c':[10, 7]}
+print(my_dict)  #  {'a': 5, 'b': 'Hi', 'c':[5, 7]}
+```
+
+Otro método útil es `update`,
+el cual te permite agregar el contenido de otro diccionario.
+Si el diccionario a agregar repite una llave del original,
+su valor reemplazará al antigüo.
+Por ejemplo,
+
+```python
+inventario = {'pera': 25, 'melon': 33}
+inventario.update({'manzana':20, 'pera':18})
+print(inventario)  #  {'pera': 18, 'melon': 33, 'manzana':20}
+```
+
+Este método también funciona con iterables;
+cada elemento del iterable debe contener dos objetos,
+uno para la llave y el otro el valor:
+
+```python
+my_list = [('compilador', 'gcc'), ('dir_lib', './lib')]
+# inicialización
+conf = {}
+# agregar contenido de iterable
+conf.update(my_list)
+print(conf)  #  {'compilador': 'gcc', 'dir_lib': './lib'}
+```
+
+#### Comprensiones de diccionario (*dictionary comprehension*)
+
+Podemos emplear `for` implícitos para la creación de diccionarios.
+Por ejemplo,
+a partir de un iterable como `range`
+
+```python
+square = {x: x**2 for x in range(1, 6)}
+print(square)  #  {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+print(square[4])  #  16
+```
+
+o bien, a partir de otro diccionario
+
+```python
+# costo antes del iva
+precio = {'camisa': 750.0, 'pantalon': 1200.0}
+# costo final
+iva = 1.16
+precio_total = {key: val * iva for key, val in precio.items()}
+print(precio_total)  #  {'camisa': 870.0, 'pantalon': 1392.0}
+```
+
+Un uso típico es tener iterables separados para las llaves y los valores los cuales deseamos unir.
+Para lograr esto requerimos del objeto iterable `zip`.
+
+Para crear este objeto empleamos la función `zip`
+seguida de `n` argumentos.
+Cada elemento será una tupla con `n` objetos.
+La primer tupla toma el primer elemento de cada argumento,
+la segunda tupla tiene los segundos elementos de cada argumento
+y así sucesivamente.
+Los elementos terminan cuando a alguno de los argumentos dados a `zip` se le acaban sus elementos.
+
+```python
+a = ['a', 'b', 'c', 'd']
+b = (2, 4, 6)
+my_zip = zip(a, b)
+for elem in my_zip:
+    print(elem)
+
+# imprime:
+# ('a', 2)
+# ('b', 4)
+# ('c', 6)
+```
+
+Una vez llamados sus elementos no podemos volver a utilizarlos;
+el siguiente código
+
+```python
+count = 0
+for elem in my_zip:
+    count += 1
+    print(count)
+    print(elem)
+```
+
+no imprime nada.
+
+Podemos transformar el objeto `zip` en una lista si lo deseamos
+
+```python
+x = (2.0, 2.5, 3.0, 3.5)
+y = (1.0, 1.5, 2.0, 2.5)
+
+z = map(lambda a, b: a**2 + b**2, x, y)
+z = tuple(z)  #  (5.0, 8.5, 13.0, 18.5)
+
+coor_zip = zip(x, y, z)
+coor_lista = list(coor_zip)
+print(coor)
+
+# imprime:
+#  [(2.0, 1.0, 5.0),
+#   (2.5, 1.5, 8.5),
+#   (3.0, 2.0, 13.0),
+#   (3.5, 2.5, 18.5)]
+```
+
+Observa que al transformarlo en una lista hemos agotado la extracción de sus elementos
+y ya no podemos iterar sobre el objeto `zip`:
+
+```python
+# no imprimirá nada
+for elem in coor_zip:
+    print(elem)
+```
+
+Regresando a nuestro problema original;
+para unir dos iterables,
+digamos nombres y edades,
+podemos ejecutar
+
+```python
+nombres = ['Aang', 'Katara', 'Sokka']
+edades = (112, 14, 15)
+
+edad = {key: val for key, val in zip(nombres, edades)}
+print(edad)  #  {'Aang': 112, 'Katara': 14, 'Sokka': 15}
+```
+
+
 </div>
