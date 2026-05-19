@@ -595,7 +595,7 @@ El módulo **math** incluye:
 * constantes típicas
 ($\pi$, $e$),
 * funciones comunes
-(raíz cuadrada, exponencial, logarítmo),
+(raíz cuadrada, exponencial, logaritmo),
 * funciones trigonométricas
 (coseno, seno hiperbólico),
 * funciones encontradas en probabilidad y estadística
@@ -746,12 +746,12 @@ y nos regresa un `float`.
     print(f'asinh(1) = {math.asinh(1)}')
     print()
 
-Para tomar el logarítmo de una base deseada empleamos
+Para tomar el logaritmo de una base deseada empleamos
 
     # Logarítmos
     print('Logaritmos')
 
-    # logarítmo de base e
+    # logaritmo de base e
     y = math.e  # constante de Euler
     print('y =  ', y)
     print(f'ln(y) = {math.log(y)}') # Utilizando f-strings
@@ -930,11 +930,11 @@ de acuerdo al diccionario.
 Específicamente,
 utilizan el código unicode durante la operación.
 
-* Para verificar si dos strings son indénticos utilizamos `==`,
+* Para verificar si dos strings son idénticos utilizamos `==`,
   mientras que `!=` nos informa si los strings son distintos.
 
 * El resto de operadores nos permiten determinar el orden alfabético entre dos strings,
-  comparando el valor unicode del primer caracter que difiera entre estos.
+  comparando el valor unicode del primer carácter que difiera entre estos.
 
 Tenemos, por ejemplo
 
@@ -961,9 +961,9 @@ en este caso
     True
 
 ya que las mayúsculas van antes que las minúsculas en unicode.
-**Para conocer el valor unicode de un caracter,
+**Para conocer el valor unicode de un carácter,
 utilizamos la función `ord`**
-(acepta *strings* de un sólo caracter,
+(acepta *strings* de un sólo carácter,
 *strings* más grandes generarán un error):
 
     >>> ord('H')
@@ -1157,7 +1157,7 @@ También contamos con un método que nos regresa el índice de la primera aparic
 o substring en un string dado,
 el método `find`.
 Si el método encuentra el substring,
-regresa el índice de ínicio,
+regresa el índice de inicio,
 en caso contrario regresa `-1`
 (nunca regresa un error).
 Por ejemplo,
@@ -1310,7 +1310,7 @@ else:
     print(f'{x} es impar')
 ```
 
-Ejemplo 2: Se hace una venta de boletos de loteria con las siguientes reglas:
+Ejemplo 2: Se hace una venta de boletos de lotería con las siguientes reglas:
 * Si compras hasta 20 boletos, el precio por boleto es de $100.
 * Si compras más de 20 boletos y menos de 30, se te da un precio de $90.
 * Si compras 30 o más boletos, obtienes un precio de $60.
@@ -1704,7 +1704,7 @@ examenes = [('Luis', 8), ('Penelope', 9), ('Liz', 7)]
 ```
 
 y deseamos agregar la calificación de cada estudiante a otras calificaciones que ya tenemos en una base de datos.
-Si no contaramos con el desempaquetado,
+Si no contáramos con el desempaquetado,
 tendríamos que iterar por cada elemento,
 el cual es una tupla,
 y después indexar para extraer cada elemento.
@@ -1934,7 +1934,7 @@ print([1, 2, 3] == (1, 2, 3))  #  False  (tipos)
 print([1, 2, 3] == [1, 2, 3, 3])  #  False  (longitud)
 ```
 
-Oberva que `==` nunca regresa una `Exception` (error).
+Observa que `==` nunca regresa una `Exception` (error).
 
 Reglas similares aplican para `!=` el cual checa que las secuencias sean distintas:
 
@@ -2193,7 +2193,7 @@ print(L)  # imprime []
 
 ### Métodos para tuplas
 
-Debido aque las tuplas son inmutables,
+Debido a que las tuplas son inmutables,
 no podemos agregar,
 eliminar,
 ni modificar elementos.
@@ -2268,7 +2268,7 @@ Las siguientes funciones toman a un iterable como argumento:
 * `max`, `min`
 
     Retorna el valor máximo o mínimo de un iterable.
-    Se permite introducir más de un argumeto;
+    Se permite introducir más de un argumento;
     en este caso se retorna el argumento de valor máximo o mínimo.
 
     > [!NOTE]
@@ -2520,7 +2520,7 @@ Por ejemplo, si deseamos los enteros impares del 1 al 13
 
 Regresando a los bucles `for`,
 estos se utilizan cuando conocemos el número exacto de iteraciones,
-o si este se encuentra determinado por la longitud de una sequencia.
+o si este se encuentra determinado por la longitud de una secuencia.
 A continuación mostramos algunos ejemplos.
 
 Utilizando la secuencia de enteros range
@@ -2564,7 +2564,7 @@ Las temperaturas de grados Celsius a Farenheit
 
 Como mencionamos al principio de esta sección,
 contamos con un segunda estructura para la repetición de instrucciones,
-el búcle `while`.
+el bucle `while`.
 Este sigue la sintaxis
 
     while condicion:
@@ -2730,7 +2730,7 @@ el flujo retorna inmediatamente a la línea desde dónde se invocó la función,
 sin importar si esta contiene  más lineas.
 
 Si una función no cuenta con la palabra `return`,
-el intérprete ejecuta todas las lineas de codigo,
+el intérprete ejecuta todas las lineas de código,
 de arriba a abajo,
 y retorna el valor `None`,
 es decir,
@@ -3109,7 +3109,7 @@ Hacemos notar que las colecciones son iterables.
 > una colección es un objeto que es iterable
 > (tiene el método `__iter__` que nos permite iterar en un `for`),
 > tiene un tamaño
-> (posee el método `__len__` permitiendonos usar la función `len`),
+> (posee el método `__len__` permitiéndonos usar la función `len`),
 > es un contenedor,
 > (tiene el método `__contains__` que nos permite probar membresía de elementos via `in`)
 > y sus elementos se almacenan mediante referencias,
@@ -3193,7 +3193,7 @@ Y ya que estamos en esto,
 > para buscar cualquier llave tendríamos que explorar elemento a elemento de la lista,
 > y en caso de no encontrarse el objeto
 > tendríamos que haber recorrido la lista entera
-> (algorítmo de orden N).
+> (algoritmo de orden N).
 
 > [!NOTE]
 >
@@ -3315,7 +3315,7 @@ Aquí exploramos los principales.
 > digamos `update`,
 > puedes llamar `help(dict.update)`.
 >
-> Si estas en ipython `dir.` seguide de la tecla `TAB`
+> Si estas en ipython `dir.` seguido de la tecla `TAB`
 > nos indica los métodos y
 > `dict.update?` o `dict.update??`
 > nos da información sobre el método `update`
@@ -3470,7 +3470,7 @@ print(my_dict)  #  {'a': 5, 'b': 'Hi', 'c':[5, 7]}
 Otro método útil es `update`,
 el cual te permite agregar el contenido de otro diccionario.
 Si el diccionario a agregar repite una llave del original,
-su valor reemplazará al antigüo.
+su valor reemplazará al antiguo.
 Por ejemplo,
 
 ```python
@@ -3627,8 +3627,8 @@ ya que introducir `a = {}` crea un diccionario vacío `a`,
 no un conjunto.
 
 Los elementos deben ser *hashable*,
-lo cual forza a que sean de tipo inmutable
-(numeros, strings, bool, tuplas);
+lo cual fuerza a que sean de tipo inmutable
+(números, strings, bool, tuplas);
 esto debido a que internamente se almacenan en una tabla de *hash*.
 Por ejemplo,
 
@@ -3676,7 +3676,7 @@ print(simpsons)  #  {'Bart', 'Homero'}
 
 donde el método `remove` regresa un `KeyError`
 si el elemento a eliminar no se encuentra.
-Si no deseamos este comporatmiento tenemos a `discard`
+Si no deseamos este comportamiento tenemos a `discard`
 el cual elimina un elemento y no hace nada si este no se encuentra
 
 ```python
