@@ -3594,5 +3594,276 @@ edad = {key: val for key, val in zip(nombres, edades)}
 print(edad)  #  {'Aang': 112, 'Katara': 14, 'Sokka': 15}
 ```
 
+### Conjuntos
+
+Los conjuntos de tipo `set`
+son colecciones mutables que no permiten la repetición de elementos.
+Estos se crean directamente mediante llaves
+(sin el separador `:` que se utiliza en mapeos)
+o con el constructor `set`
+al cual le damos un iterable:
+
+```python
+# utilizando llaves directamente
+pelis = {'Matrix', 'El Padrino'}
+print(type(pelis))  #  <class 'set'>
+
+# no se agregan elementos repetidos
+conjunto = {'a', 'a'}  #  no agrega elementos repetidos
+print(conjunto)  #  {'a'}
+
+# con `set` y un iterable
+series = set(['Breaking Bad', 'Juego de Tronos'])
+print(series)  #  {'Breaking Bad', 'Juego de Tronos'}
+```
+
+Para crear un conjunto vacío debemos emplear
+
+```python
+conjunto_vacio = set()
+```
+
+ya que introducir `a = {}` crea un diccionario vacío `a`,
+no un conjunto.
+
+Los elementos deben ser *hashable*,
+lo cual forza a que sean de tipo inmutable
+(numeros, strings, bool, tuplas);
+esto debido a que internamente se almacenan en una tabla de *hash*.
+Por ejemplo,
+
+```python
+# correcto
+my_set = {1, 'hola', (2, 3)}
+type(my_set)  #  set
+
+# incorrecto
+other_set = {1, 'hola', [2, 3]} # TypeError: unhashable type: 'list'
+```
+
+Además, sus elementos no siguen el orden en que fueron ingresados;
+el almacenamiento es de acuerdo al valor de hash de cada elemento,
+como podemos apreciar con el conjunto `my_set`
+
+```python
+print(my_set)  #  {(2, 3), 1, 'hola'}
+```
+
+Estos objetos soportan métodos para añadir y eliminar elementos,
+pero no permiten modificar aquellos ya ingresados
+ni utilizar la indexación o rebanado
+(no tendría sentido ya que desconocemos el orden).
+
+```python
+# no soporta índices
+my_set[0]  #  TypeError: 'set' object is not subscriptable
+```
+
+Para añadir o eliminar un elemento a la vez utilizamos
+`add` o `remove`,
+respectivamente:
+
+```python
+simpsons = set()
+simpsons.add('Homero')
+simpsons.add('Bart')
+simpsons.add('Luigi')  # Ups me equivoqué
+print(simpsons)  #  {'Luigi', 'Bart', 'Homero'}
+
+simpsons.remove('Luigi')
+print(simpsons)  #  {'Bart', 'Homero'}
+```
+
+donde el método `remove` regresa un `KeyError`
+si el elemento a eliminar no se encuentra.
+Si no deseamos este comporatmiento tenemos a `discard`
+el cual elimina un elemento y no hace nada si este no se encuentra
+
+```python
+simpsons.discard('Mario')  #  no pasa nada
+simpsons.remove('Mario')  #  KeyError: 'Mario'
+```
+
+Para agregar múltiples elementos contamos con `update`;
+este recibe un iterable con objetos *hashable*
+
+```python
+simpsons.update(('Lisa', 'Marge'))
+print(simpsons)  #  {'Marge', 'Lisa', 'Bart', 'Homero'}
+
+# no es lo mismo agregar una tupla que un string
+my_set = set()
+my_set.update('Lisa')
+print(my_set)  #  {'s', 'a', 'L', 'i'}
+```
+
+Dado que los conjuntos son **colecciones**,
+estos permiten checar si un elemento existe o no
+mediante `in` y `not in`,
+respectivamente,
+soportan la iteración
+y tienen un tamaño dado por `len`:
+
+```python
+conjunto = {'uva', 'mango', 'melon'}
+
+print('fresa' in conjunto)  #  False
+print(len(conjunto))  #  3
+
+# al iterar recuerda que los elementos están desordenados
+for fruta in conjunto:
+    print(fruta)
+# imprime:
+# uva
+# melon
+# mango
+```
+
+> [!NOTE]
+>
+> Aquí es importante detenernos a hacer una mención importante:
+> debido a la implementación mediante la tabla de *hash*,
+> checar si un elemento existe (`in`) en un conjunto
+> es muchísimo más rápido que para una lista
+> (tiempo con orden $O(1)$ contra $O(n)$ en una lista).
+> También tenemos que el insertar y eliminar elementos
+> es más veloz ya que las listas requieren mover los elementos
+> al insertar o eliminar un objeto de el medio.
+> La iteración por otro lado es más veloz en las listas.
+
+Existe un segundo tipo de conjunto,
+**el conjunto congelado** `frozenset`.
+Este es la **versión inmutable de un** `set`.
+Además este objeto es *hashable*,
+es decir,
+puede usarse como elemento en los conjuntos.
+
+Su creación requiere del constructor `frozenset`
+al cual le pasamos un iterable:
+
+```python
+U = frozenset('Hola')
+print(U)  #  frozenset({'o', 'H', 'l', 'a'})
+```
+
+Al igual que un `set` sus elementos están desordenados
+y es una colección; soporta `in`, iteración y `len`.
+
+Siendo inmutable no soporta:
+`add`,
+`update`,
+`remove` y
+`discard`.
+
+En este objeto no se soporta agregar ni eliminar elementos
+
+#### Operaciones de conjunto
+
+Al estar inspirados en los conjuntos matemáticos,
+tanto `set` como `frozenset` permiten las operaciones:
+unión,
+intersección,
+diferencia,
+diferencia simétrica,
+verificar subconjuntos,
+etc.
+
+Para la **unión** tenemos el método `union`
+y el operador `|`,
+los cuales regresan un nuevo conjunto que resulte
+de la unión de dos o más conjuntos:
+
+```python
+a = {1, 2, 'a', 'b', 'c'}
+b = {'a', 'b', 'f'}
+
+c = a.union(b)
+print(c)  #  {1, 2, 'a', 'c', 'f', 'b'}
+# equivalentemente pudimos ejecutar (teniendo el mismo resultado)
+# c = a | b
+```
+
+La **intersección** se obtiene con el método `intersection`
+o el operador `&`:
+
+```python
+c = a & b
+print(c)  #  {'a', 'b'}
+# equivalentemente
+# c = a.intersection(b)
+```
+
+Para verificar si un conjunto es **subconjunto** de otro tenemos
+al métodos `issubset` y el operador `<=`
+
+```python
+a = {2, 4, 6}
+b = {2, 4, 6, 8}
+c = {2, 4, 6}
+
+print(b.issubset(a))  #  False
+print(a.issubset(b))  #  True
+print(a.issubset(c))  #  True
+```
+
+En teoría de conjuntos existe otro concepto conocido como
+**subconjunto propio**:
+un conjunto `U` es subconjunto propio de `V`
+sí y solo sí `U` es subconjunto de `V` y
+`U` es distinto a `V`.
+Para verificar esto contamos con el operador `<`:
+
+```python
+print(a < b)  #  True
+print(a < c)  #  False
+```
+
+En el caso opuesto,
+podemos verificar si un conjunto es **superconjunto** de otro con
+`issuperset` o `>=`
+(superconjunto propio con `>`).
+
+
+También podemos verificar si dos conjuntos son **disjuntos** mediante
+`isdisjoint`
+
+```python
+U = {'a', 'g'}; V = {'b', 'c', 1}
+print(U.isdisjoint(V))  #  True
+
+# dos conjuntos son disjuntos si no se intersectan,
+# por lo tanto, también podríamos verificar con
+W = U.intersection(V)
+# cuyo resultado debería ser el conjunto vacío
+print(W)  #  set()
+```
+
+Otras operaciones importantes son la **diferencia**
+y la **diferencia simétrica**.
+
+Para la diferencia podemos emplear `difference`
+o el operador `-`;
+`U - V` regresa el conjunto con los elementos de `U` que no están en `V`.
+
+Para la segunda operación tenemos el método `symmetric_difference`;
+`U.symmetric_difference(A)`
+regresa los elementos únicos en ambos conjuntos.
+
+```python
+U, V = set('carbon'), set('arbol')
+print(V)  #  {'a', 'b', 'o', 'r', 'l'}
+
+print(U - V)  #  {'n', 'c'}
+print(V - U)  #  {'l'}
+
+W = U.symmetric_difference(V)
+print(W)  #  {'n', 'l', 'c'}   la diferencia simétrica es igual a
+          #                    (U-V) | (V-U)
+```
+
+Los conjuntos tienen muchas operaciones disponibles.
+Para ver una lista completa visita
+[aquí](https://docs.python.org/3.13/library/stdtypes.html#set-types-set-frozenset)
+
 
 </div>
