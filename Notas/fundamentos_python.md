@@ -2255,9 +2255,8 @@ texto_limpio = [word.strip() for word in texto if word.strip()]
 print(texto_limpio)  #  ['Hola', 'mis', 'amigos']
 ```
 
-Podríamos llevar la lógica un paso más allá mediante
-
-Por último también podemos iterar sobre dos o más iterables utilizando
+Por último,
+iteramos sobre dos o más iterables con
 
 ```python
 [expresion for x in iter1 for y in iter2]
@@ -2282,8 +2281,6 @@ iter2 = [3, 4]
 my_list = [(x, y) for x in iter1 for y in iter2]
 print(my_list)  #  [(1, 3), (1, 4), (2, 3), (2, 4)]
 ```
-
-
 
 > [!NOTE]
 >
