@@ -2356,6 +2356,53 @@ Las siguientes funciones toman a un iterable como argumento:
     print(estudiantes)  #  {'Carlos', 'Liza', 'Laura'}
     ```
 
+* `enumerate`
+
+    En un bucle `for` esta función nos permite extraer al mismo
+    tiempo un contador de cada elemento y el elemento mismo
+
+    ```python
+    # funciona con cualquier iterable (aquí escogimos una lista)
+    my_iter = ['a', 'b', 'c']
+    for count, elem in enumerate(my_iter):
+        print(count, elem)
+    #imprime
+    # 0 a
+    # 1 b
+    # 2 c
+    ```
+
+    Esto resulta mucho más legible en muchos casos.
+    Por ejemplo,
+    supongamos que tengo el registro de un estudiante con sus datos en una lista
+    y decido agregar `None` para la información desconocida,
+    podemos querer encontrar en que índices de la lista ocurre
+    esto mediante
+
+    ```python
+    estudiante = ['Laura', 21, None, 'Culiacán', None,
+                  'informática']
+    indices_none = []
+    idx = 0
+    for info in estudiante:
+        if info is None:
+            indices_none.append(idx)
+        idx += 1
+    print(indices_none)
+    ```
+
+    pero lo podemos hacer más claro mediante
+
+    ```python
+    estudiante = ['Laura', 21, None, 'Culiacán', None,
+                  'informática']
+    indices_none = []
+    for idx, info in enumerate(estudiante):
+        if info is None:
+            indices_none.append(idx)
+    print(indices_none)
+    ```
+
 * `sum`
 
     Retorna la suma de los elementos en el iterable
