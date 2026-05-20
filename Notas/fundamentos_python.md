@@ -2191,6 +2191,106 @@ L.clear()
 print(L)  # imprime []
 ```
 
+### Comprensiones de listas
+
+Contamos con una manera más para la creación de listas
+de manera concisa y legíble,
+las comprensiones de listas.
+
+Estas producen una lista a partir de otro iterable;
+se aplica una expresión a cada elemento de dicho iterable agregando cada resultado a la lista.
+A continuación mostramos la sintaxis:
+
+```python
+[expresion for var in iterable]
+```
+
+y ahora un ejemplo
+
+```python
+my_iter = (2, 4, 6)
+my_list = [x**2 for x in my_iter]
+print(my_list)  #  [4, 16, 36]
+```
+
+como podemos apreciar utilizamos `for` con la variable que
+deseemos para extraer los elementos del iterable `my_iter`,
+`x` en este caso,
+y del lado izquierdo realizamos una operación cuyo resultado se agrega a la lista.
+
+Podemos por ejemplo generar una lista de coordenadas con espaciamiento constante mediante
+
+```python
+coor = [0.5+num for num in range(6)]
+print(coor)  #  [0.5, 1.5, 2.5, 3.5, 4.5, 5.5]
+```
+
+Las comprensiones también nos permiten utilizar lógica condicional mediante la sintaxis
+
+```python
+[expresion for var in iterable if condicion]
+```
+
+Veamos un ejemplo
+
+```python
+# filtrar solo los valores pares
+numeros = (3, 5, 1, 4, 9, 2)
+pares = [n for n in numeros if n % 2==0]
+print(pares)  #  [4, 2]
+```
+
+Lo que sucede arriba es que `n` itera sobre cada valor de `numeros`,
+al tomar un valor particular se evalua la condición lógica
+`n % 2 == 0`
+y cuando esta es verdadera se ejecuta la expresión de hasta la izquierda que en este caso es simplemente `n`
+(agregar el valor que satisface mi filtro).
+
+Podemos también usarla para limpiar texto
+
+```python
+texto = [' Hola', '  mis ', '  ', 'amigos ']
+# recuerda que un string vacío es falsy
+texto_limpio = [word.strip() for word in texto if word.strip()]
+print(texto_limpio)  #  ['Hola', 'mis', 'amigos']
+```
+
+Podríamos llevar la lógica un paso más allá mediante
+
+Por último también podemos iterar sobre dos o más iterables utilizando
+
+```python
+[expresion for x in iter1 for y in iter2]
+```
+
+dónde el primer `for` actúa como el bucle exterior y el otro como interior.
+En otras palabras,
+esta sintaxis equivale a
+
+```python
+my_list = []
+for x in iter1:
+    for y in iter2:
+        my_list.append(expresion)
+```
+
+Un ejemplo vale mil palabras
+
+```python
+iter1 = (1, 2)
+iter2 = [3, 4]
+my_list = [(x, y) for x in iter1 for y in iter2]
+print(my_list)  #  [(1, 3), (1, 4), (2, 3), (2, 4)]
+```
+
+
+
+> [!NOTE]
+>
+> Las comprensiones de lista son normalmente de 10% a 30%
+> más veloces que los bucles `for` debido a que python
+> las optimiza a nivel de *bytecode*.
+
 ### Métodos para tuplas
 
 Debido a que las tuplas son inmutables,
