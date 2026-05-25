@@ -4010,4 +4010,165 @@ Para ver una lista completa visita
 [aquí](https://docs.python.org/3.13/library/stdtypes.html#set-types-set-frozenset)
 
 
+## Generadores
+
+Los generadores son objetos iterables que tienen una evaluación perezosa.
+No almacenan todos los valores del iterable en la memoria
+sino que regresan valor a valor en un bucle `for`
+o mediante la función `next`.
+Estos nos permiten procesar cantidades grandes de información,
+trabajar con secuencias infinitas
+o procesar un flujo continuo de datos.
+
+Para crear un generador utilizamos la sintaxis de una función
+pero en vez de utilizar `return` empleamos `yield`.
+En una función,
+`return` termina la ejecución,
+en cambio el generador utiliza `yield` para generar un valor y pausar,
+guardando el estado de la función para que esta pueda
+resumir donde nos quedamos cuando se pida el siguiente valor.
+Si pedimos un valor después de haber consumido todos,
+se obtiene la excepción `StopIteration`.
+
+A continuación creamos un generador
+
+```python
+def mi_gen(x):
+    x += 2
+    yield x**2
+    if x%2 == 0:
+        print('es par')
+        yield x//2
+```
+
+Hay que hacer hincapié que dicho objeto no es una función,
+es un generador.
+Para ver esto creamos dos instancias
+(dos entidades específicas e individuales de su clase)
+mediante:
+
+```python
+inst_1 = mi_gen(5)
+inst_2 = mi_gen(8)
+```
+
+Si `mi_gen` fuera una función se habría corrido el código del cuerpo.
+En cambio,
+lo que hemos hecho es crear dos generadores independientes
+los cuales no han ejecutado el código.
+Si aplicamos la función `next` sobre el primer generador
+
+```python
+print(next(inst_1))  #  49
+```
+
+se ejecuta el código del cuerpo hasta llegar al primer `yield`
+y ahí se detiene a esperar que solicitemos un nuevo valor,
+almacenando el estado actual de la función
+(variables locales hasta ese punto: `x=7`).
+
+Si vuelvo a solicitar un valor
+
+```python
+print(next(inst_1))  #  StopIteration
+```
+
+obtengo un error ya que no hay más valores que regresar
+(`x=7` no es un número par y no se entra en el `if`).
+
+Si ahora ejecutamos el segundo generador
+
+```python
+print(next(inst_2))  #  100
+```
+
+Este almacena su propio estado independiente (`x=10`) y
+puede resumir donde se quedó
+
+```python
+val = next(inst_2)  #  se imprime: es par
+print(val)  #  5
+```
+
+> [!NOTE]
+> Debemos considerar que una vez evaluado un valor no podemos regresar al anterior.
+
+Podemos obtener una secuencia de enteros ´donde el
+i-ésimo elemento sea la suma de $1$ a $i$ mediante
+
+```python
+def sumatoria(n:int):
+    """
+    n > 0
+
+    """
+    suma = 0
+    for i in range(1, n+1):
+        suma += i
+        yield suma
+```
+
+En esta ocasión recorreremos los valores del generador,
+el cual es un iterador,
+en un bucle `for`:
+
+```python
+for num in sumatoria(10):
+    print(num)
+# imprime
+# 1
+# 3  (1+2)
+# 6  (1+2+3)
+# 10  (1+2+3+4)
+# ...
+# 55 (1+2+3+...+10)
+```
+
+¿Cómo modificarías el generador `sumatoria` para tratar de obtener la secuencia hasta el infinito?
+
+Aquí creamos un generador que retorna la secuencia de *Fibonacci*
+(la cual toma valores $(0, 1, 1, 2, 3, 5, 8, ...)$ ya que cada valor se obtiene de sumar los dos anteriores)
+
+```python
+def fibonacci():
+    a = 0
+    b = 1
+    while True:
+        yield a
+        a, b = b, a + b
+```
+
+Para obtener todos los número Fibonacci ejecutamos
+(esta serie es infinita,
+para detener el programa presiona las teclas Ctrl+C):
+
+```python
+import time
+
+
+# creamos el objeto
+mi_fibo = fibonacci()
+# ahora lo ejecutamos
+while True:
+    print(next(mi_fibo))
+    time.sleep(0.5)  # dormimos medio segundo para ver resultados
+```
+
+Una manera concisa de crear generadores es utilizar paréntesis y
+comprensión `for` como para las listas:
+
+```python
+gen = (x**2 for x in range(5))
+print(type(gen))  #  <class 'generator'>
+```
+
+Podemos iterar sobre el generador o bien transformarlo en una lista
+lo cual hará que se ejecute hasta obtener su último valor:
+
+```python
+cuadrados = list(gen)
+print(cuadrados)  #  [0, 1, 4, 9, 16]
+```
+
+
 </div>
