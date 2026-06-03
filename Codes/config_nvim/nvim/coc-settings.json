@@ -1,0 +1,35 @@
+{
+  // -----------------------------------------------------------
+  // Settings for coc-pyright
+  // -----------------------------------------------------------
+  // Choose Formatter (PEP8)
+  "python.formatting.provider": "ruff",
+
+  // Linting
+  "python.linting.ruffEnabled": true,
+  // "python.linting.pycodestyleEnabled": true,
+
+  // Imports
+  "pyright.organizeimports.provider": "ruff",
+
+  // Deactivate variable type hints (very pervasive)
+  "inlayHint.enable": false,
+  // Autoformat files during typing
+  // "coc.preferences.formatOnType": true,
+
+  // Autoformat python files on save 
+  // "[python]": {
+  //   "coc.preferences.formatOnSave": true,
+  // }
+  // "coc.preferences.formatOnSaveFiletypes": ["python"]
+
+  // -----------------------------------------------------------
+
+  "coc.source.vimtex.filetypes": ["tex", "plaintex", "latex"],
+
+  // Don't look for ultisnips in any directory other than the user's
+  "snippets.ultisnips.directories": [],
+  // Disable snipmate snippets
+  "snippets.snipmate.enable": false,
+  "markdown-preview-enhanced.scrollSync": true,
+}
