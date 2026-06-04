@@ -63,8 +63,47 @@ class DadoCargado(Dado):
 d1 = Dado(6)
 d2 = DadoCargado(6)
 
+# Puedo utilizar cualquier objeto que contenga los métodos `arrojar_dado` e
+# `info` sin importar cual sea su clase de origen (polimorfismo).
 for dado in [d1, d2]:
-    print(f'arrojar dado: {dado.arrojar_dado()}')
+    # Arroja el dado
+    resultado = dado.arrojar_dado()
+    print(f'arrojar dado: {resultado}')
+    # Dame información sobre el dado
     dado.info()
     print()
+
+# Puedo también crear una función que acepte polimorfismo; aquí tenemos que el
+# primer argumento es cualquier objeto que implemente el método `arrojar_dado`,
+# no importándonos que tipo de objeto sea (no nos importa su clase).
+def jugar(dado, N: int) -> list:
+    """Arrojar el objeto múltiples veces
+
+    Parameters
+    ----------
+    dado : cualquier objeto que implemente el método `arrojar_dado`
+
+    N : int
+        Número de veces que se arroja el objeto.
+
+    Returns
+    -------
+    list
+        Lista con los valores obtenidos al arrojar el objeto
+    """
+    resultados = []
+    # La comunidad de python suele utilizar la variable `_` para indicar que no
+    # utilizaremos dicha variable (variable dummy o desechable). En el
+    # siguiente loop nos interesa la repetición no el valor que toma `_`.
+    for _ in range(N):
+        resultados.append(dado.arrojar_dado())
+    return resultados
+
+# Arrojar `N` veces el dado cargado
+N = 20
+print(f'Arrojando el dado cargado {N} veces')
+# Observaras que numpy guarda los enteros como objetos np.int64. Si deseas que
+# los enteros sean `int` de python tendrías que utilizar la función int() al
+# interior de los métodos `arrojar_dado`.
+print(jugar(d2, N))
 
