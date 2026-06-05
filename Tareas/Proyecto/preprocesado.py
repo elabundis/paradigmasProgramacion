@@ -1,52 +1,71 @@
-def minusculas(linea):
-    """Esta función toma una linea de texto (string) y transforma todos los
-    carácteres a minúsculas (regresa un string)
+def limpiar_linea(linea, caracteres_especiales):
+    """Esta función toma una línea de texto (str) y un iterable de caracteres
+    especiales y regresa la línea sin dichos caracteres (.,?!*/).
 
     """
     pass
 
-def limpiar_linea(linea):
-    """Esta función acepta una línea de texto (str) y regresa un nuevo string
-    sin caracteres especiales (.,?!*/).
-    El módulo string de la librería estándar de python contiene estos
-    caracteres si los desean. Los incluyo al principio de su código.
+# def obtener_tokens(linea):
+#     """Esta función recibe una línea de texto y la transforma en una lista
+#     cuyos elementos son las palabras en la linea.
 
-    """
-    from string import punctuation
-
-def obtener_tokens(linea):
-    """Esta función recibe una línea de texto y la transforma en una lista
-    cuyos elementos son las palabras en la linea.
-
-    """
-    pass
+#     """
+#     pass
 
 def limpiar_tokens(tokens, stopwords):
-    """Esta función recibe una lista de palabras (tokens) y elimina aquellas
-    que se encuentren en la lista de stopwords (regresa lista de palabras sin
-    stopwords).
+    """Esta función recibe una lista de palabras (`tokens`) y elimina aquellas
+    que se encuentren en el iterable `stopwords` modificando la lista original.
+    (regresa lista de palabras sin stopwords)
 
     """
     pass
 
-def preprocesar_linea(linea):
-    """Esta función aplica las funciones anteriores a una línea de texto
-    (string). Debe regresar tokens limpios (lista de strings).
+def preprocesar_linea(linea, caracteres_especiales, stopwords) -> list[str]:
+    """Limpia una línea de texto regresando tokens  limpios. La limpieza debe
+    considerar eliminar espacios blancos al principio y final de la línea,
+    convertir a minúsculas, eliminar caracteres especiales, crear tokens y
+    eliminar stopwords en estos tokens.
+
+    Esta función debe aplicar las funciones anteriores donde sea necesario.
+    Debe regresar tokens limpios (lista de strings).
+
+    """
+    # eliminar espacios blancos al principio y final de la línea
+
+    # convierte la linea a minúsculas
+
+    # elimina los caracteres especiales
+
+    # obten tokens: cada palabra debe aparecer como un elemento de una lista
+
+    # limpia la lista de tokens
+    pass
+
+def leer_libro(filename) -> list[str]:
+    """Dado el nombre de un archivo debe leer cada línea, agregando aquellas
+    que no esten vacías a una lista, es decir, debe regresar una lista cuyos
+    elementos son las líneas no vacías del libro (el primer elemento es la
+    primer línea no vacía y así sucesivamente).
 
     """
     pass
 
-def preprocesar_libro(libro):
-    """Aplica preprocesar_linea a cada linea de un libro. El libro consiste en
-    una lista, donde cada elemento es una linea del libro.
+def preprocesar_libro(libro: list[str], caracteres_especiales, stopwords) -> Dict[str, int]:
+    """Regresa un diccionario de palabras relevantes del libro como llaves
+    (los tokens limpios) y sus respectivas frecuencias como valores. Por
+    ejemplo, puede regresar:
+        {'shrek': 55, 'fiona': 43, 'caminando': 8}
 
-    Debe regresar una lista de listas. Las listas interiores son los tokens
-    limpios de cada línea.
+    Para hacer esto, aplica `preprocesar_linea` a cada linea del `libro`
+    agregando cada token limpio al diccionario si la palabra no existe o
+    aumentado el contador de palabras correspondiente en caso contrario.
+
+    El libro consiste en una lista con las líneas de este.
+
+    El módulo string de la librería estándar de python contiene estos
+    caracteres si los desean. Los incluyo al principio de su código.
     """
+    # La siguiente línea puede serte de ayuda
+    # from string import punctuation
     pass
 
-def leer_libro(filename):
-    """Dado el nombre de un archivo, debe leer línea a línea agregandolas a una
-    lista, es decir, debe regresar una lista cuyos elementos son las líneas.
-    """
-    pass
