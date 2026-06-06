@@ -84,11 +84,7 @@ class Libro:
         palabra no existe o aumentado el contador de la palabra correspondiente
         en caso contrario.
 
-        El módulo string de la librería estándar de python contiene estos
-        caracteres si los desean. Los incluyo al principio de su código.
         """
-        # La siguiente línea puede serte de ayuda
-        # from string import punctuation
         pass
 
     def __str__(self) -> str:
