@@ -5,13 +5,6 @@ def limpiar_linea(linea, caracteres_especiales):
     """
     pass
 
-# def obtener_tokens(linea):
-#     """Esta función recibe una línea de texto y la transforma en una lista
-#     cuyos elementos son las palabras en la linea.
-
-#     """
-#     pass
-
 def limpiar_tokens(tokens, stopwords):
     """Esta función recibe una lista de palabras (`tokens`) y elimina aquellas
     que se encuentren en el iterable `stopwords` modificando la lista original.
@@ -50,7 +43,9 @@ def leer_libro(filename) -> list[str]:
     """
     pass
 
-def preprocesar_libro(libro: list[str], caracteres_especiales, stopwords) -> Dict[str, int]:
+def preprocesar_libro(
+    libro: list[str], caracteres_especiales, stopwords
+) -> dict[str, int]:
     """Regresa un diccionario de palabras relevantes del libro como llaves
     (los tokens limpios) y sus respectivas frecuencias como valores. Por
     ejemplo, puede regresar:
