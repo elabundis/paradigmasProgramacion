@@ -1,4 +1,5 @@
 from pathlib import Path
+from string import punctuation
 
 
 class Libro:
@@ -6,8 +7,8 @@ class Libro:
         """Crear atributos públicos """
         self.name = name
         self.filename = filename
-        self.CARACTERES_ESPECIALES = None
-        self.STOPWORDS = None
+        self.CARACTERES_ESPECIALES: str | None = None
+        self.STOPWORDS: str | None = None
         # hacer que estos atributos sean de tipo property (al setter hay que
         # incluirle validación)
         # @property
@@ -160,7 +161,7 @@ class LibroFrench(LibroGutenberg):
 
 # La siguiente función asume que todos los libros se encuentran en el
 # directorio `directory`, tienen extensión `txt` y todos son en inglés.
-def crear_lista_libros_ingles(directory: str):
+def crear_lista_libros_ingles(directory: str, caract_especiales=punctuation):
     """Crea una lista de instancias `LibroEnglish` a partir de libros
     localizados en `directory`.
 
@@ -172,6 +173,7 @@ def crear_lista_libros_ingles(directory: str):
     for file in path.glob('*.txt'):
         filename = str(file.relative_to(path.parent))
         libro = LibroEnglish(file.name, filename)
+        libro.CARACTERES_ESPECIALES = caract_especiales
         libros.append(libro)
     return libros
 
