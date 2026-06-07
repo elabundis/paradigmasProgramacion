@@ -8,7 +8,7 @@ class Libro:
         self.name = name
         self.filename = filename
         self.CARACTERES_ESPECIALES: str | None = None
-        self.STOPWORDS: str | None = None
+        self.STOPWORDS: list[str] | None = None
         # hacer que estos atributos sean de tipo property (al setter hay que
         # incluirle validación)
         # @property
