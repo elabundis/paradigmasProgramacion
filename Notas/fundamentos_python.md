@@ -3331,7 +3331,8 @@ Y ya que estamos en esto,
 
 > [!NOTE]
 >
-> Un mapeo llave-valor podría implementarse mediante una lista de tuplas como `[('a',5), ('b':1)]`,
+> Un mapeo llave-valor podría implementarse mediante una lista de tuplas como
+> `[('a',5), ('b',1)]`,
 > sin embargo,
 > esto sería muy ineficiente para listas grandes;
 > para buscar cualquier llave tendríamos que explorar elemento a elemento de la lista,
