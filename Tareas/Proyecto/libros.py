@@ -42,7 +42,7 @@ class Libro:
         """
         pass
 
-    def _preprocesar_linea(linea) -> list[str]:
+    def _preprocesar_linea(self, linea) -> list[str]:
         """Limpia una línea de texto regresando tokens  limpios. La limpieza
         debe considerar eliminar espacios blancos al principio y final de la
         línea, convertir a minúsculas, eliminar caracteres especiales, crear
