@@ -115,7 +115,7 @@ Zepeda Rivera Antonio,47,4,92
 
 Tareas: Tareas
 Nombre,PEP8,Hist. Leng. Prog.,Pyenv,Ambientes virt.,Ejercicios_1: If,Trabajo en clase: If,Strings,Listas,Documentación con estilo numpy,Funciones (8-May),Resumen secuencias,Resumen secuencias y loops,Resumen OOP
-Aispuro Zuñiga Jayme Antonio,8,10,0,8,2,8,10,10,5,10,0,9,9
+Aispuro Zuñiga Jayme Antonio,8,10,0,8,2,8,10,10,5,10,9,9,9
 Alcaraz Salas Héctor Zadquiel,8,10,0,0,2,10,6.4,10,10,9.5,7,8.5,0
 Angulo Calleros Joel Enrique,6,10,0,10,7,10,10,0,9,9,9,0,10
 Ángulo Soto Ángel Gabriel,10,0,0,0,0,0,10,0,0,0,9,9,0
@@ -136,7 +136,7 @@ Gámez Espinoza Jesús Armando,8,10,0,0,10,10,10,10,10,10,0,10,10
 GARCÍA VERDUZCO JOSÉ RICARDO,8,0,0,9,9.5,0,9.3,10,9,9,10,7,0
 Hernández José Ángel,0,0,0,0,10,10,0,10,9,9,10,7,0
 Hilario Ballesteros Lisandro Adonai,0,0,9,0,4,0,10,10,5,0,8,10,8
-Ibarra Zazueta Jaime,10,10,10,0,9,8,8.6,10,9,10,0,9,9
+Ibarra Zazueta Jaime,10,10,10,0,9,8,8.6,10,9,10,9,9,9
 Jacobo Torres Adrián Josué,10,10,0,8,5,7,9.3,10,10,10,0,10,10
 Landeros Martinez Alexis Jeovany,8,10,8,10,10,10,10,10,7,10,8.5,10,9
 Lopez Carballo Elian de Jesus,10,0,0,0,9.5,10,10,10,9,8,9,9,9
@@ -144,8 +144,8 @@ Lopez Villarreal Lesli Yamileth,10,10,0,9,10,10,10,10,7,10,8.5,10,9
 LUGO RAMÍREZ ESKANDRA,10,10,9,9,0,10,9.3,10,7,10,8.5,10,9
 Machado Olivas Benigno Sebastián,8,10,8,8,6,10,6.4,10,10,6,8.5,9.5,10
 Molina Velázquez Brayan Jesús,5,10,9,0,8,10,10,0,9,9,0,0,10
-Montoya Garcia Darey,5,10,0,0,9,8,10,10,9,10,0,9,9
-Murillo Córdova Alexis Loreto,10,10,8,8,2,10,10,0,9,10,0,9,9
+Montoya Garcia Darey,5,10,0,0,9,8,10,10,9,10,9,9,9
+Murillo Córdova Alexis Loreto,10,10,8,8,2,10,10,0,9,10,9,9,9
 Muro López Angel Victorio,8,10,9,0,10,0,0,10,10,6,8.5,9.5,10
 Nuñez Inurriaga Luis Alfonso,10,10,0,8,10,0,10,0,9,9,9,0,10
 Otañez Vidaca Emilio Santiago,0,0,0,0,8,0,8.6,10,9,9,9,9,9
@@ -155,7 +155,7 @@ Pérez Márquez Francisco Javier,10,10,8,9,2,10,10,10,9,9,9,0,10
 Quintero Núñez Victor Dariel,10,0,0,0,0,0,9.3,0,0,0,9,9,0
 Rasura Fregozo Juan Emanuel,10,0,10,8,7,8,9.3,10,5,10,8,10,8
 Recio Guerrero Erick Alejandro,6,0,0,0,9.5,10,10,0,9,8,9,9,9
-Reyes Peña Maria Fernanda,10,10,0,9,9,8,7.9,10,9,10,0,9,9
+Reyes Peña Maria Fernanda,10,10,0,9,9,8,7.9,10,9,10,9,9,9
 Rojas Moreno Jesus Tadeo,5,0,0,0,0,0,0,0,0,0,0,9,0
 Rosas García Elias,8,0,0,0,0,0,2.1,0,0,0,0,0,0
 Sainz Hernandez Rey David,10,0,8,0,5,10,9.3,10,5,10,8,10,8
@@ -164,7 +164,7 @@ Sicairos Escobedo Rogelio,9,10,9,0,5,10,9.3,0,9,9,0,0,10
 Soto Uraga Luis Adrian,10,0,0,8,0,0,7.9,0,0,0,0,0,0
 Traslaviña Calderon Luis Guillermo,10,0,0,0,5,7,8.6,10,10,10,0,10,10
 Uriarte Valenzuela Osmar Emiliano,6,10,0,0,8,0,4.3,10,9,9,9,0,9
-Valdez Rodríguez Johan Uriel,5,10,0,10,8.5,10,10,10,9,10,0,9,9
+Valdez Rodríguez Johan Uriel,5,10,0,10,8.5,10,10,10,9,10,9,9,9
 Velarde Amarillas Sebastian,0,10,0,9,0,0,10,0,0,0,0,0,0
 Villa Corrales Esaú,10,0,0,0,0,0,9.3,0,0,0,9,9,0
 Zazueta Rios Diego,10,0,0,8,0,0,8.6,0,0,0,0,0,0
@@ -172,7 +172,7 @@ Zepeda Rivera Antonio,10,10,0,10,9,8,7.1,10,0,9,9,9,10
 
 Tareas: Notas Tareas
 Nombre,Documentación con estilo numpy,Funciones (8-may),Resumen secuencias,Resumen secuencias y loops
-Aispuro Zuñiga Jayme Antonio,IA. Y el ejemplo está mal.,,Cero contenido. Hacen comentarios de un ejemplo que no existe en su contenido.,
+Aispuro Zuñiga Jayme Antonio,IA. Y el ejemplo está mal.,,Hacen comentarios de un ejemplo que no existe en su contenido (después de la tabla en la primer hoja).,
 Alcaraz Salas Héctor Zadquiel,,Deben mejorar el formato de las instrucciones.,,No puso grupo en hoja de presentación
 Angulo Calleros Joel Enrique,Terminas páginas con el inicio de un título,Faltaron instrucciones en los problemas,,
 Ángulo Soto Ángel Gabriel,,,,
@@ -193,7 +193,7 @@ Gámez Espinoza Jesús Armando,,,,
 GARCÍA VERDUZCO JOSÉ RICARDO,Problema con el formato de párrafos y faltó un ejemplo más completo.,Hoja de presentación sin grupo y sin fecha. Problemas en documentación de Ejercicio 5.pdf,,
 Hernández José Ángel,Problema con el formato de párrafos y faltó un ejemplo más completo.,Hoja de presentación sin grupo y sin fecha. Problemas en documentación de Ejercicio 5.pdf,,
 Hilario Ballesteros Lisandro Adonai,IA en su mayoría. No es un resumen de la página que les dí.,,,
-Ibarra Zazueta Jaime,Faltó dar un ejemplo completo,,Cero contenido. Hacen comentarios de un ejemplo que no existe en su contenido.,
+Ibarra Zazueta Jaime,Faltó dar un ejemplo completo,,Hacen comentarios de un ejemplo que no existe en su contenido (después de la tabla en la primer hoja).,
 Jacobo Torres Adrián Josué,,,,
 Landeros Martinez Alexis Jeovany,Falta contenido. El ejemplo que se da no abarca los elementos de documentación y está mal de hecho.,,,
 Lopez Carballo Elian de Jesus,,Faltó gráfica,,
@@ -201,8 +201,8 @@ Lopez Villarreal Lesli Yamileth,Falta contenido. El ejemplo que se da no abarca 
 LUGO RAMÍREZ ESKANDRA,Falta contenido. El ejemplo que se da no abarca los elementos de documentación y está mal de hecho.,,,
 Machado Olivas Benigno Sebastián,,El pdf del repositorio no se abre. No tengo tiempo para ponerme a descargar y correr sus códigos. Les doy un seis porque vi un esfuerzo.,No puso grupo en hoja de presentación ni título de tarea,No puso grupo en hoja de presentación
 Molina Velázquez Brayan Jesús,Faltaron secciones,Faltaron instrucciones en los problemas,,
-Montoya Garcia Darey,Faltó dar un ejemplo completo,,Cero contenido. Hacen comentarios de un ejemplo que no existe en su contenido.,
-Murillo Córdova Alexis Loreto,Faltó dar un ejemplo completo,,Cero contenido. Hacen comentarios de un ejemplo que no existe en su contenido.,
+Montoya Garcia Darey,Faltó dar un ejemplo completo,,Hacen comentarios de un ejemplo que no existe en su contenido (después de la tabla en la primer hoja).,
+Murillo Córdova Alexis Loreto,Faltó dar un ejemplo completo,,Hacen comentarios de un ejemplo que no existe en su contenido (después de la tabla en la primer hoja).,
 Muro López Angel Victorio,,El pdf del repositorio no se abre. No tengo tiempo para ponerme a descargar y correr sus códigos. Les doy un seis porque vi un esfuerzo.,No puso grupo en hoja de presentación ni título de tarea,No puso grupo en hoja de presentación
 Nuñez Inurriaga Luis Alfonso,Terminas páginas con el inicio de un título,Faltaron instrucciones en los problemas,,
 Otañez Vidaca Emilio Santiago,Faltaron secciones,Faltaron instrucciones en los problemas,,
@@ -212,7 +212,7 @@ Pérez Márquez Francisco Javier,Terminas páginas con el inicio de un título,F
 Quintero Núñez Victor Dariel,,,,
 Rasura Fregozo Juan Emanuel,IA en su mayoría. No es un resumen de la página que les dí.,,,
 Recio Guerrero Erick Alejandro,,Faltó gráfica,,
-Reyes Peña Maria Fernanda,Faltó dar un ejemplo completo,,Cero contenido. Hacen comentarios de un ejemplo que no existe en su contenido.,
+Reyes Peña Maria Fernanda,Faltó dar un ejemplo completo,,Hacen comentarios de un ejemplo que no existe en su contenido (después de la tabla en la primer hoja).,
 Rojas Moreno Jesus Tadeo,,,,
 Rosas García Elias,,,,
 Sainz Hernandez Rey David,IA en su mayoría. No es un resumen de la página que les dí.,,,
@@ -221,7 +221,7 @@ Sicairos Escobedo Rogelio,Faltaron secciones,Faltaron instrucciones en los probl
 Soto Uraga Luis Adrian,,,,
 Traslaviña Calderon Luis Guillermo,,,,
 Uriarte Valenzuela Osmar Emiliano,Faltaron secciones,Faltaron instrucciones en los problemas,,
-Valdez Rodríguez Johan Uriel,Faltó dar un ejemplo completo,,Cero contenido. Hacen comentarios de un ejemplo que no existe en su contenido.,
+Valdez Rodríguez Johan Uriel,Faltó dar un ejemplo completo,,Hacen comentarios de un ejemplo que no existe en su contenido (después de la tabla en la primer hoja).,
 Velarde Amarillas Sebastian,,,,
 Villa Corrales Esaú,,,,
 Zazueta Rios Diego,,,,
@@ -229,7 +229,7 @@ Zepeda Rivera Antonio,No me entregó un resumen.,Faltaron instrucciones en los p
 
 Tareas: Promedio Tareas
 Nombre,Tareas Final
-Aispuro Zuñiga Jayme Antonio,6.8
+Aispuro Zuñiga Jayme Antonio,7.5
 Alcaraz Salas Héctor Zadquiel,6.3
 Angulo Calleros Joel Enrique,6.9
 Ángulo Soto Ángel Gabriel,2.9
@@ -250,7 +250,7 @@ Gámez Espinoza Jesús Armando,7.5
 GARCÍA VERDUZCO JOSÉ RICARDO,6.2
 Hernández José Ángel,5
 Hilario Ballesteros Lisandro Adonai,4.9
-Ibarra Zazueta Jaime,7.9
+Ibarra Zazueta Jaime,8.6
 Jacobo Torres Adrián Josué,7.6
 Landeros Martinez Alexis Jeovany,9.3
 Lopez Carballo Elian de Jesus,7.2
@@ -258,8 +258,8 @@ Lopez Villarreal Lesli Yamileth,8.7
 LUGO RAMÍREZ ESKANDRA,8.6
 Machado Olivas Benigno Sebastián,8.5
 Molina Velázquez Brayan Jesús,6.2
-Montoya Garcia Darey,6.8
-Murillo Córdova Alexis Loreto,7.3
+Montoya Garcia Darey,7.5
+Murillo Córdova Alexis Loreto,8
 Muro López Angel Victorio,7
 Nuñez Inurriaga Luis Alfonso,6.5
 Otañez Vidaca Emilio Santiago,5.5
@@ -269,7 +269,7 @@ Pérez Márquez Francisco Javier,8.2
 Quintero Núñez Victor Dariel,2.9
 Rasura Fregozo Juan Emanuel,7.9
 Recio Guerrero Erick Alejandro,6.1
-Reyes Peña Maria Fernanda,7.8
+Reyes Peña Maria Fernanda,8.5
 Rojas Moreno Jesus Tadeo,1.1
 Rosas García Elias,0.8
 Sainz Hernandez Rey David,7.2
@@ -278,7 +278,7 @@ Sicairos Escobedo Rogelio,6.2
 Soto Uraga Luis Adrian,2
 Traslaviña Calderon Luis Guillermo,6.2
 Uriarte Valenzuela Osmar Emiliano,5.7
-Valdez Rodríguez Johan Uriel,7.7
+Valdez Rodríguez Johan Uriel,8.4
 Velarde Amarillas Sebastian,2.2
 Villa Corrales Esaú,2.9
 Zazueta Rios Diego,2
@@ -628,7 +628,7 @@ Zepeda Rivera Antonio,6.5
 
 Calificación: Calificaciones
 Nombre,Calif.,Final
-Aispuro Zuñiga Jayme Antonio,6.8,6
+Aispuro Zuñiga Jayme Antonio,6.9,7
 Alcaraz Salas Héctor Zadquiel,6.4,7
 Angulo Calleros Joel Enrique,6.6,6
 Ángulo Soto Ángel Gabriel,3.6,5
@@ -657,7 +657,7 @@ Lopez Villarreal Lesli Yamileth,8,9
 LUGO RAMÍREZ ESKANDRA,8,9
 Machado Olivas Benigno Sebastián,8.2,8
 Molina Velázquez Brayan Jesús,6.6,6
-Montoya Garcia Darey,7.6,8
+Montoya Garcia Darey,7.7,8
 Murillo Córdova Alexis Loreto,4.7,5
 Muro López Angel Victorio,7,7
 Nuñez Inurriaga Luis Alfonso,8.1,8
@@ -668,7 +668,7 @@ Pérez Márquez Francisco Javier,7.5,8
 Quintero Núñez Victor Dariel,1.8,5
 Rasura Fregozo Juan Emanuel,6.4,5
 Recio Guerrero Erick Alejandro,6.7,7
-Reyes Peña Maria Fernanda,7.6,8
+Reyes Peña Maria Fernanda,7.7,8
 Rojas Moreno Jesus Tadeo,1.4,5
 Rosas García Elias,3.2,5
 Sainz Hernandez Rey David,6.8,7
@@ -677,7 +677,7 @@ Sicairos Escobedo Rogelio,7,8
 Soto Uraga Luis Adrian,2.9,5
 Traslaviña Calderon Luis Guillermo,7.2,7
 Uriarte Valenzuela Osmar Emiliano,6,6
-Valdez Rodríguez Johan Uriel,7.3,7
+Valdez Rodríguez Johan Uriel,7.4,7
 Velarde Amarillas Sebastian,6,6
 Villa Corrales Esaú,4.8,5
 Zazueta Rios Diego,3.7,5
